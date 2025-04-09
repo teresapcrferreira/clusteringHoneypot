@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cluster Dashboard</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    aside#cluster-index {
+      width: 220px;
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 15px;
+      height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+
+    #cluster-index h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+    }
+
+    #index-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #index-list li {
+      margin: 8px 0;
+    }
+
+    #index-list a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #index-list a:hover {
+      text-decoration: underline;
+    }
+
+    .inspect-btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 3px;
+      margin-top: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .inspect-btn:hover {
+      background-color: var(--primary-color-hover);
+    }
+
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid var(--primary-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 15px;
+    }
+
+    select, input[type="date"] {
+      width: auto;
+      min-width: 150px;
+      max-width: 200px;
+      padding: 6px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout">
+    <!-- Sidebar index -->
+    <aside id="cluster-index">
+      <h4>Cluster Index</h4>
+      <ul id="index-list"></ul>
+    </aside>
+
+    <!-- Main content -->
+    <main style="flex: 1; padding: 20px;">
+      <!-- Filter bar -->
+      <div class="filter-row">
+        <label for="honeypot">Honeypot:</label>
+        <select id="honeypot">
+          <option value="cowrie">Cowrie</option>
+          <option value="Adbhoney">ADBHoney</option>
+        </select>
+
+        <label for="from-date">From:</label>
+        <input type="date" id="from-date">
+
+        <label for="to-date">To:</label>
+        <input type="date" id="to-date">
+
+        <button class="button" onclick="fetchClusters()">Apply Filters</button>
+      </div>
+
+      <!-- Loading spinner -->
+      <div id="loading-wrapper">
+        <div id="loading" class="spinner"></div>
+      </div>      
+
+      <!-- Clusters will be inserted here -->
+      <div id="clusters-area"></div>
+    </main>
+  </div>
+
+  <script>
+    function fetchClusters() {
+      const honeypot = $('#honeypot').val();
+      const from = $('#from-date').val();
+      const to = $('#to-date').val();
+
+      $('#loading').show();
+      $('#clusters-area').empty();
+      $('#index-list').empty();
+
+      $.get("/clusters", {
+        honeypot: honeypot,
+        from: from ? new Date(from).toISOString() : '',
+        to: to ? new Date(to).toISOString() : ''
+      }, function(data) {
+        let html = '';
+        let indexHtml = '';
+
+        data.forEach(cluster => {
+          const anchorId = `cluster-${cluster.id}`;
+          const purpose = cluster.purpose || "Unknown";
+
+          html += `<div class="cluster-block" id="${anchorId}">
+            <h3>
+              Cluster ${cluster.id} Parent: ${cluster.parent}<br>
+              <small>Purpose: <strong>${purpose}</strong></small>
+            </h3>
+            <ul>`;
+
+          cluster.commands.slice(0, 3).forEach(([cmd, count]) => {
+            html += `<li>${cmd} (${count})</li>`;
+          });
+
+          if (cluster.commands.length > 3) {
+            html += `<ul class="more-commands" style="display:none;">`;
+            cluster.commands.slice(3).forEach(([cmd, count]) => {
+              html += `<li>${cmd} (${count})</li>`;
+            });
+            html += `</ul>
+              <button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
+          }
+
+          html += `</ul></div>`;
+
+          indexHtml += `<li><a href="#${anchorId}">Cluster ${cluster.id}: ${purpose}</a></li>`;
+        });
+
+        $('#clusters-area').html(html);
+        $('#index-list').html(indexHtml);
+        $('#loading').hide();
+      }).fail(function() {
+        $('#clusters-area').html('<p style="color:red;">Error loading clusters.</p>');
+        $('#loading').hide();
+      });
+    }
+
+    function toggleCluster(button) {
+      const hiddenList = $(button).prev('.more-commands');
+      hiddenList.slideToggle(200);
+
+      const isVisible = hiddenList.is(':visible');
+      button.textContent = isVisible ? 'Hide Cluster' : 'Inspect Cluster';
+    }
+
+    $(document).ready(() => {
+      // You could trigger the first fetch here if desired
+      // fetchClusters();
+    });
+  </script>
+</body>
+</html>

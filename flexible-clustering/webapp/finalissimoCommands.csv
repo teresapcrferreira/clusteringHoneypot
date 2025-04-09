@@ -1,0 +1,71 @@
+label,simplified_purpose,flag_description
+awk,Text Processing,
+cat,Read file,
+cat -b,Read file,Number non-empty lines
+cat -n,Read file,Number every output line
+cat -s,Read file,Remove repeated empty lines
+cd,Change Directory,
+chattr,File Attribute Manipulation,
+chattr +a,File Attribute Manipulation,Only allow adding to file
+chattr +i,File Attribute Manipulation,Make file unchangeable
+chattr -i,File Attribute Manipulation,Allow file changes again
+crontab,Scheduled Task,
+crontab -e,Scheduled Task,Edit user crontab
+crontab -l,Scheduled Task,List user crontab
+crontab -r,Scheduled Task,Delete user crontab
+curl,Remote File Retrieval,
+curl -X,Remote File Retrieval,Set request method
+curl -d,Remote File Retrieval,Send data with POST
+curl -o,Remote File Retrieval,Write output to a file
+curl -s,Remote File Retrieval,Suppress output
+echo,Output Text,
+echo -e,Output Text,Interpret escape characters
+echo -n,Output Text,Skip trailing newline
+free,Memory Info,
+free -g,Memory Info,Show memory in GB
+free -h,Memory Info,Show sizes in a readable format
+free -m,Memory Info,Show memory in MB
+grep,Pattern Matching,
+grep -E,Pattern Matching,Use extended regex
+grep -i,Pattern Matching,Ignore case
+grep -r,Pattern Matching,Search directories recursively
+grep -v,Pattern Matching,Match lines that don't fit the pattern
+head,Extract lines,
+head -n,Extract lines,Show the first N lines
+ifconfig,Network Info,
+lockr,Permission/Attribute Manipulation,
+ls,Directory Listing,
+ls -R,Directory Listing,List directories recursively
+ls -a,Directory Listing,Include hidden files
+ls -h,Directory Listing,Show sizes in a readable format
+ls -l,Directory Listing,Use detailed file listing
+lscpu,CPU Info,
+pkill,Process Termination,
+pkill -9,Process Termination,Forcefully kill the process
+pkill -f,Process Termination,Match full command line
+pkill -u,Process Termination,Match user’s processes
+ps,Process Discovery,
+ps -e,Process Discovery,List all processes
+ps -f,Process Discovery,Show detailed process info
+ps -u,Process Discovery,Match user’s processes
+rm,File Deletion,
+rm -f,File Deletion,Force delete files
+rm -r,File Deletion,Delete folders recursively
+sh,Script Execution,
+tftp,File Transfer,
+top,Real-time Process Monitor,
+uname,System Info,
+uname -a,System Info,Show all system info
+uname -n,System Info,Show hostname
+uname -r,System Info,Show kernel release
+uname -s,System Info,Show kernel name
+w,User Sessions,
+wc,Counting lines,
+wc -c,Counting lines,Count bytes
+wc -l,Counting lines,Count lines
+wc -w,Counting lines,Count words
+wget,Remote File Retrieval,
+wget --no-check-certificate,Remote File Retrieval,Skip certificate checks
+wget -O,Remote File Retrieval,Write output to a file
+wget -q,Remote File Retrieval,Suppress output
+which,Binary Locator,

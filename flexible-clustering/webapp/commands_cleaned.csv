@@ -1,0 +1,2804 @@
+Command,Description
+30-systemd-environment-d-generator,load variables specified environmentd
+abicompat,check abi compatibility
+abidb,check binary abixml corpus andor submit new data
+abidiff,compare abis elf files
+abidw,serialize abi elf file
+abilint,validate abigail abi representation
+abipkgdiff,compare abis elf files software packages
+ac,print statistics users connect time
+accessdb,dumps content mandb database human readable format
+accton,turns process accounting
+actions,independently defined actions tc
+addpart,tell kernel existence partition
+addr2line,convert addresses symboloffset file names line numbers
+admin,create administer sccs files development
+agetty,alternative linux getty
+alias,define display aliases
+anacron,runs commands periodically
+apropos,search manual page names descriptions
+ar,create modify extract archives
+ar,create maintain library archives
+arch,print machine hardware name uname
+aria_chk,aria tablemaintenance utility
+aria_dump_log,dump content aria log pages
+aria_ftdump,display fulltext index information
+aria_pack,generate compressed readonly aria tables
+aria_read_log,display aria log file contents
+arp,manipulate system arp cache
+arpd,userspace arp daemon
+arping,send arp request neighbour host
+arptables-nft-restore,restore arp tables nftbased
+arptables-nft-save,dump arptables rules stdout nftbased
+arptables-nft,based
+arptables-restore,restore arp tables nftbased
+arptables-save,dump arptables rules stdout nftbased
+arptables-translate,translation tool migrate iptables nftables
+arptables,based
+AS,portable gnu assembler
+as,portable gnu assembler
+asa,control characters
+ascii-xfr,uploaddownload files using ascii protocol
+astraceroute,autonomous system trace route utility
+at,execute commands later time
+attr,extended attributes xfs filesystem objects
+audispd-zos-remote,zos remoteservices audit dispatcher plugin
+audit2allow,generate selinux policy allowdontaudit rules logs denied operations
+audit2why,generate selinux policy allowdontaudit rules logs denied operations
+auditctl,utility assist controlling kernels audit system
+auditd,linux audit daemon
+augenrules,script merges component audit rule files
+aureport,tool produces summary reports audit daemon logs
+ausearch,tool query audit daemon logs
+autofs,service control automounter
+autofsd-probe,probe autofs mountunmount daemon
+automount,manage autofs mount points
+autopoint,copies standard gettext infrastructure
+avcstat,display selinux avc statistics
+awk,pattern scanning processing language
+b2sum,compute check blake2 message digest
+babeltrace2-convert,convert one traces given format
+babeltrace2-help,get help babeltrace 2 plugin component class
+babeltrace2-list-plugins,list babeltrace 2 plugins properties
+babeltrace2-query,query object babeltrace 2 component class
+babeltrace2-run,create babeltrace 2 trace processing graph run
+babeltrace2,convert process one traces
+badblocks,search device bad blocks
+base32,base32 encodedecode data print standard output
+base64,base64 encodedecode data print standard output
+basename,strip directory suffix filenames
+basename,directory portion pathname
+basenc,encodedecode data print standard output
+bash,gnu bourneagain shell
+basic,basic traffic control filter
+batch,schedule commands executed batch queue
+bc,precision arithmetic language
+bfifo,packet limited first first queue
+bg,run jobs background
+bits,convert bit masks fromto various formats
+blkdeactivate,utility deactivate block devices
+blkdiscard,discard sectors device
+blkid,locateprint block device attributes
+blkiomon,monitor block device io based blktrace data
+blkmapd,pnfs block layout mapping daemon
+blkparse,produce formatted output event streams block devices
+blkpr,run persistent reservations command device
+blkrawverify,verifies output file produced blkparse
+blktrace,generate traces io traffic block devices
+blkzone,run zone command device
+blockdev,call block device ioctls command line
+bno_plot,generate interactive 3d plot io blocks sizes
+booleans,policy booleans enable runtime customization selinux policy
+bootctl,control efi firmware boot settings manage boot loader
+BPF,bpf programmable classifier actions ingressegress queueing disciplines
+bpfc,berkeley packet filter assembler compiler
+break,exit loop
+bridge,show manipulate bridge addresses devices
+btrace,perform live tracing block devices
+btrecord,recreate io loads recorded blktrace
+btreplay,recreate io loads recorded blktrace
+btrfs-balance,balance block groups btrfs filesystem
+btrfs-check,check repair btrfs filesystem
+btrfs-convert,convert ext234 reiserfs filesystem btrfs inplace
+btrfs-device,manage devices btrfs filesystems
+btrfs-filesystem,command group primarily work whole filesystems
+btrfs-find-root,filter find btrfs root
+btrfs-image,createrestore image filesystem
+btrfs-inspect-internal,query various internal information
+btrfs-map-logical,map btrfs logical extent physical extent
+btrfs-property,getsetlist properties given filesystem object
+btrfs-qgroup,control quota group btrfs filesystem
+btrfs-quota,control global quota status btrfs filesystem
+btrfs-receive,receive subvolumes send stream
+btrfs-replace,replace devices managed btrfs device
+btrfs-rescue,recover damaged btrfs filesystem
+btrfs-restore,try restore files damaged btrfs filesystem image
+btrfs-scrub,scrub btrfs filesystem verify block checksums
+btrfs-select-super,overwrite primary superblock backup copy
+btrfs-send,generate stream changes two subvolume snapshots
+btrfs-subvolume,manage btrfs subvolumes
+btrfs,toolbox manage btrfs filesystems
+btrfsck,check repair btrfs filesystem
+btrfstune,tune various filesystem parameters
+btt,analyse block io traces produces blktrace
+busctl,introspect bus
+c++filt,demangle c java symbols
+c99,compile standard c programs
+CAKE,common applications kept enhanced cake
+cal,display calendar
+cal,print calendar
+callgrind_annotate,postprocessing tool callgrind
+callgrind_control,observe control programs run callgrind
+cancel,cancel jobs
+capsh,capability shell wrapper
+captest,program demonstrate capabilities
+captree,display tree process capabilities
+cat,concatenate files print standard output
+cat,concatenate print files
+catman,create update preformatted manual pages
+CBS,credit based shaper cbs qdisc
+cd,change working directory
+cdrwtool,perform various actions cdr cdrw dvdr
+certtool,gnutls certificate tool
+cfdisk,display manipulate disk partition table
+cflow,language flowgraph development
+cg_annotate,postprocessing tool cachegrind
+cgcc,compiler wrapper run sparse compiling
+cg_diff,deprecated diffs two cachegrind output files
+cg_merge,deprecated merges multiple cachegrind output files one
+cgroup,control group based traffic control filter
+chacl,change access control list file directory
+chage,change user password expiry information
+chat,automated conversational script modem
+chattr,change file attributes linux file system
+chcat,change selinux security categories filesusers
+chcon,change file security context
+chcpu,configure cpus
+checkmodule,selinux policy module compiler
+checkpolicy,selinux policy compiler
+chfn,change finger information
+chgpasswd,update group passwords batch mode
+chgrp,change group ownership
+chgrp,change file group ownership
+chkcon,determine security context valid given binary policy
+chkhelp,check performance metrics help text files
+chmem,configure memory
+chmod,change file mode bits
+chmod,change file modes
+choke,choose keep scheduler
+choom,display adjust oomkiller score
+chown,change file owner group
+chown,change file ownership
+chpasswd,update passwords batch mode
+chroot,run command interactive shell special root directory
+chrt,manipulate realtime attributes process
+chsh,change login shell
+chvt,change foreground virtual terminal
+cifsiostat,report cifs statistics
+cksum,compute verify file checksums
+cksum,write file checksums sizes
+CLEAR,clear terminal screen
+clear,clear terminal screen
+clockdiff,measure clock difference hosts
+clustervis,visualize cpu network performance cluster
+cmirrord,cluster mirror log daemon
+cmp,compare two files byte byte
+cmp,compare two files
+cmtime,rdma cm connection steps timing test
+CoDel,controlleddelay active queue management algorithm
+col,filter reverse line feeds input
+colcrt,filter nroff output crt previewing
+collectl2pcp,import collectl data pcp archive
+colon,null utility
+colrm,remove columns file
+column,columnate lists
+comm,compare two sorted files line line
+comm,select reject lines common two files
+command,execute simple command
+comp_err,compile mariadb error message file
+compress,compress data
+connmark,netfilter connmark retriever action
+continue,continue loop
+convertquota,convert quota old file format new one
+coredumpctl,retrieve process saved core dumps metadata
+coresched,manage core scheduling cookies tasks
+coreutils,single binary coreutils programs
+cp,copy files directories
+cp,copy files
+cpp,c preprocessor
+crash,analyze linux crash dump data live system
+cron,daemon execute scheduled commands
+crond,daemon execute scheduled commands
+cronnext,time next job cron execute
+crontab,maintains crontab files individual users
+crontab,schedule periodic background work
+cryptsetup-benchmark,benchmarks ciphers kdf
+cryptsetup-bitlkDump,dump header information bitlk bitlocker compatible device
+cryptsetup-bitlkdump,dump header information bitlk bitlocker compatible device
+cryptsetup-bitlkOpen,open encrypted device create mapping specified name
+cryptsetup-bitlkopen,open encrypted device create mapping specified name
+cryptsetup-close,removes existing mapping name associated key
+cryptsetup-config,set permanent configuration options store luks header
+cryptsetup-convert,converts device luks1 luks2 format
+cryptsetup-create,open encrypted device create mapping specified name
+cryptsetup-erase,erase keyslots
+cryptsetup-fvault2Dump,dump header information fvault2 filevault2 compatible device
+cryptsetup-fvault2dump,dump header information fvault2 filevault2 compatible device
+cryptsetup-fvault2Open,open encrypted device create mapping specified name
+cryptsetup-fvault2open,open encrypted device create mapping specified name
+cryptsetup-isLuks,check device luks device
+cryptsetup-isluks,check device luks device
+cryptsetup-loopaesOpen,open encrypted device create mapping specified name
+cryptsetup-loopaesopen,open encrypted device create mapping specified name
+cryptsetup-luksAddKey,add new passphrase
+cryptsetup-luksaddkey,add new passphrase
+cryptsetup-luksChangeKey,change existing passphrase
+cryptsetup-lukschangekey,change existing passphrase
+cryptsetup-luksConvertKey,converts existing luks2 keyslot new pbkdf parameters
+cryptsetup-luksconvertkey,converts existing luks2 keyslot new pbkdf parameters
+cryptsetup-luksDump,dump header information luks device
+cryptsetup-luksdump,dump header information luks device
+cryptsetup-luksErase,erase keyslots
+cryptsetup-lukserase,erase keyslots
+cryptsetup-luksFormat,initialize luks partition set initial passphrase
+cryptsetup-luksformat,initialize luks partition set initial passphrase
+cryptsetup-luksHeaderBackup,store binary backup luks header keyslot area
+cryptsetup-luksheaderbackup,store binary backup luks header keyslot area
+cryptsetup-luksHeaderRestore,restore binary backup luks header keyslot area
+cryptsetup-luksheaderrestore,restore binary backup luks header keyslot area
+cryptsetup-luksKillSlot,wipe keyslot luks device
+cryptsetup-lukskillslot,wipe keyslot luks device
+cryptsetup-luksOpen,open encrypted device create mapping specified name
+cryptsetup-luksopen,open encrypted device create mapping specified name
+cryptsetup-luksRemoveKey,remove supplied passphrase luks device
+cryptsetup-luksremovekey,remove supplied passphrase luks device
+cryptsetup-luksResume,resume suspended device reinstate key
+cryptsetup-luksresume,resume suspended device reinstate key
+cryptsetup-luksSuspend,suspends active device wipes key
+cryptsetup-lukssuspend,suspends active device wipes key
+cryptsetup-luksUUID,print set uuid luks device
+cryptsetup-luksuuid,print set uuid luks device
+cryptsetup-open,open encrypted device create mapping specified name
+cryptsetup-plainOpen,open encrypted device create mapping specified name
+cryptsetup-plainopen,open encrypted device create mapping specified name
+cryptsetup-reencrypt,reencrypt luks encrypted volumes inplace
+cryptsetup-refresh,refresh parameters active mapping
+cryptsetup-repair,repair device metadata
+cryptsetup-resize,resize active mapping
+cryptsetup-ssh,manage luks2 ssh token
+cryptsetup-status,report status mapping
+cryptsetup-tcryptDump,dump header information tcrypt truecrypt veracrypt compatible device
+cryptsetup-tcryptdump,dump header information tcrypt truecrypt veracrypt compatible device
+cryptsetup-tcryptOpen,open encrypted device create mapping specified name
+cryptsetup-tcryptopen,open encrypted device create mapping specified name
+cryptsetup-token,manage luks2 tokens
+cryptsetup,manage plain dmcrypt luks encrypted volumes
+csplit,split file sections determined context lines
+csplit,split files based context
+csum,checksum update action
+ct,tc connection tracking action
+ctags,create tags file development fortran
+ctinfo,tc connmark processing action
+ctrlaltdel,set function ctrlaltdel combination
+ctstat,unified linux network statistics
+cups-config,get cups api compiler directory link information deprecated
+cups-lpd,receive print jobs report printer status lpd clients deprecated
+cups-snmp,cups snmp backend deprecated
+cups,standardsbased open source printing system
+cupsaccept,acceptreject jobs sent destination
+cupsctl,configure cupsdconf options
+cupsd-helper,cupsd helper programs deprecated
+cupsd,cups scheduler
+cupsdisable,stopstart printers classes
+cupsenable,stopstart printers classes
+cupsfilter,convert file another format using cups filters deprecated
+cupstestppd,test conformance ppd files deprecated
+curl-config,get information libcurl installation
+curl,transfer url
+curvetun,lightweight curve25519 ip46 tunnel
+cut,remove sections line files
+cut,cut selected fields line file
+cvtsudoers,convert sudoers file formats
+cxref,language program crossreference table development
+danetool,gnutls dane tool
+dash,command interpreter shell
+date,print set system date time
+date,write date time
+dbpmda,debugger performance copilot pmdas
+dbprobe,database response time availability information
+dcb-app,show manipulate application priority table dcb data center bridging subsystem
+dcb-apptrust,show configure perselector trust trust order application priority table dcb data center bridging subsystem
+dcb-buffer,show manipulate port buffer settings dcb data center bridging subsystem
+dcb-dcbx,show manipulate port dcbx data center bridging exchange
+dcb-ets,show manipulate ets enhanced transmission selection settings dcb data center bridging subsystem
+dcb-maxrate,show manipulate port maxrate settings dcb data center bridging subsystem
+dcb-pfc,show manipulate pfc prioritybased flow control settings dcb data center bridging subsystem
+dcb-rewr,show manipulate rewrite table dcb data center bridging subsystem
+dcb,show manipulate dcb data center bridging settings
+dd,convert copy file
+dd,convert copy file
+deallocvt,deallocate unused virtual consoles
+debugfs,ext2ext3ext4 file system debugger
+debuginfo-install,install debuginfo packages dependencies
+delpart,tell kernel forget partition
+delta,make delta change sccs file development
+depmod,generate modulesdep map files
+derb,disassemble resource bundle
+devlink-dev,devlink device configuration
+devlink-dpipe,devlink dataplane pipeline visualization
+devlink-health,devlink health reporting recovery
+devlink-lc,devlink line card configuration
+devlink-monitor,state monitoring
+devlink-port,devlink port configuration
+devlink-rate,devlink rate management
+devlink-region,devlink address region access
+devlink-resource,devlink device resource configuration
+devlink-sb,devlink shared buffer configuration
+devlink-trap,devlink trap configuration
+devlink,devlink tool
+df,report file system space usage
+df,report free disk space
+dh,debhelper command sequencer
+dh_assistant,tool supporting debhelper tools provide introspection
+dh_auto_build,automatically builds package
+dh_auto_clean,automatically cleans build
+dh_auto_configure,automatically configure package prior building
+dh_auto_install,automatically runs make install similar
+dh_auto_test,automatically runs packages test suites
+dh_bugfiles,install bug reporting customization files package build directories
+dh_builddeb,build debian binary packages
+dh_clean,clean package build directories
+dh_compress,compress files fix symlinks package build directories
+dh_dwz,optimize dwarf debug information elf binaries via dwz
+dh_fixperms,fix permissions files package build directories
+dh_gencontrol,generate install control file
+dh_icons,update caches freedesktop icons
+dh_install,install files package build directories
+dh_installalternatives,install declarative alternative rules
+dh_installcatalogs,install register sgml catalogs
+dh_installchangelogs,install changelogs package build directories
+dh_installcron,install cron scripts etccron
+dh_installdeb,install files debian directory
+dh_installdebconf,install files used debconf package build directories
+dh_installdirs,create subdirectories package build directories
+dh_installdocs,install documentation package build directories
+dh_installemacsen,register emacs add package
+dh_installexamples,install example files package build directories
+dh_installgsettings,install gsettings overrides set dependencies
+dh_installifupdown,install ifup ifdown hooks
+dh_installinfo,install info files
+dh_installinit,install service init files package build directories
+dh_installinitramfs,install initramfs hooks setup maintscripts
+dh_installlogcheck,install logcheck rulefiles etclogcheck
+dh_installlogrotate,install logrotate config files
+dh_installman,install man pages package build directories
+dh_installmanpages,oldstyle man page installer deprecated
+dh_installmenu,install debian menu files package build directories
+dh_installmime,install mime files package build directories
+dh_installmodules,register kernel modules
+dh_installpam,install pam support files
+dh_installppp,install ppp ipup ipdown files
+dh_installsystemd,install systemd unit files
+dh_installsystemduser,install systemd unit files
+dh_installsysusers,install integrates systemd sysusers files
+dh_installtmpfiles,install tmpfilesd configuration files
+dh_installudev,install udev rules files
+dh_installwm,register window manager
+dh_installxfonts,register x fonts
+dh_link,create symlinks package build directories
+dh_lintian,install lintian override files package build directories
+dh_listpackages,list binary packages debhelper act
+dh_makeshlibs,automatically create shlibs file call dpkggensymbols
+dh_md5sums,generate debianmd5sums file
+dh_missing,check missing files
+dh_movefiles,move files debiantmp subpackages
+dh_movetousr,canonicalize location according mergedusr
+dh_perl,calculates perl dependencies cleans makemaker
+dh_prep,perform cleanups preparation building binary package
+dh_shlibdeps,calculate shared library dependencies
+dh_strip,strip executables shared libraries static libraries
+dh_systemd_enable,enabledisable systemd unit files
+dh_systemd_start,startstoprestart systemd unit files
+dh_testdir,test directory building debian package
+dh_testroot,ensure package built necessary level root permissions
+dh_ucf,register configuration files ucf
+dh_update_autotools_config,update autotools config files
+dh_usrlocal,migrate usrlocal directories maintainer scripts
+diff,compare files line line
+diff,compare two files
+diff3,compare three files line line
+diffman-git,compare changes manual pages line line
+dir,list directory contents
+dircolors,color setup ls
+dirname,strip last component file name
+dirname,return directory portion pathname
+dkvis,visualize disk io activity performance
+dlltool,create files needed build use dlls
+dmesg,print control kernel ring buffer
+dmeventd,mapper event daemon
+dmfilemapd,mapper filemap monitoring daemon
+dmsetup,low level logical volume management
+dmstats,mapper statistics management
+dnf-automatic,dnf automatic
+dnf4,dnf command reference
+dnsdomainname,show set systems host name
+domainname,show set systems host name
+dosfsck,check repair msdos fat filesystems
+dosfslabel,set get msdos filesystem label volume id
+dot,execute commands current environment
+dpkg-architecture,set determine architecture package building
+dpkg-buildapi,returns build api level use package build
+dpkg-buildflags,returns build flags use package build
+dpkg-buildpackage,build binary source packages sources
+dpkg-buildtree,helper build tree operations package builds
+dpkg-checkbuilddeps,check build dependencies conflicts
+dpkg-deb,debian package archive deb manipulation tool
+dpkg-distaddfile,add entries debianfiles
+dpkg-divert,override packages version file
+dpkg-fsys-usrunmess,undoes mergedusrviaaliaseddirs mess
+dpkg-genbuildinfo,generate debian buildinfo files
+dpkg-genchanges,generate debian changes files
+dpkg-gencontrol,generate debian control files
+dpkg-gensymbols,generate symbols files shared library dependency information
+dpkg-maintscript-helper,works around known dpkg limitations maintainer scripts
+dpkg-mergechangelogs,3way merge debianchangelog files
+dpkg-name,rename debian packages full package names
+dpkg-parsechangelog,parse debian changelog files
+dpkg-query,tool query dpkg database
+dpkg-realpath,print resolved pathname dpkg_root support
+dpkg-scanpackages,create packages index files
+dpkg-scansources,create sources index files
+dpkg-shlibdeps,generate shared library substvar dependencies
+dpkg-source,debian source package dsc manipulation tool
+dpkg-split,debian package archive splitjoin tool
+dpkg-statoverride,override ownership mode files
+dpkg-trigger,package trigger utility
+dpkg-vendor,queries information distribution vendors
+dpkg,package manager debian
+dracut-catimages,creates initial ramdisk image concatenating images
+dracut,lowlevel tool generating initramfsinitrd image
+drr,deficit round robin scheduler
+dselect,debian package management frontend
+dtrace,dtrace compatible user application static probe generation tool
+du,estimate file space usage
+du,estimate file space usage
+dump-acct,print acctpacct file humanreadable format
+dump-utmp,print utmp file humanreadable format
+dumpe2fs,dump ext2ext3ext4 file system information
+dumpkeys,dump keyboard translation tables
+e2freefrag,report free space fragmentation information
+e2fsck,check linux ext2ext3ext4 file system
+e2image,save critical ext2ext3ext4 file system metadata file
+e2label,change label ext2ext3ext4 file system
+e2mmpstatus,check mmp status ext4 file system
+e2undo,replay undo log ext2ext3ext4 file system
+e4crypt,ext4 file system encryption utility
+e4defrag,online defragmenter ext4 file system
+ebtables-nft,based
+ebtables-translate,translation tool migrate iptables nftables
+ebtables,based
+echo,display line text
+echo,write arguments standard output
+ed,edit text
+edquota,edit user quotas
+eject,eject removable media
+elfedit,update elf header program property elf files
+ematch,extended matches use basic cgroup flow filters
+enosys,utility make syscalls fail enosys
+env,run program modified environment
+env,set environment command invocation
+envsubst,substitutes environment variables shell format strings
+ETF,earliest txtime first etf qdisc
+ethtool,query control network driver hardware settings
+ETS,enhanced transmission selection scheduler
+eval,construct command concatenating arguments
+ex,text editor
+exch,atomically exchanges paths two files
+exec,execute commands open close copy file descriptors
+execstack,tool set clear query executable stack flag elf binaries shared libraries
+exit,cause shell exit
+expand,convert tabs spaces
+expand,convert tabs spaces
+expect,programmed dialogue interactive programs version 5
+expiry,check enforce password expiration policy
+export,set export attribute variables
+exportd,nfsv4 server mount daemon
+exportfs,maintain table exported nfs file systems
+expr,evaluate expressions
+expr,evaluate arguments expression
+factor,factor numbers
+fadvise,utility use posix_fadvise system call
+faillock,tool displaying modifying authentication failure record files
+faillog,display faillog records set login failure limits
+fallocate,preallocate deallocate space file
+false,nothing unsuccessfully
+false,return false value
+fatlabel,set get msdos filesystem label volume id
+fc,process command history list
+fdisk,manipulate disk partition table
+fedabipkgdiff,compare abis fedora packages
+fg,run jobs foreground
+fgconsole,print number active vt
+file,determine file type
+file,determine file type
+filecap,program see capabilities
+filefrag,report file fragmentation
+fincore,count pages file contents core
+find-filter,finegrained file selection based time attributes
+find-repos-of-install,report yum repository package installed
+find,search files directory hierarchy
+find,find files
+findfs,find filesystem label uuid
+findmnt,find filesystem
+Firecfg,desktop integration utility firejail software
+firecfg,desktop integration utility firejail software
+Firejail,linux namespaces sandbox program
+firejail,linux namespaces sandbox program
+Firemon,monitoring program processes started firejail sandbox
+firemon,monitoring program processes started firejail sandbox
+fixfiles,fix file selinux security contexts
+flatpak-build-bundle,create singlefile bundle local repository
+flatpak-build-commit-from,create new commits based existing one possibly another repository
+flatpak-build-export,create repository build directory
+flatpak-build-finish,finalize build directory
+flatpak-build-import-bundle,import file bundle local repository
+flatpak-build-init,initialize build directory
+flatpak-build-sign,sign application runtime
+flatpak-build-update-repo,create repository build directory
+flatpak-build,build directory
+flatpak-config,manage configuration
+flatpak-create-usb,copy apps andor runtimes onto removable media
+flatpak-document-export,export file sandboxed application
+flatpak-document-info,show information exported files
+flatpak-document-unexport,stop exporting file
+flatpak-documents,list exported files
+flatpak-enter,enter application runtimes sandbox
+flatpak-history,show history
+flatpak-info,show information installed application runtime
+flatpak-install,install application runtime
+flatpak-kill,stop running application
+flatpak-list,list installed applications andor runtimes
+flatpak-make-current,make specific version app current
+flatpak-mask,mask updates automatic installation
+flatpak-override,override application requirements
+flatpak-permission-remove,remove permissions
+flatpak-permission-reset,reset permissions
+flatpak-permission-set,set permissions
+flatpak-permission-show,show permissions
+flatpak-permissions,list permissions
+flatpak-pin,pin runtimes prevent automatic removal
+flatpak-ps,enumerate running instances
+flatpak-remote-add,add remote repository
+flatpak-remote-delete,delete remote repository
+flatpak-remote-info,show information application runtime remote
+flatpak-remote-ls,show available runtimes applications
+flatpak-remote-modify,modify remote repository
+flatpak-remotes,list remote repositories
+flatpak-repair,repair flatpak installation
+flatpak-repo,show information local repository
+flatpak-run,run application open shell runtime
+flatpak-search,search applications runtimes
+flatpak-spawn,run commands sandbox
+flatpak-uninstall,uninstall application runtime
+flatpak-update,update application runtime
+flatpak,build install run applications runtimes
+flock,manage locks shell scripts
+flow,flow based traffic control filter
+flower,flow based traffic control filter
+flowtop,toplike netfilter tcpudpsctpdccpicmpv6 flow tracking
+fmt,simple optimal text formatter
+fold,wrap input line fit specified width
+fold,filter folding lines
+fort77,fortran compiler fortran
+FQ-PIE,flow queue proportional integral controller enhanced
+FQ,fair queue traffic policing
+free,display amount free used memory system
+fsadm,utility resize check filesystem device
+fsck,check repair linux filesystem
+fsck.btrfs,nothing successfully
+fsck.cramfs,fsck compressed rom file system
+fsck.fat,check repair msdos fat filesystems
+fsck.minix,check consistency minix filesystem
+fsck.msdos,check repair msdos fat filesystems
+fsck.vfat,check repair msdos fat filesystems
+fsck.xfs,nothing successfully
+fsfreeze,suspend access filesystem ext34 reiserfs jfs xfs
+fsnotifywait,wait changes files using inotify fanotify
+fsnotifywatch,gather filesystem access statistics using inotify fanotify
+fstrim,discard unused blocks mounted filesystem
+fullreport,display full report
+fuse,configuration mount options fuse file systems
+fuse2fs,fuse file system client ext2ext3ext4 file systems
+fuser,identify processes using files sockets
+fuser,list process ids processes one files open
+fusermount3,mount unmount fuse filesystems
+fw,fwmark traffic control filter
+g++,gnu project c c compiler
+gact,generic action
+galera_new_cluster,starting new galera cluster
+galera_recovery,recover nongraceful shutdown
+ganglia2pcp,import ganglia data create pcp archive
+gate,stream gate action
+gawk,pattern scanning processing language
+gcc,gnu project c c compiler
+gcore,generate core file running program
+gcov-dump,offline gcda gcno profile dump tool
+gcov-tool,offline gcda profile processing tool
+gcov,coverage testing tool
+gdb-add-index,add index files speed gdb
+gdb,gnu debugger
+gdbserver,remote server gnu debugger
+genbrk,compiles icu break iteration rules source files binary data files
+gencat,generate formatted message catalog
+genccode,generate c platform specific assembly code icu data file
+gencfu,generates unicode confusable data files
+gencmn,generate icu memorymappable data file
+gencnval,compile converters aliases file
+gendict,compiles word list icu string trie dictionary
+gendiff,utility aid errorfree diff file generation
+genhomedircon,generate selinux file context configuration entries user home directories
+genl,generic netlink utility frontend
+genload,txmon performance metrics domain agent pmda
+genpmda,performance copilot pmda generator
+genpolbools,rewrite binary policy different boolean settings
+genpolusers,generate new binary policy updated user configuration
+genrb,compile resource bundle
+gensprep,compile stringprep data files filtered filterrfc3454pl
+get,get version sccs file development
+getcap,examine file capabilities
+getconf,get configuration values
+getenforce,get current mode selinux
+getent,get entries name service switch libraries
+getfacl,get file access control lists
+getfattr,get extended attributes filesystem objects
+getkeycodes,print kernel scancodetokeycode mapping table
+getopt,parse command options enhanced
+getopts,parse utility options
+getpcaps,display process capabilities
+getsebool,get selinux boolean values
+getsubids,get subordinate id ranges user
+gettext,translate message
+gettextize,install upgrade gettext infrastructure
+gfortran,gnu fortran compiler
+git-add,add file contents index
+git-am,apply series patches mailbox
+git-annotate,annotate file lines commit information
+git-apply,apply patch files andor index
+git-archimport,import gnu arch repository git
+git-archive,create archive files named tree
+git-bisect,use binary search find commit introduced bug
+git-blame,show revision author last modified line file
+git-branch,list create delete branches
+git-bugreport,collect information user file bug report
+git-bundle,move objects refs archive
+git-cat-file,provide contents details repository objects
+git-check-attr,display gitattributes information
+git-check-ignore,debug gitignore exclude files
+git-check-mailmap,show canonical names email addresses contacts
+git-check-ref-format,ensures reference name well formed
+git-checkout-index,copy files index working tree
+git-checkout,switch branches restore working tree files
+git-cherry-pick,apply changes introduced existing commits
+git-cherry,find commits yet applied upstream
+git-citool,graphical alternative gitcommit
+git-clean,remove untracked files working tree
+git-clone,clone repository new directory
+git-column,display data columns
+git-commit-graph,write verify git commitgraph files
+git-commit-tree,create new commit object
+git-commit,record changes repository
+git-config,get set repository global options
+git-count-objects,count unpacked number objects disk consumption
+git-credential-cache--daemon,temporarily store user credentials memory
+git-credential-cache,helper temporarily store passwords memory
+git-credential-store,helper store credentials disk
+git-credential,retrieve store user credentials
+git-cvsexportcommit,export single commit cvs checkout
+git-cvsimport,salvage data another scm people love hate
+git-cvsserver,cvs server emulator git
+git-daemon,really simple server git repositories
+git-describe,give object human readable name based available ref
+git-diagnose,generate zip archive diagnostic information
+git-diff-files,compares files working tree index
+git-diff-index,compare tree working tree index
+git-diff-tree,compares content mode blobs found via two tree objects
+git-diff,show changes commits commit working tree etc
+git-difftool,show changes using common diff tools
+git-fast-export,git data exporter
+git-fast-import,backend fast git data importers
+git-fetch-pack,receive missing objects another repository
+git-fetch,download objects refs another repository
+git-filter-branch,rewrite branches
+git-fmt-merge-msg,produce merge commit message
+git-for-each-ref,output information ref
+git-for-each-repo,run git command list repositories
+git-format-patch,prepare patches email submission
+git-fsck-objects,verifies connectivity validity objects database
+git-fsck,verifies connectivity validity objects database
+git-fsmonitor--daemon,builtin filesystem monitor
+git-gc,cleanup unnecessary files optimize local repository
+git-get-tar-commit-id,extract commit id archive created using gitarchive
+git-grep,print lines matching pattern
+git-gui,portable graphical interface git
+git-hash-object,compute object id optionally create object file
+git-help,display help information git
+git-hook,run git hooks
+git-http-backend,server side implementation git http
+git-http-fetch,download remote git repository via http
+git-http-push,push objects httpdav another repository
+git-imap-send,send collection patches stdin imap folder
+git-index-pack,build pack index file existing packed archive
+git-init-db,creates empty git repository
+git-init,create empty git repository reinitialize existing one
+git-instaweb,instantly browse working repository gitweb
+git-interpret-trailers,add parse structured information commit messages
+git-log,show commit logs
+git-ls-files,show information files index working tree
+git-ls-remote,list references remote repository
+git-ls-tree,list contents tree object
+git-mailinfo,extracts patch authorship single email message
+git-mailsplit,simple unix mbox splitter program
+git-maintenance,run tasks optimize git repository data
+git-merge-base,find good common ancestors possible merge
+git-merge-file,run threeway file merge
+git-merge-index,run merge files needing merging
+git-merge-one-file,standard helper program use gitmergeindex
+git-merge-tree,perform merge without touching index working tree
+git-merge,join two development histories together
+git-mergetool--lib,common git merge tool shell scriptlets
+git-mergetool,run merge conflict resolution tools resolve merge conflicts
+git-mktag,creates tag object extra validation
+git-mktree,build treeobject lstree formatted text
+git-multi-pack-index,write verify multipackindexes
+git-mv,move rename file directory symlink
+git-name-rev,find symbolic names given revs
+git-notes,add inspect object notes
+git-p4,import submit perforce repositories
+git-pack-objects,create packed archive objects
+git-pack-redundant,find redundant pack files
+git-pack-refs,pack heads tags efficient repository access
+git-patch-id,compute unique id patch
+git-prune-packed,remove extra objects already pack files
+git-prune,prune unreachable objects object database
+git-pull,fetch integrate another repository local branch
+git-push,update remote refs along associated objects
+git-quiltimport,applies quilt patchset onto current branch
+git-range-diff,compare two commit ranges eg two versions branch
+git-read-tree,reads tree information index
+git-rebase,reapply commits top another base tip
+git-receive-pack,receive pushed repository
+git-reflog,manage reflog information
+git-refs,lowlevel access refs
+git-remote-ext,bridge smart transport external command
+git-remote-fd,reflect smart transport stream back caller
+git-remote,manage set tracked repositories
+git-repack,pack unpacked objects repository
+git-replace,create list delete refs replace objects
+git-replay,experimental replay commits new base works bare repos
+git-request-pull,generates summary pending changes
+git-rerere,reuse recorded resolution conflicted merges
+git-reset,reset current head specified state
+git-restore,restore working tree files
+git-rev-list,lists commit objects reverse chronological order
+git-rev-parse,pick massage parameters
+git-revert,revert existing commits
+git-rm,remove files working tree index
+git-send-email,send collection patches emails
+git-send-pack,push objects git protocol another repository
+git-series,track changes patch series git
+git-sh-i18n--envsubst,gits envsubst1 i18n fallbacks
+git-sh-i18n,gits i18n setup code shell scripts
+git-sh-setup,common git shell script setup code
+git-shell,restricted login shell gitonly ssh access
+git-shortlog,summarize git log output
+git-show-branch,show branches commits
+git-show-index,show packed archive index
+git-show-ref,list references local repository
+git-show,show various types objects
+git-sparse-checkout,reduce working tree subset tracked files
+git-stage,add file contents staging area
+git-stash,stash changes dirty working directory away
+git-status,show working tree status
+git-stripspace,remove unnecessary whitespace
+git-submodule,initialize update inspect submodules
+git-svn,bidirectional operation subversion repository git
+git-switch,switch branches
+git-symbolic-ref,read modify delete symbolic refs
+git-tag,create list delete verify tag object signed gpg
+git-unpack-file,creates temporary file blobs contents
+git-unpack-objects,unpack objects packed archive
+git-update-index,register file contents working tree index
+git-update-ref,update object name stored ref safely
+git-update-server-info,update auxiliary info file help dumb servers
+git-upload-archive,send archive back gitarchive
+git-upload-pack,send objects packed back gitfetchpack
+git-var,show git logical variable
+git-verify-commit,check gpg signature commits
+git-verify-pack,validate packed git archive files
+git-verify-tag,check gpg signature tags
+git-version,display version information git
+git-web--browse,git helper script launch web browser
+git-whatchanged,show logs differences commit introduces
+git-worktree,manage multiple working trees
+git-write-tree,create tree object current index
+git,stupid content tracker
+gitk,git repository browser
+gitweb,git web interface web frontend git repositories
+gnutls-cli-debug,gnutls debug client
+gnutls-cli,gnutls client
+gnutls-serv,gnutls server
+gpasswd,administer etcgroup etcgshadow
+gprof,display call graph profile data
+grep,print lines match patterns
+grep,search file pattern
+groupadd,create new group
+groupdel,delete group
+groupmems,administer members users primary group
+groupmod,modify group definition system
+groups,print groups user
+grpck,verify integrity group files
+grpconv,convert shadow passwords groups
+grpunconv,convert shadow passwords groups
+gssd,rpcsec_gss daemon
+gstack,print stack trace running program
+guards,select list files guarded conditions
+halt,power reboot halt machine
+hardlink,link multiple copies file
+hash,remember report utility locations
+hdparm,getset sataide device parameters
+head,output first part files
+head,copy first part files
+hexdump,display file contents hexadecimal decimal octal ascii
+HFSC,hierarchical fair service curves control linux
+hg-ssh,restricted ssh login shell mercurial
+hg,mercurial source code management system
+homectl,create remove change inspect home directories
+hostid,print numeric identifier current host
+hostname,show set systems host name
+hostnamectl,control system hostname
+HTB,hierarchy token bucket
+htop,interactive process viewer
+hugetop,report huge page information
+hwclock,time clocks utility
+i386,change reported architecture new program environment andor set personality flags
+ibacm,address route resolution services infiniband
+ib_acme,test configuration utility ib acm
+ibsrpdm,discover srp targets infiniband fabric
+ibv_asyncwatch,display asynchronous events
+ibv_devices,list rdma devices
+ibv_devinfo,query rdma devices
+ibv_rc_pingpong,simple infiniband rc transport test
+ibv_srq_pingpong,simple infiniband shared receive queue test
+ibv_uc_pingpong,simple infiniband uc transport test
+ibv_ud_pingpong,simple infiniband ud transport test
+ibv_xsrq_pingpong,simple infiniband shared receive queue test
+iconv,convert text one character encoding another
+iconv,codeset conversion
+iconvconfig,create iconv module configuration cache
+icuexportdata,writes text files unicode properties data icu
+icupkg,extract modify icu dat archive
+id,print real effective user group ids
+id,return user identity
+idmapd,name mapper
+ifconfig,configure network interface
+IFE,encapsulatedecapsulate metadata
+ifpps,toplike networking system statistics
+ifstat,handy utility read network interface statistics
+importctl,download import export disk images
+indent,changes appearance c program inserting deleting whitespace
+indomcachectl,manage instance domain cache files
+init,systemd system service manager
+innochecksum,offline innodb file checksum utility
+inotifywait,wait changes files using inotify fanotify
+inotifywatch,gather filesystem access statistics using inotify fanotify
+insmod,simple program insert module linux kernel
+install,copy files set attributes
+integritysetup,manage dmintegrity block level integrity volumes
+intro,introduction user commands
+intro,introduction administration privileged commands
+ionice,set get process io scheduling class priority
+iostat,report central processing unit cpu statistics inputoutput statistics devices partitions
+iostat2pcp,import iostat data create pcp archive
+iotop,simple toplike io monitor
+iowatcher,create visualizations blktrace results
+ip-address,protocol address management
+ip-addrlabel,protocol address label management
+ip-fou,foooverudp receive port configuration
+ip-gue,foooverudp receive port configuration
+ip-ioam,ipv6 insitu oam ioam
+ip-l2tp,l2tpv3 static unmanaged tunnel configuration
+ip-link,network device configuration
+ip-macsec,macsec device configuration
+ip-maddress,multicast addresses management
+ip-monitor,state monitoring
+ip-mptcp,mptcp path manager configuration
+ip-mroute,multicast routing cache management
+ip-neighbour,neighbourarp tables management
+ip-netconf,network configuration monitoring
+ip-netns,process network namespace management
+ip-nexthop,nexthop object management
+ip-ntable,neighbour table configuration
+ip-route,routing table management
+ip-sr,ipv6 segment routing management
+ip-stats,manage show interface statistics
+ip-tcp_metrics,management tcp metrics
+ip-token,tokenized interface identifier support
+ip-tunnel,tunnel configuration
+ip-vrf,run command vrf
+ip-xfrm,transform configuration
+ip,show manipulate routing network devices interfaces tunnels
+ip6tables-apply,safer way update iptables remotely
+ip6tables-restore,restore ip tables
+ip6tables-save,dump iptables rules
+ip6tables-translate,translation tool migrate iptables nftables
+ip6tables,administration tool ipv4ipv6 packet filtering nat
+ipcmk,make various ipc resources
+ipcrm,remove certain ipc resources
+ipcrm,remove xsi message queue semaphore set shared memory segment identifier
+ipcs,show information ipc facilities
+ipcs,report xsi interprocess communication facilities status
+ipmaddr,adds changes deletes displays multicast addresses
+ippeveprinter,ipp everywhere printer application cups
+ippfind,find internet printing protocol printers
+ipptool,perform internet printing protocol requests
+iptables-apply,safer way update iptables remotely
+iptables-extensions,list extensions standard iptables distribution
+iptables-restore,restore ip tables
+iptables-save,dump iptables rules
+iptables-translate,translation tool migrate iptables nftables
+iptables-xml,convert iptablessave format xml
+iptables,administration tool ipv4ipv6 packet filtering nat
+iptraf-ng,interactive colorful ip lan monitor
+iptraf,interactive colorful ip lan monitor
+iptunnel,creates changes deletes displays configured tunnels
+irqtop,utility display kernel interrupt information
+isosize,output length iso9660 filesystem
+jailcheck,simple utility program test running sandboxes
+jobs,display status jobs current session
+join,join lines two files common field
+join,relational database operator
+journalctl,print log entries systemd journal
+kbdinfo,read information keyboard state
+kbd_mode,report set keyboard mode
+kbdrate,reset keyboard repeat rate delay time
+kernel-install,add remove kernel initrd images boot partition
+kexec,directly boot new kernel
+key.dns_resolver,upcall requestkey handle dns_resolver keys
+keyctl,key management facility control
+kill,terminate process
+kill,terminate signal processes
+killall,kill processes name
+kmidiff,compare kmis linux kernel trees
+kmod,program manage linux kernel modules
+last,list logins system
+lastb,list logins system
+lastcomm,print information previously executed commands
+lastlog,reports recent login users given user
+lastlog2,displays date last login users specific one
+ld-linux,dynamic linkerloader
+ld-linux.so,dynamic linkerloader
+ld,gnu linker
+ld.so,dynamic linkerloader
+ldapadd,ldap modify entry ldap add entry tools
+ldapcompare,ldap compare tool
+ldapdelete,ldap delete entry tool
+ldapexop,issue ldap extended operations
+ldapmodify,ldap modify entry ldap add entry tools
+ldapmodrdn,ldap rename entry tool
+ldappasswd,change password ldap entry
+ldapsearch,ldap search tool
+ldapurl,ldap url formatting tool
+ldapvc,ldap verify credentials tool
+ldapwhoami,ldap tool
+ldattach,attach line discipline serial line
+ldconfig,configure dynamic linker runtime bindings
+ldd,print shared object dependencies
+less,display contents file terminal
+lessecho,expand metacharacters
+lesskey,customize key bindings less
+lex,generate programs lexical tasks development
+lexgrog,parse header information man pages
+libnss_myhostname.so.2,hostname resolution locally configured system hostname
+libnss_mymachines.so.2,hostname resolution local container instances
+libnss_resolve.so.2,hostname resolution via systemdresolvedservice
+libnss_systemd.so.2,unix user group name resolution usergroup lookup via varlink
+link,call link function create link file
+link,call link function
+linux32,change reported architecture new program environment andor set personality flags
+linux64,change reported architecture new program environment andor set personality flags
+lloadd,ldap load balancer daemon
+ln,make links files
+ln,link files
+lnstat,unified linux network statistics
+loadkeys,load keyboard translation tables
+load_policy,load new selinux policy kernel
+loadunimap,load kernel unicodetofont mapping table
+locale,get localespecific information
+locale,specific information
+localectl,control system locale keyboard layout settings
+localedef,compile locale definition files
+localedef,define locale environment
+locate,list files databases match pattern
+logger,enter messages system log
+logger,log messages
+login,begin session system
+loginctl,control systemd login manager
+logname,print userâs login name
+logname,return users login name
+logoutd,enforce login time restrictions
+logrotate,logrotate â rotates compresses mails system logs
+logsave,save output command logfile
+look,display lines beginning given string
+losetup,set control loop devices
+lp,print files
+lp,send files printer
+lpadmin,configure cups printers classes cups scheduler
+lpc,line printer control program deprecated
+lpinfo,show available devices drivers deprecated
+lpmove,move job jobs new destination
+lpoptions,display set peruser printer options defaults
+lpq,show printer queue status
+lpr,print files
+lprm,cancel print jobs
+lpstat,print cups status information
+ls,list directory contents
+ls,list directory contents
+lsattr,list ext2ext3ext4 file attributes
+lsblk,list block devices
+lsclocks,display system clocks
+lscpu,display information cpu architecture
+lsfd,list file descriptors
+lsinitrd,tool show contents initramfs image
+lsipc,show information ipc facilities currently employed system
+lsirq,utility display kernel interrupt information
+lslocks,list local system locks
+lslogins,display information known users system
+lsmem,list ranges available memory online status
+lsmod,show status modules linux kernel
+lsns,list namespaces
+lsof,list open files
+lspci,list pci devices
+lsusb,list usb devices
+lsusb.py,list usb devices
+ltrace,library call tracer
+lttng-add-context,add context fields lttng channel
+lttng-calibrate,quantify lttng overhead
+lttng-crash,recover view lttng 2 trace buffers event crash
+lttng-create,create lttng tracing session
+lttng-destroy,destroy lttng tracing session
+lttng-disable-channel,disable lttng channels
+lttng-disable-event,disable lttng event rules
+lttng-disable-rotation,unset tracing sessions rotation schedule
+lttng-enable-channel,create enable lttng channels
+lttng-enable-event,create enable lttng event rules
+lttng-enable-rotation,set tracing sessions rotation schedule
+lttng-gen-tp,generate lttngust tracepoint provider code
+lttng-help,display help information lttng command
+lttng-list,list lttng tracing sessions domains channels events
+lttng-load,load lttng tracing session configurations
+lttng-metadata,manage lttng tracing sessions metadata generation
+lttng-regenerate,manage lttng tracing sessions data regeneration
+lttng-relayd,lttng 2 relay daemon
+lttng-rotate,archive tracing sessions current trace chunk
+lttng-save,save lttng tracing session configurations
+lttng-sessiond,lttng 2 tracing session daemon
+lttng-set-session,set current lttng tracing session
+lttng-snapshot,take lttng snapshots configure snapshot outputs
+lttng-start,start lttng tracers
+lttng-status,get current lttng tracing sessions status
+lttng-stop,stop lttng tracers
+lttng-track,add one entries lttng resource tracker
+lttng-untrack,remove one entries lttng resource tracker
+lttng-version,get version lttngtools
+lttng-view,view traces lttng tracing session
+lttng,lttng 2 tracer control commandline tool
+lvchange,change attributes logical volumes
+lvconvert,change logical volume layout
+lvcreate,create logical volume
+lvdisplay,display information logical volume
+lvextend,add space logical volume
+lvm-config,display manipulate configuration information
+lvm-dumpconfig,display manipulate configuration information
+lvm-fullreport,display full report
+lvm-lvpoll,continue already initiated poll operation logical volume
+lvm,lvm2 tools
+lvmconfig,display manipulate configuration information
+lvmdbusd,bus daemon
+lvmdevices,manage devices file
+lvmdiskscan,list devices may used physical volumes
+lvmdump,create lvm2 information dumps diagnostic purposes
+lvm_import_vdo,utility import vdo volumes new volume group
+lvmlockctl,control lvmlockd
+lvmlockd,lvm locking daemon
+lvmpolld,lvm poll daemon
+lvmsadc,lvm system activity data collector
+lvmsar,lvm system activity reporter
+lvpoll,continue already initiated poll operation logical volume
+lvreduce,reduce size logical volume
+lvremove,remove logical volumes system
+lvrename,rename logical volume
+lvresize,resize logical volume
+lvs,display information logical volumes
+lvscan,list logical volumes volume groups
+lxc-attach,start process inside running container
+lxc-autostart,startstopkill autostarted containers
+lxc-cgroup,manage control group associated container
+lxc-checkconfig,check current kernel lxc support
+lxc-checkpoint,checkpoint container
+lxc-config,query lxc system configuration
+lxc-console,launch console specified container
+lxc-copy,copy existing container
+lxc-create,creates container
+lxc-destroy,destroy container
+lxc-device,manage devices running containers
+lxc-execute,run application inside container
+lxc-freeze,freeze containers processes
+lxc-info,query information container
+lxc-ls,list containers existing system
+lxc-monitor,monitor container state
+lxc-snapshot,snapshot existing container
+lxc-start,run application inside container
+lxc-stop,stop application running inside container
+lxc-top,monitor container statistics
+lxc-unfreeze,thaw containers processes
+lxc-unshare,run task new set namespaces
+lxc-update-config,update legacy pre lxc 21 configuration file
+lxc-user-nic,manage nics another network namespace
+lxc-usernsexec,run task root new user namespace
+lxc-wait,wait specific container state
+m4,macro processor
+machinectl,control systemd machine manager
+mail.lmtp,deliver mail lmtp
+mail.maildir,store mail maildir
+mail.mboxfile,deliver mail file mbox format
+mail.mda,deliver mail program
+mailq,control smtp daemon
+mailx,process messages
+make,gnu make utility maintain groups programs
+make,maintain update regenerate groups programs development
+makeconv,compile converter table
+makemap,create database maps smtpd
+man-recode,convert manual pages another encoding
+man,interface system reference manuals
+man,display system documentation
+manconv,convert manual page one encoding another
+mandb,create update manual page index caches
+manpath,determine search path manual pages
+mansect,print source code sections manual pages
+mapscrn,load screen output mapping table
+mariabackup,backup tool
+mariadb-access,client checking access privileges mariadbaccess symlink mariadbaccess
+mariadb-admin,client administering mariadb server mariadbadmin symlink mariadbadmin
+mariadb-backup,backup tool
+mariadb-binlog,utility processing binary log files mariadbbinlog symlink mariadbbinlog
+mariadb-check,table maintenance program mariadbcheck symlink mariadbcheck
+mariadb-client-test-embedded,test client api mariadbclienttest symlink mariadbclienttest
+mariadb-client-test,test client api mariadbclienttest symlink mariadbclienttest
+mariadb-conv,character set conversion utility mariadb
+mariadb-convert-table-format,convert tables use given storage engine mariadbconverttableformat symlink mariadbconverttableformat
+mariadb-dump,database backup program mariadbdump symlink mariadbdump
+mariadb-dumpslow,summarize slow query log files mariadbdumpslow symlink mariadbdumpslow
+mariadb-embedded,mariadb commandline tool mysql symlink mariadb
+mariadb-find-rows,extract sql statements files mariadbfindrows symlink mariadbfindrows
+mariadb-fix-extensions,normalize table file name extensions mariadbfixextensions symlink mariadbfixextensions
+mariadb-hotcopy,database backup program mariadbhotcopy symlink mariadbhotcopy
+mariadb-import,data import program mariadbimport symlink mariadbimport
+mariadb-install-db,initialize mariadb data directory mariadbinstalldb symlink mariadbinstalldb
+mariadb-plugin,configure mariadb server plugins mariadbplugin symlink mariadbplugin
+mariadb-secure-installation,improve mariadb installation security mariadbsecureinstallation symlink mariadbsecureinstallation
+mariadb-service-convert,generate mariadbservice file based current mariadb settings
+mariadb-setpermission,interactively set permissions grant tables mariadbsetpermission symlink mariadbsetpermission
+mariadb-show,display database table column information mariadbshow symlink mariadbshow
+mariadb-slap,load emulation client mariadbslap symlink mariadbslap
+mariadb-stress-test.pl,server stress test program
+mariadb-test-embedded,program run test cases mariadbtest symlink mariadbtest
+mariadb-test-run.pl,run mariadb test suite
+mariadb-test,program run test cases mariadbtest symlink mariadbtest
+mariadb-tzinfo-to-sql,load time zone tables mariadbtzinfotosql symlink mariadbtzinfotosql
+mariadb-upgrade,check tables mariadb upgrade mariadbupgrade symlink mariadbupgrade
+mariadb-waitpid,kill process wait termination mariadbwaitpid symlink mariadbwaitpid
+mariadb,mariadb commandline tool mysql symlink mariadb
+mariadb_config,get compile options compiling clients
+mariadbd-multi,manage multiple mariadb servers mariadbdmulti symlink mariadbdmulti
+mariadbd-safe-helper,helper script mysqld_safe_helper symlink mariadbdsafehelper
+mariadbd-safe,mariadb server startup script mariadbdsafe symlink mariadbdsafe
+mariadbd,mariadb server mariadbd symlink mariadbd
+matchall,traffic control filter matches every packet
+matchpathcon,get default selinux security context specified path file contexts configuration
+mausezahn,fast versatile packet generator ciscocli
+mbstream,serializedeserialize files xbstream format
+mckey,rdma cm multicast setup simple data transfer test
+mcookie,generate magic cookies xauth
+mcs,multicategory system
+mcstransd,mcs multiple category system daemon translates selinux mcsmls labels human readable form
+md5sum,compute check md5 message digest
+mdadm,manage md devices aka linux software raid
+mdmon,monitor md external metadata arrays
+memhog,allocates memory policy testing
+memusage,profile memory usage program
+memusagestat,generate graphic memory profiling data
+mesg,display display messages users
+mesg,permit deny messages
+migratepages,migrate physical location processes pages
+migspeed,test speed page migration
+mii-tool,view manipulate mediaindependent interface status
+minicom,friendly serial communication program
+mirred,mirrorredirect action
+mk-ca-bundle,convert mozillas certificate bundle pem format
+mkaf,create performance copilot archive folio
+mkdir,make directories
+mkdir,make directories
+mkdosfs,create msdos fat filesystem
+mke2fs,create ext2ext3ext4 file system
+mkfifo,make fifos named pipes
+mkfifo,make fifo special files
+mkfs,build linux filesystem
+mkfs.bfs,make sco bfs filesystem
+mkfs.btrfs,create btrfs filesystem
+mkfs.cramfs,make compressed rom file system
+mkfs.fat,create msdos fat filesystem
+mkfs.minix,make minix filesystem
+mkfs.msdos,create msdos fat filesystem
+mkfs.udf,create udf filesystem
+mkfs.vfat,create msdos fat filesystem
+mkhomedir_helper,helper binary creates home directories
+mklost+found,create lostfound directory mounted ext2ext3ext4 file system
+mknod,make block character special files
+mkswap,set linux swap area
+mktemp,create temporary file directory
+mkudffs,create udf filesystem
+modinfo,show information linux kernel module
+modprobe,add remove modules linux kernel
+more,display contents file terminal
+more,bypage basis
+mount,mount filesystem
+mount.ddi,dissect discoverable disk images ddis
+mount.fuse3,configuration mount options fuse file systems
+mount.nfs,mount network file system
+mount.nfs4,mount network file system
+mountd,nfs mount daemon
+mountpoint,see directory file mountpoint
+mountstats,displays various nfs client permount statistics
+mpls,mpls manipulation module
+mpstat,report processors related statistics
+mpvis,visualize cpu utilizationperformance
+MQPRIO,multiqueue priority qdisc offloaded hardware qos
+mrtg2pcp,import mrtg data create pcp archive
+msgattrib,attribute matching manipulation message catalog
+msgcat,combines several message catalogs
+msgcmp,compare message catalog template
+msgcomm,match two message catalogs
+msgconv,character set conversion message catalog
+msgen,create english message catalog
+msgexec,process translations message catalog
+msgfilter,edit translations message catalog
+msgfmt,compile message catalog binary format
+msggrep,pattern matching message catalog
+msginit,initialize message catalog
+msgmerge,merge message catalog template
+msgunfmt,uncompile message catalog binary format
+msguniq,unify duplicate translations message catalog
+ms_print,postprocessing tool massif
+msql2mysql,convert msql programs use mariadb
+mtrace,interpret malloc trace log
+mv,move rename files
+mv,move files
+myisamchk,myisam tablemaintenance utility
+myisam_ftdump,display fulltext index information
+myisamlog,display myisam log file contents
+myisampack,generate compressed readonly myisam tables
+my_print_defaults,display options option files
+my_safe_process,utility program encapsulates process creation monitoring bulletproof process cleanup
+mysql-stress-test.pl,server stress test program
+mysql-test-run.pl,run mariadb test suite
+mysql.server,mariadb server startup script
+mytop,display mariadb server performance info like top
+namei,follow pathname terminal point found
+nameif,name network interfaces based mac addresses
+nat,stateless native address translation action
+ncat,concatenate redirect sockets
+ncurses6-config,helper script ncurses libraries
+ndiff,utility compare results nmap scans
+needs-restarting,report running processes updated
+netcap,program see capabilities
+netem,network emulator
+netsniff-ng,packet sniffing beast
+netstat,print network connections routing tables interface statistics masquerade connections multicast memberships
+networkctl,query modify status network links
+newaliases,rebuild mail aliases
+newgidmap,set gid mapping user namespace
+newgrp,log new group
+newgrp,change new group
+newhelp,generate performance metrics help database
+newrole,run shell new selinux role
+newuidmap,set uid mapping user namespace
+newusers,update create new users batch
+nfs4_editfacl,manipulate nfsv4 filedirectory access control lists
+nfs4_getfacl,get nfsv4 filedirectory access control lists
+nfs4_setfacl,manipulate nfsv4 filedirectory access control lists
+nfsconf,query various nfs configuration settings
+nfsd,nfs server process
+nfsdcld,nfsv4 client tracking daemon
+nfsdclddb,tool manipulating nfsdcld sqlite database
+nfsdclnts,print various nfs client information knfsd server
+nfsdcltrack,nfsv4 client tracking callout program
+nfsidmap,nfs idmapper upcall program
+nfsiostat,emulate iostat nfs mount points using procselfmountstats
+nfsref,manage nfs referrals
+nfsstat,list nfs statistics
+nfsv4.exportd,nfsv4 server mount daemon
+nfsvis,visualize performance nfs statistics
+ngettext,translate message choose plural form
+nice,run program modified scheduling priority
+nice,invoke utility altered nice value
+nisdomainname,show set systems host name
+nitrocli,access nitrokey devices
+nl,number lines files
+nl,line numbering filter
+nm,list symbols object files
+nm,write name list object file development
+nmap,network exploration tool security port scanner
+nodename,show set systems host name
+nohup,run command immune hangups output nontty
+nohup,invoke utility immune hangups
+nologin,politely refuse login
+nping,network packet generation tool ping utility
+nproc,print number processing units available
+nscd,name service cache daemon
+nsenter,run program different namespaces
+nss-myhostname,hostname resolution locally configured system hostname
+nss-mymachines,hostname resolution local container instances
+nss-resolve,hostname resolution via systemdresolvedservice
+nss-systemd,unix user group name resolution usergroup lookup via varlink
+nstat,network statistics tools
+numactl,control numa policy processes shared memory
+numastat,show pernumanode memory statistics processes operating system
+numfmt,convert numbers fromto humanreadable strings
+objcopy,copy translate object files
+objdump,display information object files
+ocount,event counting tool linux
+ocsptool,gnutls ocsp tool
+od,dump files octal formats
+od,dump files various formats
+oomctl,analyze state stored systemdoomd
+op-check-perfevents,checks kernel perf pmu support
+opannotate,produce source assembly annotated profile data
+oparchive,produce archive oprofile data offline analysis
+open_init_pty,run program pseudo terminal
+openvt,start program new virtual terminal vt
+operf,performance profiler tool linux
+opgprof,produce gprofformat profile data
+ophelp,list oprofile events
+opimport,converts sample database files
+opjitconv,convert jit dump file elf
+opreport,produce symbol binary image summaries
+oprofile,statistical profiler linux systems capable profiling running code low overhead also included set postprofiling analysis tools well simple event counting tool
+osvis,visualize highlevel system activity
+ovn-appctl,utility configuring running ovn daemons
+ovn-controller-vtep,open virtual network local controller vtep enabled physical switches
+ovn-controller,open virtual network local controller
+ovn-ctl,open virtual network northbound daemon lifecycle utility
+ovn-debug,open virtual network debug tool
+ovn-detrace,convert ovsappctl ofprototrace output combine ovn logical flow information
+ovn-ic-nbctl,open virtual network interconnection northbound db management utility
+ovn-ic-sbctl,open virtual network interconnection southbound db management utility
+ovn-ic,open virtual network interconnection controller
+ovn-nbctl,open virtual network northbound db management utility
+ovn-northd,open virtual network central control daemon
+ovn-sbctl,open virtual network southbound db management utility
+ovn-sim,open virtual network simulator environment
+ovn-trace,open virtual network logical network tracing utility
+ovs-appctl,utility configuring running open vswitch daemons
+ovs-bugtool,open vswitch bug reporting utility
+ovs-ctl,ovs startup helper script
+ovs-dpctl-top,top like behavior ovsdpctl dumpflows
+ovs-dpctl,administer open vswitch datapaths
+ovs-flowviz,utility visualizing openflow datapath flows
+ovs-kmod-ctl,ovs startup helper script loading kernel modules
+ovs-l3ping,check network deployment l3 tunneling problems
+ovs-ofctl,administer openflow switches
+ovs-parse-backtrace,parses ovsappctl backtrace output
+ovs-pcap,print packets pcap file hex
+ovs-pki,openflow public key infrastructure management utility
+ovs-sim,open vswitch simulator environment
+ovs-tcpdump,dump traffic open vswitch port using tcpdump
+ovs-tcpundump,convert tcpdump xx output hex strings
+ovs-test,check linux drivers performance vlan l3 tunneling problems
+ovs-testcontroller,simple openflow controller testing
+ovs-vlan-test,check linux drivers problems vlan traffic
+ovs-vsctl,utility querying configuring ovsvswitchd
+ovs-vswitchd,open vswitch daemon
+ovsdb-client,commandline interface ovsdbserver1
+ovsdb-idlc,open vswitch idl interface definition language compiler
+ovsdb-server,open vswitch database server
+ovsdb-tool,open vswitch database management utility
+p11tool,gnutls pkcs 11 tool
+package-cleanup,clean locally installed duplicate orphaned packages
+PAM,pluggable authentication modules linux
+pam,pluggable authentication modules linux
+pam_access,pam module logdaemon style login access control
+pam_cap,capabilities pam module
+pam_debug,pam module debug pam stack
+pam_deny,lockingout pam module
+pam_echo,pam module printing text messages
+pam_env,pam module setunset environment variables
+pam_exec,pam module calls external command
+pam_faildelay,change delay failure perapplication
+pam_faillock,module counting authentication failures specified interval
+pam_filter,pam filter module
+pam_ftp,pam module anonymous access module
+pam_group,pam module group access
+pam_issue,pam module add issue file user prompt
+pam_keyinit,kernel session keyring initialiser module
+pam_lastlog,pam module display date last login perform inactive account lock
+pam_lastlog2,pam module display date last login
+pam_limits,pam module limit resources
+pam_listfile,deny allow services based arbitrary file
+pam_localuser,require users listed etcpasswd
+pam_loginuid,record users login uid process attribute
+pam_mail,inform available mail
+pam_mkhomedir,pam module create users home directory
+pam_motd,display motd file
+pam_namespace,pam module configuring namespace session
+pam_namespace_helper,helper binary creates home directories
+pam_nologin,prevent nonroot users login
+pam_permit,promiscuous module
+pam_pwhistory,pam module remember last passwords
+pam_rhosts,rhosts pam module
+pam_rootok,gain root access
+pam_securetty,limit root login special devices
+pam_selinux,pam module set default security context
+pam_selinux_check,login program test pam_selinuxso
+pam_sepermit,pam module allowdeny login depending selinux enforcement state
+pam_setquota,pam module set modify disk quotas session start
+pam_shells,pam module check valid login shell
+pam_stress,stresstesting pam module
+pam_succeed_if,test account characteristics
+pam_systemd,register user sessions systemd login manager
+pam_systemd_home,authenticate users mount home directories via systemdhomedservice
+pam_systemd_loadkey,read password kernel keyring set pam authtok
+pam_time,pam module time control access
+pam_timestamp,authenticate using cached successful authentication attempts
+pam_timestamp_check,check see default timestamp valid
+pam_tty_audit,enable disable tty auditing specified users
+pam_umask,pam module set file mode creation mask
+pam_unix,module traditional password authentication
+pam_userdb,pam module authenticate db database
+pam_usertype,check authenticated user system regular account
+pam_warn,pam module logs pam items called
+pam_wheel,permit root access members group wheel
+pam_xauth,pam module forward xauth keys users
+parted,partition manipulation program
+partprobe,inform os partition table changes
+partx,tell kernel presence numbering ondisk partitions
+passwd,change user password
+paste,merge lines files
+paste,merge corresponding subsequent lines files
+patch,apply diff file original
+patch,apply changes files
+pathchk,check whether file names valid portable
+pathchk,check pathnames
+pax,portable archive interchange
+pcap-config,write libpcap compiler linker flags standard output
+pcilmr,margin pcie links
+pcp-atop,advanced system process monitor
+pcp-atopsar,advanced system activity report pcpatop related
+pcp-buddyinfo,report linux kernel buddy algorithm statistics
+pcp-check,manage configuration optional pcp components
+pcp-collectl,backwardcompatibility performance copilot pcp
+pcp-dmcache,report logical storage device caches
+pcp-dstat,versatile tool generating system resource statistics
+pcp-free,report free used memory system
+pcp-geolocate,discover collector system geographical labels
+pcp-htop,interactive process viewer
+pcp-iostat,report block io statistics
+pcp-ipcs,provide information ipc facilities
+pcp-kube-pods,list kubernetes pods scan running pcp services
+pcp-lvmcache,report logical storage device caches
+pcp-meminfo,report statistics system memory
+pcp-mpstat,report cpu interrupt related statistics
+pcp-netstat,report statistics different network protocols network interfaces
+pcp-numastat,report numa memory allocation
+pcp-pidstat,report statistics linux tasks
+pcp-ps,report statistics linux process
+pcp-python,run python script using preferred python variant
+pcp-reboot-init,performance copilot helper script system reboot
+pcp-shping,report shell service availability response
+pcp-slabinfo,report statistics kernel slab allocator
+pcp-ss,report socket statistics
+pcp-summary,run command summarize installation
+pcp-tapestat,report tape io statistics
+pcp-uptime,tell long system running
+pcp-verify,verify aspects pcp installation
+pcp-vmstat,highlevel system performance overview
+pcp-xsos,highlevel summary reports system
+pcp-zoneinfo,report numa zone statistics
+pcp,run command summarize installation
+pcp2arrow,pcptoarrow metrics exporter
+pcp2csv,performance metrics reporter
+pcp2elasticsearch,pcptoelasticsearch metrics exporter
+pcp2graphite,pcptographite metrics exporter
+pcp2influxdb,pcptoinfluxdb metrics exporter
+pcp2json,pcptojson metrics exporter
+pcp2openmetrics,pcptoopenmetrics exporter
+pcp2spark,pcptospark metrics exporter
+pcp2template,pcptoxxx metrics exporter
+pcp2xlsx,pcptoxlsx metrics exporter
+pcp2xml,pcptoxml metrics exporter
+pcp2XXX,pcptoxxx metrics exporter
+pcp2zabbix,pcptozabbix metrics exporter
+PCPCompat,backwardcompatibility performance copilot pcp
+pcpcompat,backwardcompatibility performance copilot pcp
+PCPIntro,introduction performance copilot pcp
+pcpintro,introduction performance copilot pcp
+pcre2-config,program return pcre2 configuration
+pcre2grep,grep perlcompatible regular expressions
+pcre2test,program testing perlcompatible regular expressions
+pdfman,render manual page pdf
+pedit,generic packet editor action
+peekfd,peek file descriptors running processes
+perf-amd-ibs,support amd instructionbased sampling ibs perf tool
+perf-annotate,read perfdata created perf record display annotated code
+perf-archive,create archive object files buildids found perfdata file
+perf-arm-spe,support arm statistical profiling extension within perf tools
+perf-bench,general framework benchmark suites
+perf-buildid-cache,manage buildid cache
+perf-buildid-list,list buildids perfdata file
+perf-c2c,shared data c2chitm analyzer
+perf-check,check features present perf
+perf-config,get set variables configuration file
+perf-daemon,run record sessions background
+perf-data,data file related processing
+perf-diff,read perfdata files display differential profile
+perf-dlfilter,filter sample events using dynamically loaded shared object file
+perf-evlist,list event names perfdata file
+perf-ftrace,simple wrapper kernels ftrace functionality
+perf-help,display help information perf
+perf-inject,filter augment events stream additional information
+perf-intel-pt,support intel processor trace within perf tools
+perf-iostat,show io performance metrics
+perf-kallsyms,searches running kernel symbols
+perf-kmem,tool tracemeasure kernel memory properties
+perf-kvm,tool tracemeasure kvm guest os
+perf-kwork,tool tracemeasure kernel work properties latencies
+perf-list,list symbolic event types
+perf-lock,analyze lock events
+perf-mem,profile memory accesses
+perf-probe,define new dynamic tracepoints
+perf-record,run command record profile perfdata
+perf-report,read perfdata created perf record display profile
+perf-sched,tool tracemeasure scheduler properties latencies
+perf-script-perl,process trace data perl script
+perf-script-python,process trace data python script
+perf-script,read perfdata created perf record display trace output
+perf-stat,run command gather performance counter statistics
+perf-test,runs sanity tests
+perf-timechart,tool visualize total system behavior workload
+perf-top,system profiling tool
+perf-trace,strace inspired tool
+perf-version,display version perf binary
+perf,performance analysis tools linux
+perfalloc,notify pmdaperfevent1 disable hardware counter allocation
+perror,explain error codes
+pfifo,packet limited first first queue
+pfifo_fast,threeband first first queue
+pgrep,look signal wait processes based name attributes
+pidof,find process id running program
+pidstat,report statistics linux tasks
+pidwait,look signal wait processes based name attributes
+PIE,proportional integral controllerenhanced aqm algorithm
+ping,send icmp echo_request network hosts
+pinky,lightweight finger
+pipesz,set examine pipe fifo buffer sizes
+pivot_root,change root filesystem
+pkgdata,package data use icu
+pkgtorrent-service,service8 python wsgi web application generate bittorrent files binary files available web server
+pkill,look signal wait processes based name attributes
+pktsetup,set tear packet device associations
+pldd,display dynamic shared objects linked process
+plipconfig,fine tune plip device parameters
+plog,starts shuts lists log ppp connections
+pmafm,performance copilot archive folio manager
+pmap,report memory map process
+pmcd,performance metrics collector daemon
+pmcd_wait,wait pmcd accept client connections
+pmchart,strip chart tool performance copilot
+pmclient,simple performance metrics client
+pmclient_fg,simple performance metrics client
+pmconfig,performance copilot configuration parameters
+pmconfirm,general purpose dialog box
+pmcpp,simple preprocessor performance copilot
+pmdaactivemq,activemq performance metrics domain agent pmda
+pmdaaix,operating system kernel performance metrics domain agents
+pmdaamdgpu,amd gpu metrics domain agent pmda
+pmdaapache,apache2 web server performance metrics domain agent pmda
+pmdabash,bourneagain shell trace performance metrics domain agent
+pmdabcc,bcc pmda
+pmdabind2,bind performance metrics domain agent pmda
+pmdabonding,linux bonded interface performance metrics domain agent pmda
+pmdabpf,ebpf pmda
+pmdabpftrace,bpftrace pmda
+pmdacifs,common internet filesystem cifs pmda
+pmdacisco,cisco router performance metrics domain agent pmda
+pmdadarwin,operating system kernel performance metrics domain agents
+pmdadbping,database response time availability pmda
+pmdadenki,metrics related systems electrical consumption
+pmdadm,device mapper pmda
+pmdadocker,docker performance metrics domain agent pmda
+pmdads389,389 directory server pmda
+pmdads389log,389 directory server log pmda
+pmdaelasticsearch,elasticsearch performance metrics domain agent pmda
+pmdafarm,seagate farm log pmda
+pmdafreebsd,operating system kernel performance metrics domain agents
+pmdagfs2,global filesystem v2 gfs2 pmda
+pmdagluster,gluster filesystem pmda
+pmdagpfs,gpfs filesystem statistics performance metrics domain agent pmda
+pmdahacluster,high availability cluster pmda
+pmdahaproxy,haproxy pmda
+pmdaib,infiniband performance metrics domain agent pmda
+pmdajbd2,journal block device jbd performance metrics domain agent pmda
+pmdajson,json pmda
+pmdakernel,operating system kernel performance metrics domain agents
+pmdakvm,linux virtualization performance metrics domain agent pmda
+pmdalibvirt,libvirt pmda
+pmdalinux,operating system kernel performance metrics domain agents
+pmdalio,linux lio subsystem pmda
+pmdalmsensors,linux hardware monitoring performance metrics domain agent pmda
+pmdalogger,log file performance metrics domain agent pmda
+pmdalustre,lustre filesystem statistics performance metrics domain agent pmda
+pmdalustrecomm,lustre filesystem comms performance metrics domain agent pmda
+pmdamailq,mail queue performance metrics domain agent pmda
+pmdamemcache,memcached performance metrics domain agent pmda
+pmdamic,mic card pmda
+pmdammv,memory mapped values performance metrics domain agent pmda
+pmdamongodb,mongodb database metrics
+pmdamounts,filesystem mounts performance metrics domain agent pmda
+pmdamssql,microsoft sql server database pmda
+pmdamysql,mysql mariadb database pmda
+pmdanetbsd,operating system kernel performance metrics domain agents
+pmdanetcheck,netcheck pmda
+pmdanetfilter,linux netfilter ip connection tracking performance metrics domain agent pmda
+pmdanfsclient,nfs client statistics performance metrics domain agent pmda
+pmdanginx,nginx performance metrics domain agent pmda
+pmdanutcracker,nutcracker performance metrics domain agent pmda
+pmdanvidia,nvidia gpu metrics domain agent pmda
+pmdaopenmetrics,openmetrics pmda
+pmdaopenvswitch,openvswitch pmda
+pmdaoracle,oracle database pmda
+pmdaoverhead,performance metrics domain agent pmda exporting resource consumption metrics groups processes
+pmdaperfevent,hardware performance counter performance metrics domain agent pmda
+pmdapipe,command output capture performance metrics domain agent pmda
+pmdapodman,podman container performance metrics domain agent pmda
+pmdapostfix,postfix performance metrics domain agent pmda
+pmdapostgresql,postgresql database pmda
+pmdaproc,process performance metrics domain agent pmda
+pmdarabbitmq,rabbit message queue subsystem pmda
+pmdaredis,redis performance metrics domain agent pmda
+pmdaresctrl,resctrl performance metrics domain agent pmda
+pmdaroomtemp,room temperature performance metrics domain agent pmda
+pmdaroot,privileged pmcd helper performance metrics domain agent
+pmdarsyslog,rsyslog reliable extended syslog pmda
+pmdasample,sample performance metrics domain agent pmda
+pmdasendmail,sendmail performance metrics domain agent pmda
+pmdashping,shellping performance metrics domain agent
+pmdasimple,simple performance metrics domain agent pmda
+pmdaslurm,slurm statistics performance metrics domain agent pmda
+pmdasmart,smart data pmda
+pmdasockets,sockets statistics pmda
+pmdasolaris,operating system kernel performance metrics domain agents
+pmdastatsd,statsd protocol performance metric domain agent pmda
+pmdasummary,summary performance metrics domain agent pmda
+pmdasystemd,systemd performance metrics domain agent pmda
+pmdate,display offset date
+pmdatrace,applicationlevel transaction performance metrics domain agent
+pmdatrivial,trivial performance metrics domain agent pmda
+pmdatxmon,txmon performance metrics domain agent pmda
+pmdaunbound,unbound resolver pmda
+pmdauwsgi,uwsgi performance metrics domain agent pmda
+pmdaweblog,performance metrics domain agent pmda web server logs
+pmdawindows,operating system kernel performance metrics domain agents
+pmdaxfs,xfs filesystem performance metrics domain agent pmda
+pmdazfs,zfs filesystem performance metrics domain agent pmda linux
+pmdazimbra,zimbra collaboration suite zcs pmda
+pmdazswap,zswap compressed swap pmda
+pmdbg,report performance copilot debug options
+pmdiff,compares archives report significant differences
+pmdumplog,dump internal details performance metrics archive
+pmdumptext,dump performance metrics ascii table
+pmerr,translate performance copilot error codes error messages
+pmevent,arbitrary performance metrics value dumper
+pmfind,find pcp services network
+pmfind_check,administration performance copilot discovery
+pmgenmap,generate c code simplify handling performance metrics
+pmgetopt,performance copilot shell script option parser
+pmhostname,report hostname
+pmie,inference engine performance metrics
+pmie2col,convert pmie output multicolumn format
+pmie_check,administration performance copilot inference engine
+pmieconf,display set configurable pmie rule variables
+pmie_daily,administration performance copilot inference engine
+pmie_dump_stats,dump contents pmie stats files
+pmiestatus,display information pmie stats file
+pminfo,display information performance metrics
+pmiostat,report block io statistics
+pmjson,performance copilot json dumping utility
+pmlc,configure active performance copilot pmloggers interactively
+pmlock,simple filebased mutex
+pmlogbasename,basename pcp archive
+pmlogcheck,checks invalid data pcp archive
+pmlogcompress,compress decompress pcp archive files
+pmlogconf,createedit pmlogger configuration file
+pmlogcp,move rename copy performance copilot archive files
+pmlogctl,manage control performance copilot archivers
+pmlogdecompress,compress decompress pcp archive files
+pmlogdump,dump internal details performance metrics archive
+pmlogextract,reduce extract concatenate merge performance copilot archives
+pmlogger,create archive performance metrics
+pmlogger_check,administration performance copilot archive files
+pmlogger_daily,administration performance copilot archive files
+pmlogger_daily_report,write performance copilot daily summary reports
+pmlogger_merge,helper script merge performance copilot archives
+pmlogger_rewrite,helper script rewrite performance copilot archives
+pmloglabel,check repair performance metrics archive label
+pmlogmv,move rename copy performance copilot archive files
+pmlogpaste,paste text metric pcp archive
+pmlogredact,remove sensitive information pcp archives
+pmlogreduce,temporal reduction performance copilot archives
+pmlogrewrite,rewrite performance copilot archives
+pmlogsize,report sizes parts pcp archives
+pmlogsummary,calculate averages metrics stored set pcp archives
+pmmessage,general purpose dialog box
+pmmgr,backwardcompatibility performance copilot pcp
+pmnsadd,add new names performance copilot pmns
+pmnscomp,compile ascii performance metrics namespace binary format
+pmnsdel,delete subtree names performance copilot pmns
+pmnsmerge,merge multiple versions performance copilot pmns
+pmpause,portable subsecondcapable sleep
+pmpost,append messages performance copilot notice board
+pmprobe,lightweight probe performance metrics
+pmproxy,proxy performance metrics collector querying
+pmpython,run python script using preferred python variant
+pmquery,general purpose dialog box
+pmrep,performance metrics reporter
+pmrepconf,createedit pmrep configuration file
+pmsearch,help text names search metrics instances instance domains
+pmseries,display information performance metric timeseries
+pmsignal,send signal one processes
+pmsleep,portable subsecondcapable sleep
+pmsnap,generate performance summary snapshot images
+pmsocks,shell wrapper performance monitoring across firewalls
+pmstat,highlevel system performance overview
+pmstore,modify performance metric values
+pmtime,time control server performance copilot
+pmtrace,command line performance instrumentation
+pmval,arbitrary performance metrics value dumper
+pmview,performance metrics 3d visualization backend
+pmwebd,backwardcompatibility performance copilot pcp
+poff,starts shuts lists log ppp connections
+police,policing action
+pon,starts shuts lists log ppp connections
+portablectl,attach detach inspect portable service images
+poweroff,power reboot halt machine
+ppdc,cups ppd compiler deprecated
+ppdhtml,cups html summary generator deprecated
+ppdi,import ppd files deprecated
+ppdmerge,merge ppd files deprecated
+ppdpo,ppd message catalog generator deprecated
+pppd-radattr,radius utility plugin pppd8
+pppd-radius,radius authentication plugin pppd8
+pppd,pointtopoint protocol daemon
+pppdump,convert ppp record file readable format
+pppoe-discovery,perform pppoe discovery
+pppstats,print ppp statistics
+pr,convert text files printing
+pr,print files
+prelink,prelink elf shared libraries binaries speed startup time
+printenv,print part environment
+printf,format print data
+printf,write formatted output
+PRIO,priority qdisc
+prlimit,get set process resource limits
+prs,print sccs file development
+prtstat,print statistics process
+ps,report snapshot current processes
+ps,report process status
+pscap,program see capabilities
+psfaddtable,add unicode character table console font
+psfgettable,extract embedded unicode character table console font
+psfstriptable,remove embedded unicode character table console font
+psfxtable,handle unicode character tables console fonts
+psktool,gnutls psk tool
+pslog,report current logs path process
+pstree,display tree processes
+ptx,produce permuted index file contents
+pv,monitor progress data pipe
+pvchange,change attributes physical volumes
+pvck,check metadata physical volumes
+pvcreate,initialize physical volumes use lvm
+pvdisplay,display various attributes physical volumes
+pvmove,move extents one physical volume another
+pvremove,remove lvm labels physical volumes
+pvresize,resize physical volumes
+pvs,display information physical volumes
+pvscan,list physical volumes
+pwck,verify integrity password files
+pwconv,convert shadow passwords groups
+pwd,print name currentworking directory
+pwd,return working directory name
+pwdx,report current working directory process
+pwhistory_helper,helper binary transfers password hashes passwd shadow opasswd
+pwunconv,convert shadow passwords groups
+qalter,alter batch job
+qdel,delete batch jobs
+qhold,hold batch jobs
+qmove,move batch jobs
+qmsg,send message batch jobs
+qrerun,rerun batch jobs
+qrls,release batch jobs
+qselect,select batch jobs
+qsig,signal batch jobs
+qstat,show status batch jobs
+qsub,submit script
+quilt,manage series patches
+quota,display disk usage limits
+quotacheck,scan filesystem disk usage create check repair quota files
+quota_nld,quota netlink message daemon
+quotaoff,turn filesystem quotas
+quotaon,turn filesystem quotas
+quotastats,program query quota statistics
+quotasync,synchronize inkernel file system usage limits disk format
+radattr.so,radius utility plugin pppd8
+radius.so,radius authentication plugin pppd8
+raid6check,check md raid6 device errors aka linux software raid
+ranlib,generate index archive
+rarp,manipulate system rarp table
+rc-local.service,compatibility generator service start etcrclocal boot
+rcopy,simple file copy rdma
+rdma-dev,rdma device configuration
+rdma-link,rdma link configuration
+rdma-monitor,rdma events monitoring
+rdma-resource,rdma resource configuration
+rdma-statistic,rdma statistic counter configuration
+rdma-system,rdma subsystem configuration
+rdma,rdma tool
+rdma_client,simple rdma cm connection pingpong test
+rdma_server,simple rdma cm connection pingpong test
+rdma_xclient,rdma cm communication client test program
+rdma_xserver,rdma cm communication server test program
+read,read standard input shell variables
+readelf,display information elf files
+readlink,print resolved symbolic links canonical file names
+readonly,set readonly attribute variables
+readprofile,read kernel profiling information
+realpath,print resolved path
+reboot,power reboot halt machine
+recode-sr-latin,convert serbian text cyrillic latin script
+red,random early detection
+rename,rename files
+renice,alter priority running processes
+renice,set nice values running processes
+replace,stringreplacement utility
+repo-graph,output full package dependency graph dot format
+repo-rss,generates rss feed one yum repositories
+repoclosure,display list unresolved dependencies yum repository
+repodiff,list differences two yum repositories
+repomanage,list newest oldest rpm packages directory
+repoquery,query information yum repositories
+reposync,synchronize yum repositories local directory
+repotrack,track package dependencies download
+repquota,summarize quotas filesystem
+request-key,handle key instantiation callback requests kernel
+RESET,terminal initialization
+reset,initialize terminal query terminfo database
+resize2fs,ext2ext3ext4 file system resizer
+resizecons,change kernel idea console size
+resizepart,tell kernel new size partition
+resolvconf,resolve domain names ipv4 ipv6 addresses dns resource records services introspect reconfigure dns resolver
+resolvectl,resolve domain names ipv4 ipv6 addresses dns resource records services introspect reconfigure dns resolver
+resolveip,resolve host name ip address vice versa
+resolve_stack_dump,resolve numeric stack trace dump symbols
+restorecon,restore files default selinux security contexts
+restorecond,daemon watches file creation sets default selinux file context
+restorecon_xattr,manage securitysehash extended attribute entries added setfiles8 restorecon8
+return,return function dot script
+rev,reverse lines characterwise
+rfkill,tool enabling disabling wireless devices
+riostream,zerocopy streaming rdma pingpong test
+rm,remove files directories
+rm,remove directory entries
+rmdel,remove delta sccs file development
+rmdir,remove empty directories
+rmdir,remove directories
+rmmod,simple program remove module linux kernel
+route,show manipulate ip routing table
+routel,list routes pretty output format
+rpc.gssd,rpcsec_gss daemon
+rpc.idmapd,name mapper
+rpc.mountd,nfs mount daemon
+rpc.nfsd,nfs server process
+rpc.rquotad,remote quota server
+rpc.statd,nsm service daemon
+rpc.svcgssd,serverside rpcsec_gss daemon
+rpcbind,universal addresses rpc program number mapper
+rpcctl,displays sunrpc connection information
+rpcdebug,set clear nfs rpc kernel debug flags
+rpcinfo,report rpc information
+rping,rdma cm connection rdma pingpong test
+rpm-plugin-audit,audit plugin rpm package manager
+rpm-plugin-dbus-announce,dbus plugin rpm package manager
+rpm-plugin-fapolicyd,fapolicyd plugin rpm package manager
+rpm-plugin-ima,ima plugin rpm package manager
+rpm-plugin-prioreset,plugin rpm package manager fix issues priorities deamons sysv init
+rpm-plugin-selinux,selinux plugin rpm package manager
+rpm-plugin-syslog,syslog plugin rpm package manager
+rpm-plugin-systemd-inhibit,plugin rpm package manager
+rpm-plugin-unshare,unshare plugin rpm package manager
+rpm-plugins,plugins rpm package manager
+rpm,rpm package manager
+rpm2archive,create tar archive rpm package manager rpm package
+rpm2cpio,extract cpio archive rpm package manager rpm package
+rpmbuild,build rpm packages
+rpmdb,rpm database tool
+rpmdeps,generate rpm package dependencies
+rpmgraph,display rpm package dependency graph
+rpmkeys,rpm keyring
+rpmlua,rpm lua interpreter
+rpmsign,rpm package signing
+rpmsort,sort input rpm package manager rpm versioning
+rpmspec,rpm spec tool
+rrsync,script setup restricted rsync users via ssh logins
+rstream,streaming rdma pingpong test
+rsync-ssl,helper script connecting ssl rsync daemon
+rsync,fast versatile remote local filecopying tool
+rsyslogd,reliable extended syslogd
+rtacct,network statistics tools
+rtcwake,enter system sleep state specified wakeup time
+rtmon,listens monitors rtnetlink
+rtstat,unified linux network statistics
+run0,elevate privileges
+runaspcp,execute shell command user pcp
+runcon,run command specified security context
+run_init,run init script proper selinux context
+runlevel,print previous current sysv runlevel
+runscript,script interpreter minicom
+runuser,run command substitute user group id
+sa,summarizes accounting information
+sa1,collect store binary data system activity daily data file
+sa2,create report current standard system activity daily data file
+sact,editing activity development
+sadc,system activity data collector
+sadf,display data collected sar multiple formats
+sample,packet sampling tc action
+sandbox,run cmd selinux sandbox
+sar,collect report save system activity information
+sar2pcp,import sar data create pcp archive
+scalar,tool managing large git repositories
+sccs,front end sccs subsystem development
+scmp_sys_resolver,resolve system calls
+scp,openssh secure file copy
+screen,screen manager vt100ansi terminal emulation
+script,make typescript terminal session
+scriptlive,rerun session typescripts using timing information
+scriptreplay,play back typescripts using timing information
+sdiff,sidebyside merge file differences
+secon,see selinux context file program user input
+sed,stream editor filtering transforming text
+sed,stream editor
+sefcontext_compile,compile file context regular expression files
+selinux-polgengui,selinux policy generation tool
+SELinux,securityenhanced linux selinux
+selinux,securityenhanced linux selinux
+selinuxenabled,tool used within shell scripts determine selinux enabled
+selinuxexeccon,report selinux context used executable
+semanage-boolean,selinux policy management boolean tool
+semanage-dontaudit,selinux policy management dontaudit tool
+semanage-export,selinux policy management import tool
+semanage-fcontext,selinux policy management file context tool
+semanage-ibendport,selinux policy management ibendport mapping tool
+semanage-ibpkey,selinux policy management ibpkey mapping tool
+semanage-import,selinux policy management import tool
+semanage-interface,selinux policy management network interface tool
+semanage-login,selinux policy management linux user selinux user mapping tool
+semanage-module,selinux policy management module mapping tool
+semanage-node,selinux policy management node mapping tool
+semanage-permissive,selinux policy management permissive mapping tool
+semanage-port,selinux policy management port mapping tool
+semanage-user,selinux policy management selinux user mapping tool
+semanage,selinux policy management tool
+semind,semantic indexer c
+semodule,manage selinux policy modules
+semodule_expand,expand selinux policy module package
+semodule_link,link selinux policy module packages together
+semodule_package,create selinux policy module package
+semodule_unpackage,extract policy module file context file selinux policy module package
+sendmail,mail enqueuer smtpd8
+sepolgen,generate initial selinux policy module template
+sepolicy-booleans,query selinux policy see description booleans
+sepolicy-communicate,generate report showing two selinux policy domains communicate
+sepolicy-generate,generate initial selinux policy module template
+sepolicy-gui,graphical user interface selinux policy
+sepolicy-interface,print interface information based installed selinux policy
+sepolicy-manpage,generate man page based installed selinux policy
+sepolicy-network,examine selinux policy generate network report
+sepolicy-transition,examine selinux policy generate process transition report
+sepolicy,selinux policy inspection tool
+seq,print sequence numbers
+sestatus,selinux status tool
+set,set unset options positional parameters
+setarch,change reported architecture new program environment andor set personality flags
+setcap,set file capabilities
+setenforce,modify mode selinux running
+setfacl,set file access control lists
+setfattr,set extended attributes filesystem objects
+setfiles,set selinux file security contexts
+setfont,load egavga console screen font
+setkeycodes,load kernel scancodetokeycode mapping table entries
+setleds,set keyboard leds
+setmetamode,define keyboard meta key handling
+setpci,configure pci devices
+setpgid,run program new process group
+setpriv,run program different linux privilege settings
+setquota,set disk quotas
+setsebool,set selinux boolean value
+setsid,run program new session
+setterm,set terminal attributes
+setvtrgb,set virtual terminal rgb colors
+seunshare,run cmd alternate homedir tmpdir andor selinux context
+sfb,stochastic fair blue
+sfdisk,display manipulate disk partition table
+sfq,stochastic fairness queueing
+sftp-server,openssh sftp server subsystem
+sftp,openssh secure file transfer
+sg,execute command different group id
+sh,shell standard command language interpreter
+sha1sum,compute check sha1 message digest
+sha224sum,compute check sha224 message digest
+sha256sum,compute check sha256 message digest
+sha384sum,compute check sha384 message digest
+sha512sum,compute check sha512 message digest
+sheet2pcp,import spreadsheet data create pcp archive
+shift,shift positional parameters
+show-changed-rco,show changes rpm package
+show-installed,show installed rpm packages descriptions
+showconsolefont,show current egavga console screen font
+showkey,examine codes sent keyboard
+showmount,show mount information nfs server
+shred,overwrite file hide contents optionally delete
+shuf,generate random permutations
+shutdown,halt power reboot machine
+simple,basic example action
+size,list section sizes total size binary files
+skbedit,skb editing action
+skbmod,userfriendly packet editor action
+skbprio,skb priority queue
+skill,send signal report process status
+slabtop,display kernel slab cache information real time
+slapacl,check access list attributes
+slapadd,add entries slapd database
+slapauth,check list stringrepresented ids ldap authcauthz
+slapcat,slapd database ldif utility
+slapd,standalone ldap daemon
+slapdn,check list stringrepresented ldap dns based schema syntax
+slapindex,reindex entries slapd database
+slapmodify,modify entries slapd database
+slappasswd,openldap password utility
+slapschema,slapd indatabase schema checking utility
+slaptest,check suitability openldap slapd configuration
+slattach,attach network interface serial line
+sleep,delay specified amount time
+sleep,suspend execution interval
+sln,create symbolic links
+sm-notify,send reboot notifications nfs peers
+smtp,simple mail transfer protocol client
+smtpctl,control smtp daemon
+smtpd,simple mail transfer protocol smtp daemon
+snice,send signal report process status
+snmp,cups snmp backend deprecated
+sort,sort lines text files
+sort,sort merge sequence check text files
+sortman,sort manualpage path names
+sparse,semantic parser c
+split,split file pieces
+split,split file pieces
+sprof,read display shared object profiling data
+sqlhist,tool uses sql language create show creation tracefs histograms synthetic events
+srp-entry,generate srpsha1 server entry
+srptool,gnutls srp tool
+ss,another utility investigate sockets
+ssh-add,adds private key identities openssh authentication agent
+ssh-agent,openssh authentication agent
+ssh-copy-id,use locally available keys authorise logins remote machine
+ssh-keygen,openssh authentication key utility
+ssh-keyscan,gather ssh public keys servers
+ssh-keysign,openssh helper hostbased authentication
+ssh-pkcs11-helper,openssh helper pkcs11 support
+ssh-sk-helper,openssh helper fido authenticator support
+ssh,openssh remote login client
+sshd,openssh daemon
+SSHFS,filesystem client based ssh
+sshfs,filesystem client based ssh
+stap-exporter,systemtapprometheus interoperation mechanism
+stap-jupyter-container,locally install isystemtap
+stap-jupyter-install,locally install isystemtap
+stap-jupyter,locally install isystemtap
+stap-merge,systemtap percpu binary merger
+stap-prep,prepare system systemtap use
+stap-report,collect system information useful debugging systemtap bugs
+stap-server,systemtap compile server management
+stap,systemtap script translatordriver
+stapbpf,systemtap bpf runtime
+stapdyn,systemtap dyninst runtime
+stapref,systemtap language reference
+staprun,systemtap runtime
+stapsh,stapsh
+stapvirt,prepare libvirt domains systemtap probing
+start-stop-daemon,start stop system daemon programs
+stat,display file file system status
+statd,nsm service daemon
+stdbuf,run command modified buffering operations standard streams
+stg-branch,branch operations switch list create rename delete
+stg-clean,delete empty patches series
+stg-commit,finalize patches stack base
+stg-completion,support shell completions
+stg-delete,delete patches
+stg-diff,show diff
+stg-edit,edit patch
+stg-email,format send patches email
+stg-export,export patches directory
+stg-files,show files modified patch
+stg-float,push patches top even applied
+stg-fold,fold diff file current patch
+stg-goto,go patch pushing popping necessary
+stg-help,print message help given subcommands
+stg-hide,hide patches series
+stg-id,print git hash stgit revision
+stg-import,import patches stack
+stg-init,initialize stgit stack branch
+stg-log,display optionally clear stack changelog
+stg-name,print patch name stgit revision
+stg-new,create new patch top stack
+stg-next,print name next patch
+stg-patches,show patches modify files
+stg-pick,import patch another branch commit object
+stg-pop,pop unapply one applied patches
+stg-prev,print name previous patch
+stg-pull,pull changes remote repository
+stg-push,push apply one unapplied patches
+stg-rebase,move stack base another point history
+stg-redo,undo last undo operation
+stg-refresh,incorporate worktree changes current patch
+stg-rename,rename patch
+stg-repair,repair stack branch modified git commands
+stg-reset,reset patch stack earlier state
+stg-series,display patch series
+stg-show,show patch commits
+stg-sink,move patches deeper stack
+stg-spill,spill changes topmost patch
+stg-squash,squash two patches one
+stg-sync,synchronize patches branch series
+stg-top,print name top patch
+stg-uncommit,convert regular git commits stgit patches
+stg-undo,undo last command
+stg-unhide,unhide hidden patches
+stg-version,print version information exit
+stg,manage stacks patches using git content tracker
+strace-log-merge,merge strace ff tt output
+strace,trace system calls signals
+strings,print sequences printable characters files
+strings,find printable strings files
+strip,discard symbols data object files
+strip,remove unnecessary information strippable files development
+stty,change print terminal line settings
+stty,set options terminal
+su,run command substitute user group id
+sudo,execute command another user
+sudoedit,execute command another user
+sudo_logsrvd,sudo event io log server
+sudoreplay,replay sudo session logs
+sudo_sendlog,send sudo io log log server
+sulogin,singleuser login
+sum,checksum count blocks file
+svcgssd,serverside rpcsec_gss daemon
+swaplabel,print change label uuid swap area
+swapoff,enabledisable devices files paging swapping
+swapon,enabledisable devices files paging swapping
+switch_root,switch another filesystem root mount tree
+sync,synchronize cached writes persistent storage
+sysctl,configure kernel parameters runtime
+system-config-selinux,selinux management tool
+systemctl,control systemd system service manager
+systemd-ac-power,report whether connected external power source
+systemd-analyze,analyze debug system manager
+systemd-ask-password-console.path,query user system passwords console via wall
+systemd-ask-password-console.service,query user system passwords console via wall
+systemd-ask-password-wall.path,query user system passwords console via wall
+systemd-ask-password-wall.service,query user system passwords console via wall
+systemd-ask-password,query user system password
+systemd-backlight,load save display backlight brightness boot shutdown
+systemd-backlight.service,load save display backlight brightness boot shutdown
+systemd-backlight@.service,load save display backlight brightness boot shutdown
+systemd-battery-check,check battery level whether theres enough charge power
+systemd-battery-check.service,check battery level whether theres enough charge power
+systemd-binfmt,configure additional binary formats executables boot
+systemd-binfmt.service,configure additional binary formats executables boot
+systemd-bless-boot-generator,pull systemdblessbootservice initial boot transaction boot counting effect
+systemd-bless-boot,mark current boot process successful
+systemd-bless-boot.service,mark current boot process successful
+systemd-boot-check-no-failures,verify system booted cleanly
+systemd-boot-check-no-failures.service,verify system booted cleanly
+systemd-boot-random-seed.service,refresh boot loader random seed boot
+systemd-bsod,displays boottime emergency log message full screen
+systemd-bsod.service,displays boottime emergency log message full screen
+systemd-cat,connect pipeline programs output journal
+systemd-cgls,recursively show control group contents
+systemd-cgtop,show top control groups resource usage
+systemd-confext-initrd.service,activates system extension images
+systemd-confext,activates system extension images
+systemd-confext.service,activates system extension images
+systemd-coredump,acquire save process core dumps
+systemd-coredump.service,acquire save process core dumps
+systemd-coredump.socket,acquire save process core dumps
+systemd-coredump@.service,acquire save process core dumps
+systemd-creds,lists shows encrypts decrypts service credentials
+systemd-cryptenroll,enroll pkcs11 fido2 tpm2 tokendevices luks2 encrypted volumes
+systemd-cryptsetup-generator,unit generator etccrypttab
+systemd-cryptsetup,full disk decryption logic
+systemd-cryptsetup.service,full disk decryption logic
+systemd-cryptsetup@.service,full disk decryption logic
+systemd-debug-generator,generator enabling runtime debug shell masking specific units boot
+systemd-delta,find overridden configuration files
+systemd-detect-virt,detect execution virtualized environment
+systemd-dissect,dissect discoverable disk images ddis
+systemd-environment-d-generator,load variables specified environmentd
+systemd-escape,escape strings usage systemd unit names
+systemd-firstboot,initialize basic system settings first bootup system
+systemd-firstboot.service,initialize basic system settings first bootup system
+systemd-fsck-root.service,file system checker logic
+systemd-fsck-usr.service,file system checker logic
+systemd-fsck,file system checker logic
+systemd-fsck.service,file system checker logic
+systemd-fsck@.service,file system checker logic
+systemd-fstab-generator,unit generator etcfstab
+systemd-getty-generator,generator enabling getty instances console
+systemd-gpt-auto-generator,generator automatically discovering mounting root home srv var vartmp partitions well discovering enabling swap partitions based gpt partition type guids
+systemd-growfs-root.service,creating growing file systems demand
+systemd-growfs,creating growing file systems demand
+systemd-growfs.service,creating growing file systems demand
+systemd-growfs@.service,creating growing file systems demand
+systemd-halt.service,system shutdown logic
+systemd-hibernate-clear.service,resume hibernation
+systemd-hibernate-resume-generator,unit generator resume kernel parameter
+systemd-hibernate-resume,resume hibernation
+systemd-hibernate-resume.service,resume hibernation
+systemd-hibernate.service,system sleep state logic
+systemd-homed-firstboot.service,create remove change inspect home directories
+systemd-homed,home areauser account manager
+systemd-homed.service,home areauser account manager
+systemd-hostnamed,daemon control system hostname programs
+systemd-hostnamed.service,daemon control system hostname programs
+systemd-hwdb,hardware database management tool
+systemd-hybrid-sleep.service,system sleep state logic
+systemd-id128,generate print sd128 identifiers
+systemd-import-generator,generator automatically downloading disk images boot
+systemd-importd,vm container image import export service
+systemd-importd.service,vm container image import export service
+systemd-inhibit,execute program inhibition lock taken
+systemd-initctl,devinitctl compatibility
+systemd-initctl.service,devinitctl compatibility
+systemd-initctl.socket,devinitctl compatibility
+systemd-integritysetup-generator,unit generator integrity protected block devices
+systemd-integritysetup,disk integrity protection logic
+systemd-integritysetup.service,disk integrity protection logic
+systemd-integritysetup@.service,disk integrity protection logic
+systemd-journal-gatewayd,http server journal events
+systemd-journal-gatewayd.service,http server journal events
+systemd-journal-gatewayd.socket,http server journal events
+systemd-journal-remote,receive journal messages network
+systemd-journal-remote.service,receive journal messages network
+systemd-journal-remote.socket,receive journal messages network
+systemd-journal-upload,send journal messages network
+systemd-journal-upload.service,send journal messages network
+systemd-journald-audit.socket,journal service
+systemd-journald-dev-log.socket,journal service
+systemd-journald-varlink.socket,journal service
+systemd-journald-varlink@.socket,journal service
+systemd-journald,journal service
+systemd-journald.service,journal service
+systemd-journald.socket,journal service
+systemd-journald@.service,journal service
+systemd-journald@.socket,journal service
+systemd-kexec.service,system shutdown logic
+systemd-keyutil,perform various operations private keys x509 certificates
+systemd-localed,locale bus mechanism
+systemd-localed.service,locale bus mechanism
+systemd-logind,login manager
+systemd-logind.service,login manager
+systemd-machine-id-commit.service,commit transient machine id disk
+systemd-machine-id-setup,initialize machine id etcmachineid
+systemd-machined,virtual machine container registration manager
+systemd-machined.service,virtual machine container registration manager
+systemd-makefs,creating growing file systems demand
+systemd-makefs.service,creating growing file systems demand
+systemd-makefs@.service,creating growing file systems demand
+systemd-measure,precalculate sign expected tpm2 pcr 11 values booted unified kernel images
+systemd-mkswap.service,creating growing file systems demand
+systemd-mkswap@.service,creating growing file systems demand
+systemd-modules-load,load kernel modules boot
+systemd-modules-load.service,load kernel modules boot
+systemd-mount,establish destroy transient mount automount points
+systemd-mountfsd,disk image file system mount service
+systemd-mountfsd.service,disk image file system mount service
+systemd-network-generator,generate network configuration kernel command line
+systemd-network-generator.service,generate network configuration kernel command line
+systemd-networkd-wait-online,wait network come online
+systemd-networkd-wait-online.service,wait network come online
+systemd-networkd-wait-online@.service,wait network come online
+systemd-networkd,network manager
+systemd-networkd.service,network manager
+systemd-notify,notify service manager startup completion daemon status changes
+systemd-nspawn,spawn command os lightweight container
+systemd-nsresourced,user namespace resource delegation service
+systemd-nsresourced.service,user namespace resource delegation service
+systemd-oomd,userspace outofmemory oom killer
+systemd-oomd.service,userspace outofmemory oom killer
+systemd-path,list query system user paths
+systemd-pcrextend,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrfs-root.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrfs.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrfs@.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrlock-file-system.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-firmware-code.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-firmware-config.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-machine-id.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-make-policy.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-secureboot-authority.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock-secureboot-policy.service,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrlock,analyze predict tpm2 pcr states generate access policy prediction
+systemd-pcrmachine.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrphase-initrd.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrphase-sysinit.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-pcrphase.service,measure boot phase tpm2 pcr 11 machine id file system identity pcr 15
+systemd-portabled,portable service manager
+systemd-portabled.service,portable service manager
+systemd-poweroff.service,system shutdown logic
+systemd-pstore,service archive contents pstore
+systemd-pstore.service,service archive contents pstore
+systemd-pty-forward,run command custom terminal background color title
+systemd-quotacheck,file system quota checker logic
+systemd-quotacheck.service,file system quota checker logic
+systemd-random-seed,load save os system random seed boot shutdown
+systemd-random-seed.service,load save os system random seed boot shutdown
+systemd-rc-local-generator,compatibility generator service start etcrclocal boot
+systemd-reboot.service,system shutdown logic
+systemd-remount-fs,remount root kernel file systems
+systemd-remount-fs.service,remount root kernel file systems
+systemd-repart,automatically grow add partitions generate disk images ddis
+systemd-repart.service,automatically grow add partitions generate disk images ddis
+systemd-resolved,network name resolution manager
+systemd-resolved.service,network name resolution manager
+systemd-rfkill,load save rf kill switch state boot change
+systemd-rfkill.service,load save rf kill switch state boot change
+systemd-rfkill.socket,load save rf kill switch state boot change
+systemd-run-generator,generator invoking commands specified kernel command line system service
+systemd-run,run programs transient scope units service units path socket timertriggered service units
+systemd-sbsign,sign pe binaries efi secure boot
+systemd-shutdown,system shutdown logic
+systemd-sleep,system sleep state logic
+systemd-socket-activate,test socket activation daemons
+systemd-socket-proxyd,bidirectionally proxy local sockets another possibly remote socket
+systemd-soft-reboot.service,userspace reboot operation
+systemd-ssh-generator,generator binding socketactivated ssh server local af_vsock af_unix sockets
+systemd-ssh-proxy,ssh client plugin connecting af_vsock af_unix sockets
+systemd-stdio-bridge,dbus proxy
+systemd-storagetm,exposes local block devices nvmetcp mass storage devices
+systemd-storagetm.service,exposes local block devices nvmetcp mass storage devices
+systemd-suspend-then-hibernate.service,system sleep state logic
+systemd-suspend.service,system sleep state logic
+systemd-sysctl,configure kernel parameters boot
+systemd-sysctl.service,configure kernel parameters boot
+systemd-sysext-initrd.service,activates system extension images
+systemd-sysext,activates system extension images
+systemd-sysext.service,activates system extension images
+systemd-system-update-generator,generator redirecting boot offline update mode
+systemd-sysupdate-reboot.service,automatically update os resources
+systemd-sysupdate-reboot.timer,automatically update os resources
+systemd-sysupdate,automatically update os resources
+systemd-sysupdate.service,automatically update os resources
+systemd-sysupdate.timer,automatically update os resources
+systemd-sysupdated,system update service
+systemd-sysupdated.service,system update service
+systemd-sysusers,allocate system users groups
+systemd-sysusers.service,allocate system users groups
+systemd-sysv-generator,unit generator sysv init scripts
+systemd-time-wait-sync,wait kernel time synchronized
+systemd-time-wait-sync.service,wait kernel time synchronized
+systemd-timedated,time date bus mechanism
+systemd-timedated.service,time date bus mechanism
+systemd-timesyncd,network time synchronization
+systemd-timesyncd.service,network time synchronization
+systemd-tmpfiles-clean.service,create delete clean files directories
+systemd-tmpfiles-clean.timer,create delete clean files directories
+systemd-tmpfiles-setup-dev-early.service,create delete clean files directories
+systemd-tmpfiles-setup-dev.service,create delete clean files directories
+systemd-tmpfiles-setup.service,create delete clean files directories
+systemd-tmpfiles,create delete clean files directories
+systemd-tpm2-generator,generator inserting tpm2 synchronization point boot process
+systemd-tpm2-setup-early.service,set tpm2 storage root key srk boot
+systemd-tpm2-setup,set tpm2 storage root key srk boot
+systemd-tpm2-setup.service,set tpm2 storage root key srk boot
+systemd-tty-ask-password-agent,list process pending systemd password requests
+systemd-udev-settle.service,wait pending udev events handled
+systemd-udevd-control.socket,device event managing daemon
+systemd-udevd-kernel.socket,device event managing daemon
+systemd-udevd-varlink.socket,device event managing daemon
+systemd-udevd,device event managing daemon
+systemd-udevd.service,device event managing daemon
+systemd-umount,establish destroy transient mount automount points
+systemd-update-done,mark etc var fully updated
+systemd-update-done.service,mark etc var fully updated
+systemd-update-utmp-runlevel.service,write audit utmp updates bootup runlevel changes shutdown
+systemd-update-utmp,write audit utmp updates bootup runlevel changes shutdown
+systemd-update-utmp.service,write audit utmp updates bootup runlevel changes shutdown
+systemd-user-sessions,permit user logins boot prohibit user logins shutdown
+systemd-user-sessions.service,permit user logins boot prohibit user logins shutdown
+systemd-userdbd,json usergroup record query multiplexernss compatibility
+systemd-userdbd.service,json usergroup record query multiplexernss compatibility
+systemd-vconsole-setup,configure virtual consoles
+systemd-vconsole-setup.service,configure virtual consoles
+systemd-veritysetup-generator,unit generator verity protected block devices
+systemd-veritysetup,disk verity protection logic
+systemd-veritysetup.service,disk verity protection logic
+systemd-veritysetup@.service,disk verity protection logic
+systemd-vmspawn,spawn os virtual machine
+systemd-volatile-root,make root file system volatile
+systemd-volatile-root.service,make root file system volatile
+systemd-vpick,resolve paths v versioned directories
+systemd-xdg-autostart-generator,user unit generator xdg autostart files
+systemd,systemd system service manager
+systemtap-service,systemtap initscript systemd service
+TABS,set tabs terminal
+tabs,set tabs terminal
+tabs,set terminal tabs
+tac,concatenate print files reverse
+tail,output last part files
+tail,copy last part file
+talk,talk another user
+tapestat,report tape statistics
+TAPRIO,time aware priority shaper
+tar,archiving utility
+taskset,set retrieve processs cpu affinity
+tbf,token bucket filter
+tc-actions,independently defined actions tc
+tc-basic,basic traffic control filter
+tc-bfifo,packet limited first first queue
+tc-bpf,bpf programmable classifier actions ingressegress queueing disciplines
+tc-cake,common applications kept enhanced cake
+tc-cbs,credit based shaper cbs qdisc
+tc-cgroup,control group based traffic control filter
+tc-choke,choose keep scheduler
+tc-codel,controlleddelay active queue management algorithm
+tc-connmark,netfilter connmark retriever action
+tc-csum,checksum update action
+tc-ct,tc connection tracking action
+tc-ctinfo,tc connmark processing action
+tc-drr,deficit round robin scheduler
+tc-ematch,extended matches use basic cgroup flow filters
+tc-etf,earliest txtime first etf qdisc
+tc-ets,enhanced transmission selection scheduler
+tc-flow,flow based traffic control filter
+tc-flower,flow based traffic control filter
+tc-fq,fair queue traffic policing
+tc-fq_codel,fair queuing fq controlled delay codel
+tc-fq_pie,flow queue proportional integral controller enhanced
+tc-fw,fwmark traffic control filter
+tc-gact,generic action
+tc-gate,stream gate action
+tc-hfsc,hierarchical fair service curves control linux
+tc-htb,hierarchy token bucket
+tc-ife,encapsulatedecapsulate metadata
+tc-matchall,traffic control filter matches every packet
+tc-mirred,mirrorredirect action
+tc-mpls,mpls manipulation module
+tc-mqprio,multiqueue priority qdisc offloaded hardware qos
+tc-nat,stateless native address translation action
+tc-netem,network emulator
+tc-pedit,generic packet editor action
+tc-pfifo,packet limited first first queue
+tc-pfifo_fast,threeband first first queue
+tc-pie,proportional integral controllerenhanced aqm algorithm
+tc-police,policing action
+tc-prio,priority qdisc
+tc-red,random early detection
+tc-route,route traffic control filter
+tc-sample,packet sampling tc action
+tc-sfb,stochastic fair blue
+tc-sfq,stochastic fairness queueing
+tc-simple,basic example action
+tc-skbedit,skb editing action
+tc-skbmod,userfriendly packet editor action
+tc-skbprio,skb priority queue
+tc-stab,generic size table manipulations
+tc-taprio,time aware priority shaper
+tc-tbf,token bucket filter
+tc-tunnel_key,tunnel metadata manipulation
+tc-u32,universal 32bit traffic control filter
+tc-vlan,vlan manipulation module
+tc,show manipulate traffic control settings
+tcpdump,dump traffic network
+tcpdump,dump traffic network
+tee,read standard input write standard output files
+tee,duplicate standard input
+telinit,change sysv runlevel
+telnet-probe,lightweight telnetlike port probe
+test,check file types compare values
+test,evaluate expression
+time,time simple command give resource usage
+time,time simple command
+timedatectl,control system time date
+timeout,run command time limit
+times,write process times
+tipc-bearer,show modify tipc bearers
+tipc-link,show links modify link properties
+tipc-media,list modify media properties
+tipc-nametable,show tipc nametable
+tipc-node,modify show local node parameters list peer nodes
+tipc-peer,modify peer information
+tipc-socket,show tipc socket port information
+tipc,tipc configuration management tool
+tload,graphic representation system load average
+tmux,terminal multiplexer
+togglesebool,flip current value selinux boolean
+top,display linux processes
+touch,change file timestamps
+touch,change file access modification times
+tpmtool,gnutls tpm tool
+TPUT,initialize terminal query terminfo database
+tput,initialize terminal query terminfo database
+tput,change terminal characteristics
+tr,translate delete characters
+tr,translate characters
+trace-cmd-agent,run agent machine controlled another machine
+trace-cmd-attach,attach guest tracedat file host tracedat file
+trace-cmd-check-events,parse event formats local system
+trace-cmd-clear,clear ftrace buffer
+trace-cmd-convert,convert trace files
+trace-cmd-dump,show meta data trace file created tracecmd record
+trace-cmd-extract,extract data ftrace linux tracer
+trace-cmd-hist,show histogram events tracedat file
+trace-cmd-list,list available plugins events options ftrace
+trace-cmd-listen,listen incoming connection record tracing
+trace-cmd-mem,show memory usage certain kmem events
+trace-cmd-options,list available options tracecmd plugins
+trace-cmd-profile,profile tasks running live
+trace-cmd-record,record trace ftrace linux internal tracer
+trace-cmd-report,show ascii trace created tracecmd record
+trace-cmd-reset,turn ftrace tracing bring back full performance
+trace-cmd-restore,restore failed trace record
+trace-cmd-set,set configuration parameter ftrace linux internal tracer
+trace-cmd-show,show contents ftrace linux kernel tracing buffer
+trace-cmd-snapshot,take reset free show ftrace kernel snapshot
+trace-cmd-split,split tracedat file smaller files
+trace-cmd-sqlhist,use sql language create show creation tracefs histograms synthetic events
+trace-cmd-stack,read enable disable ftrace linux kernel stack tracing
+trace-cmd-start,start ftrace linux kernel tracer without recording
+trace-cmd-stat,show status tracing ftrace system
+trace-cmd-stop,stop ftrace linux kernel tracer writing ring buffer
+trace-cmd-stream,stream trace stdout happening
+trace-cmd,interacts ftrace linux kernel internal tracer
+tracepath,traces path network host discovering mtu along path
+traceroute,print route packets trace network host
+trafgen,fast multithreaded network packet generator
+trap,trap signals
+true,nothing successfully
+true,return true value
+truncate,shrink extend size file specified size
+TSET,terminal initialization
+tset,terminal initialization
+tsort,perform topological sort
+tsort,topological sort
+tty,print file name terminal connected standard input
+tty,return users terminal name
+tune2fs,adjust tunable file system parameters ext2ext3ext4 file systems
+tunnel_key,tunnel metadata manipulation
+txrecord,txmon performance metrics domain agent pmda
+type,write description command type
+tzselect,select timezone
+u32,universal 32bit traffic control filter
+uclampset,manipulate utilization clamping attributes system process
+ucmatose,rdma cm connection simple pingpong test
+uconv,convert data one encoding another
+udaddy,rdma cm datagram setup simple pingpong test
+udevadm,udev management tool
+udfinfo,show information udf filesystem
+udflabel,show change udf filesystem label
+udpong,unreliable datagram streaming rdma pingpong test
+ukify,combine components signed unified kernel image uefi systems
+ul,underlining
+ulimit,set report file size limit
+umask,get set file mode creation mask
+umount,unmount filesystems
+umount.nfs,unmount network file system
+umount.nfs4,unmount network file system
+unalias,remove alias definitions
+uname,print system information
+uname,return system name
+uname26,change reported architecture new program environment andor set personality flags
+uncompress,expand compressed data
+unexpand,convert spaces tabs
+unexpand,convert spaces tabs
+unget,undo previous get sccs file development
+unicode_start,put keyboard console unicode mode
+unicode_stop,revert keyboard console unicode mode
+uniq,report omit repeated lines
+uniq,report filter repeated lines file
+unix_chkpwd,helper binary verifies password current user
+unix_update,helper binary updates password given user
+unlink,call unlink function remove specified file
+unlink,call unlink function
+unset,unset values attributes variables functions
+unsetfiles,remove selinux file security contexts
+unshare,run program new namespaces
+update-alternatives,maintain symbolic links determining default commands
+update-pciids,download new version pci id list
+updatectl,control system update service
+updatedb,update file name database
+uptime,tell long system running
+usb-devices,print usb device details
+usbhid-dump,dump usb hid device report descriptors streams
+usbreset,send usb port reset usb device
+useradd,create new user update default new user information
+userdbctl,inspect users groups group memberships
+userdel,delete user account related files
+usermod,modify user account
+users,print user names users currently logged current host
+utmpdump,dump utmp wtmp files raw format
+uucp,tosystem copy
+uudecode,decode binary file
+uuencode,encode binary file
+uuidd,uuid generation daemon
+uuidgen,create new uuid value
+uuidparse,utility parse unique identifiers
+uustat,uucp status enquiry job control
+uux,remote command execution
+val,validate sccs files development
+valgrind-di-server,experimental debuginfo server valgrind
+valgrind-listener,listens socket valgrind commentary
+valgrind,suite tools debugging profiling programs
+varlinkctl,introspect invoke varlink services
+vdir,list directory contents
+vdpa-dev,vdpa device configuration
+vdpa-mgmtdev,vdpa management device view
+vdpa,vdpa management tool
+verify_blkparse,verifies output file produced blkparse
+verifytree,verify local yum repository consistent
+veritysetup,manage dmverity block level verification volumes
+vgcfgbackup,backup volume group configurations
+vgcfgrestore,restore volume group configuration
+vgchange,change volume group attributes
+vgck,check consistency volume groups
+vgconvert,change volume group metadata format
+vgcreate,create volume group
+vgdb,intermediary valgrind gdb shell
+vgdisplay,display volume group information
+vgexport,unregister volume groups system
+vgextend,add physical volumes volume group
+vgimport,register exported volume group system
+vgimportclone,import vg cloned pvs
+vgimportdevices,add devices vg devices file
+vgmerge,merge volume groups
+vgmknodes,create special files volume group devices dev
+vgreduce,remove physical volumes volume group
+vgremove,remove volume groups
+vgrename,rename volume group
+vgs,display information volume groups
+vgscan,search volume groups
+vgsplit,move physical volumes new existing volume group
+vi,oriented visual display editor
+vigr,edit password group shadowpassword shadowgroup file
+vipw,edit password group shadowpassword shadowgroup file
+visudo,edit sudoers file
+vlan,vlan manipulation module
+vlock,virtual console lock program
+vmstat,report virtual memory statistics
+vtep-ctl,utility querying configuring vtep database
+w,show logged
+wait,await process completion
+waitpid,utility wait arbitrary processes
+wall,write message users
+warnquota,send mail users quota
+watch,execute program periodically showing output fullscreen
+wc,print newline word byte counts file
+wc,word line byte character count
+wdctl,show hardware watchdog status
+weblogvis,visualize activity performance web server logs
+webpingvis,visualize web server response time
+webvis,visualize systemlevel web server activity
+wg-quick,set wireguard interface simply
+wg,set retrieve configuration wireguard interfaces
+Wget,noninteractive network downloader
+wget,noninteractive network downloader
+what,identify sccs files development
+whatis,display oneline manual page descriptions
+whereis,locate binary source manual page files command
+who,show logged
+who,display system
+whoami,print effective user name
+windmc,generates windows message resources
+windres,manipulate windows resources
+wipefs,wipe signature device
+write,write another user
+wrudf,maintain udf filesystem
+wsrep_sst_backup,backup helper script mariadb galera cluster
+wsrep_sst_common,common command line parser sourced sst scripts
+wsrep_sst_mariabackup,mariabackupbased state snapshot transfer
+wsrep_sst_mysqldump,mysqldumpbased state snapshot transfer
+wsrep_sst_rsync,rsyncbased state snapshot transfer
+wsrep_sst_rsync_wan,rsync_wan rsync delta transfersbased state snapshot transfer
+x86_64,change reported architecture new program environment andor set personality flags
+xargs,build execute command lines standard input
+xargs,construct argument lists invoke utility
+xfs_admin,change parameters xfs filesystem
+xfs_bmap,print block mapping xfs file
+xfs_copy,copy contents xfs filesystem
+xfs_db,debug xfs filesystem
+xfsdump,xfs filesystem incremental dump utility
+xfs_estimate,estimate space xfs filesystem take
+xfs_freeze,suspend access xfs filesystem
+xfs_fsr,filesystem reorganizer xfs
+xfs_growfs,expand xfs filesystem
+xfs_info,display xfs filesystem geometry information
+xfsinvutil,xfsdump inventory database checking pruning utility
+xfs_io,debug io path xfs filesystem
+xfs_logprint,print log xfs filesystem
+xfs_mdrestore,restores xfs metadump image filesystem image
+xfs_metadump,copy xfs filesystem metadata file
+xfs_mkfile,create xfs file
+xfs_ncheck,generate pathnames inumbers xfs
+xfs_property,examine edit properties xfs filesystem
+xfs_quota,manage use quota xfs filesystems
+xfs_repair,repair xfs filesystem
+xfsrestore,xfs filesystem incremental restore utility
+xfs_rtcp,xfs realtime copy command
+xfs_scrub,check repair contents mounted xfs filesystem
+xfs_spaceman,show free space information xfs filesystem
+xgettext,extract gettext strings source
+xminicom,friendly serial communication program
+xqmstats,display xfs quota manager statistics proc
+xtables-legacy,iptables using old getsockoptsetsockoptbased kernel api
+xtables-monitor,show changes rule set traceevents
+xtables-nft,iptables using nftables kernel api
+xtables-translate,translation tool migrate iptables nftables
+yacc,yet another compiler compiler development
+yes,output string repeatedly killed
+ypdomainname,show set systems host name
+yum-aliases,redirecting dnf command reference
+yum-builddep,install missing dependencies building rpm package
+yum-changelog,changelog
+yum-complete-transaction,attempt complete failed aborted yum transactions
+yum-config-manager,manage yum configuration options yum repositories
+yum-copr,yum copr plugin
+yum-cron,interface conveniently call yum cron
+yum-debug-dump,write system rpm configuration debugdump file
+yum-debug-restore,replay yum transactions captured debugdump file
+yum-filter-data,yum filter data plugin
+yum-fs-snapshot,fssnapshot
+yum-groups-manager,create edit yums group metadata
+yum-list-data,yum list data plugin
+yum-ovl,performs initial copyup yum8 package database
+yum-plugin-copr,yum copr plugin
+yum-shell,redirecting dnf command reference
+yum-torrent,download packages via http peertopeer
+yum-updatesd,update notifier daemon
+yum-utils,tools manipulating repositories extended package management
+yum-verify,yum verify plugin
+yum-versionlock,version lock rpm packages
+yum,redirecting dnf command reference
+yum2dnf,changes dnf compared yum
+yumdb,query alter yum database
+yumdownloader,download rpm packages yum repositories
+zcat,expand concatenate data
+zdump,timezone dumper
+zenmap,graphical nmap frontend results viewer
+zic,timezone compiler
+zramctl,set control zram devices
+zsoelim,satisfy requests roff input
