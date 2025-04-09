@@ -22,6 +22,8 @@ This repository contains the research, code, and documentation for my Master’s
 
 
 ## Repository Structure
+``
 ├── README.md                     # Project overview and documentation
 └── flexible-clustering/         # Main source code and clustering logic
     └── webapp/                  # Flask-based web interface for cluster exploration
+``
