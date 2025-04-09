@@ -1,24 +1,19 @@
-Metadata-Version: 2.2
-Name: flexible_clustering
+Metadata-Version: 2.1
+Name: flexible-clustering
 Version: 0.1.0
 Summary: Flexible Clustering
+Home-page: UNKNOWN
 Author: Matteo Dell'Amico
 Author-email: matteo_dellamico@symantec.com
 License: BSD 3-clause
 Keywords: clustering non-metric
+Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: BSD License
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.5
 License-File: LICENSE
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: keywords
-Dynamic: license
-Dynamic: summary
 
 Flexible clustering
 ===================
@@ -119,3 +114,5 @@ Copyright
 ---------
 
 BSD 3-clause; see the LICENSE file.
+
+
