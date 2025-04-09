@@ -23,6 +23,38 @@ This repository contains the research, code, and documentation for my Master’s
 
 ## Repository Structure
 
-├── README.md                     # Project overview and documentation
-└── flexible-clustering/         # Main source code and clustering logic
-    └── webapp/                  # Flask-based web interface for cluster exploration
+.
+├── README.md
+├── flexible-clustering
+│   ├── LICENSE
+│   ├── README.rst
+│   ├── flexible_clustering
+│   │   ├── extsort.py
+│   │   ├── fishdbc.py
+│   │   ├── fishdbc_example.py
+│   │   ├── hnsw.py
+│   │   ├── hnsw_optics.py
+│   │   ├── hnsw_optics_cachefile.py
+│   │   ├── optics.py
+│   │   ├── pdict.py
+│   │   ├── plot_optics.py
+│   │   ├── unionfind.c
+│   │   └── unionfind.pyx
+│   ├── setup.cfg
+│   ├── setup.py
+│   └── webapp
+│       ├── SmallAnalysis-AdbHoney.ipynb
+│       ├── SmallAnalysis-Cowrie.ipynb
+│       ├── SmallAnalysis-Suricata.ipynb
+│       ├── TFIDF thing.ipynb
+│       ├── app.py
+│       ├── clustering.py
+│       ├── commands_cleaned.csv
+│       ├── finalissimoCommands.csv
+│       ├── finalissimoSim.csv
+│       ├── linux commands.ipynb
+│       ├── static
+│       │   └── styles.css
+│       └── templates
+│           └── clusters.html
+
