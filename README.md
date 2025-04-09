@@ -22,7 +22,7 @@ This repository contains the research, code, and documentation for my Master’s
 
 
 ## Repository Structure
-
+```
 .
 ├── README.md
 ├── flexible-clustering
@@ -57,4 +57,4 @@ This repository contains the research, code, and documentation for my Master’s
 │       │   └── styles.css
 │       └── templates
 │           └── clusters.html
-
+```
