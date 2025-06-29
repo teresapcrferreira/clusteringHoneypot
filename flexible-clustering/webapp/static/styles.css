@@ -1,0 +1,244 @@
+:root {
+  --primary-color: #3d5a80;
+  --primary-color-hover: #324d6e; /* darker version for hover state */
+  --secondary-color: #293241;
+  --background-color: #f5f7fa;
+  --text-color: #333;
+  --card-bg: #fff;
+  --box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "nav header"
+    "nav main"
+    "nav footer";
+  height: 100vh;
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 20px;
+}
+
+header {
+  grid-area: header;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+  grid-area: main;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+footer {
+  grid-area: footer;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+.inspect-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inspect-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+select, input[type="date"], input[type="text"] {
+  width: auto;
+  min-width: 150px;
+  max-width: 200px;
+  padding: 6px;
+  margin: 5px 10px 10px 0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+}
+
+
+.layout {
+  display: flex;
+}
+
+aside#cluster-index {
+width: 200px;
+background-color: var(--secondary-color);
+color: #fff;
+padding: 15px;
+height: 100vh;
+overflow-y: auto;
+position: sticky;
+top: 0;
+}
+
+
+
+#cluster-index h4 {
+font-size: 16px;
+margin-bottom: 10px;
+border-bottom: 1px solid #fff;
+padding-bottom: 5px;
+}
+
+#index-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+#index-list li {
+margin: 8px 0;
+}
+
+#index-list a {
+color: #fff;
+text-decoration: none;
+}
+
+#index-list a:hover {
+text-decoration: underline;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+/* #loading {
+  display: none;
+} */
+
+
+#loading-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3d5a80;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#cluster-mini-map {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 100px;       /* initial small square */
+  height: 100px;      /* initial small square */
+  overflow: hidden;   /* hide overflowing SVG content */
+  border: 1px solid #ccc;  /* optional border for visibility */
+  transition: width 0.3s ease, height 0.3s ease;  /* smooth transition */
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+#cluster-mini-map:hover {
+  width: 800px;       /* expanded width on hover */
+  height: 600px;      /* expanded height on hover */
+}
+
+
+/* #cluster-mini-map {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 800px;
+  height: 600px;
+  background: white;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+} */
+

@@ -1,0 +1,159 @@
+label,simplified_purpose,flag_description
+awk,Text Processing,
+cat,Read file,
+cat -b,Read file,Number non-empty lines
+cat -n,Read file,Number every output line
+cat -s,Read file,Remove repeated empty lines
+cd,Change Directory,
+chattr,File Attribute Manipulation,
+chattr +a,File Attribute Manipulation,Only allow adding to file
+chattr +i,File Attribute Manipulation,Make file unchangeable
+chattr -i,File Attribute Manipulation,Allow file changes again
+crontab,Scheduled Task,
+crontab -e,Scheduled Task,Edit user crontab
+crontab -l,Scheduled Task,List user crontab
+crontab -r,Scheduled Task,Delete user crontab
+curl,Remote File Retrieval,
+curl -X,Remote File Retrieval,Set request method
+curl -d,Remote File Retrieval,Send data with POST
+curl -o,Remote File Retrieval,Write output to a file
+curl -s,Remote File Retrieval,Suppress output
+echo,Output Text,
+echo -e,Output Text,Interpret escape characters
+echo -n,Output Text,Skip trailing newline
+free,Memory Info,
+free -g,Memory Info,Show memory in GB
+free -h,Memory Info,Show sizes in a readable format
+free -m,Memory Info,Show memory in MB
+grep,Pattern Matching,
+grep -E,Pattern Matching,Use extended regex
+grep -i,Pattern Matching,Ignore case
+grep -r,Pattern Matching,Search directories recursively
+grep -v,Pattern Matching,Match lines that don't fit the pattern
+head,Extract lines,
+head -n,Extract lines,Show the first N lines
+ifconfig,Network Info,
+lockr,Permission/Attribute Manipulation,
+ls,Directory Listing,
+ls -R,Directory Listing,List directories recursively
+ls -a,Directory Listing,Include hidden files
+ls -h,Directory Listing,Show sizes in a readable format
+ls -l,Directory Listing,Use detailed file listing
+lscpu,CPU Info,
+pkill,Process Termination,
+pkill -9,Process Termination,Forcefully kill the process
+pkill -f,Process Termination,Match full command line
+pkill -u,Process Termination,Match user’s processes
+ps,Process Discovery,
+ps -e,Process Discovery,List all processes
+ps -f,Process Discovery,Show detailed process info
+ps -u,Process Discovery,Match user’s processes
+rm,File Deletion,
+rm -f,File Deletion,Force delete files
+rm -r,File Deletion,Delete folders recursively
+sh,Script Execution,
+tftp,File Transfer,
+top,Process Discovery,
+uname,System Info,
+uname -a,System Info,Show all system info
+uname -n,System Info,Show hostname
+uname -r,System Info,Show kernel release
+uname -s,System Info,Show kernel name
+w,User Sessions,
+wc,Counting lines,
+wc -c,Counting lines,Count bytes
+wc -l,Counting lines,Count lines
+wc -w,Counting lines,Count words
+wget,Remote File Retrieval,
+wget --no-check-certificate,Remote File Retrieval,Skip certificate checks
+wget -O,Remote File Retrieval,Write output to a file
+wget -q,Remote File Retrieval,Suppress output
+which,Binary Locator,
+ack ,Pattern Matching,
+ack -i,Pattern Matching,Ignore case
+ack -w,Pattern Matching,Match whole words
+ack -c,Pattern Matching,Count matching lines
+ack -l,Pattern Matching,List matching files
+ack -n,Pattern Matching,Number every output line
+bzip2 ,Compression,
+bzip2 -k,Compression,Keep input files
+bzip2 -f,Compression,Force overwrite
+bzip2 -v,Compression,Verbose mode
+bzip2 -d,Compression,Decompress
+bzip2 -t,Compression,Test integrity
+cmp ,Comparison,
+cmp -l,Comparison,List all differing bytes
+cmp -s,Comparison,"Silent, exit status only"
+cmp -n,Comparison,Limit number of bytes to compare
+cmp -i,Comparison,Skip initial bytes
+diff ,Comparison,
+diff -u,Comparison,Unified format
+diff -c,Comparison,Context format
+diff -i,Comparison,Ignore case
+diff -b,Comparison,Ignore changes in whitespace
+diff -r,Comparison,Search directories recursively
+find ,File Search,
+find -name,File Search,Match filename
+find -type,File Search,Specify file type
+find -mtime,File Search,Match modification time
+find -size,File Search,Match file size
+find -exec,File Search,Execute command on found files
+gzip ,Compression,
+gzip -k,Compression,Keep input files
+gzip -d,Compression,Decompress
+gzip -v,Compression,Verbose mode
+gzip --best,Compression,Best compression
+gzip --fast,Compression,Fastest compression
+locate ,File Search,
+locate -i,File Search,Ignore case
+locate -r,File Search,Use regular expressions
+locate -l,File Search,Limit number of results
+locate -e,File Search,Only existing files
+mosh ,Remote Access,
+mosh -p,Remote Access,Specify port
+mosh -s,Remote Access,Server-side SSH options
+mosh -c,Remote Access,Specify SSH command
+mosh --predict,Remote Access,Enable local-echo prediction
+rsync ,Remote File Transfer,
+rsync -a,Remote File Transfer,Archive mode
+rsync -v,Remote File Transfer,Verbose mode
+rsync -z,Remote File Transfer,Compress file data
+rsync --delete,Remote File Transfer,Delete extraneous files
+rsync -P,Remote File Transfer,Show progress
+scp ,Remote File Transfer,
+scp -r,Remote File Transfer,Recursive copy
+scp -p,Remote File Transfer,Preserve file attributes
+scp -C,Remote File Transfer,Enable compression
+scp -P,Remote File Transfer,Specify port
+scp -l,Remote File Transfer,Limit bandwidth
+ssh ,Remote Access,
+ssh -p,Remote Access,Specify port
+ssh -i,Remote Access,Identity file
+ssh -L,Remote Access,Local port forwarding
+ssh -R,Remote Access,Remote port forwarding
+ssh -o,Remote Access,Specify SSH option
+su ,Privilege Escalation,
+su -c,Privilege Escalation,Run command as substitute user
+su -l,Privilege Escalation,Start login shell
+su -p,Privilege Escalation,Preserve environment
+sudo ,Privilege Escalation,
+sudo -u,Privilege Escalation,Run as specified user
+sudo -s,Privilege Escalation,Run shell as specified user
+sudo -H,Privilege Escalation,Set HOME to target user
+sudo -E,Privilege Escalation,Preserve environment
+sudo -n,Privilege Escalation,Non-interactive mode
+tar ,Archiving,
+tar -c,Archiving,Create archive
+tar -x,Archiving,Extract archive
+tar -t,Archiving,List archive contents
+tar -z,Archiving,Filter through gzip
+tar -j,Archiving,Filter through bzip2
+tar -v,Archiving,Verbose output
+tar -f,Archiving,Specify archive file
+tar --exclude,Archiving,Exclude files
+zip ,Archiving,
+zip -r,Archiving,Include files and directories recursively
+zip -u,Archiving,Update existing entries
+zip -d,Archiving,Delete entries from zip
+zip -9,Archiving,Maximum compression
+zip -l,Archiving,List contents

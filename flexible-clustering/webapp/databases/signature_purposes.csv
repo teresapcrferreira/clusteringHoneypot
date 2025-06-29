@@ -1,0 +1,119 @@
+signature,purposes
+SURICATA Applayer Detect protocol only one direction,Change Directory;Directory Listing;Network Info;Read file;Scheduled Task
+ET INFO User-Agent (python-requests) Inbound to Webserver,Output Text;Pattern Matching;Remote File Retrieval;System Info
+SURICATA HTTP invalid response chunk len,Network Info;Pattern Matching;Read file;Scheduled Task
+ET SCAN Laravel Debug Mode Information Disclosure Probe Inbound,File Deletion;Network Info;Output Text;Scheduled Task;System Info
+ET INFO Request to Hidden Environment File,Output Text;Remote File Retrieval;System Info
+ET POLICY CURL User Agent,File Transfer;Remote File Transfer
+SURICATA HTTP missing Host header,Network Info;Pattern Matching;Read file;Scheduled Task
+ET POLICY Proxy GET Request,Remote File Retrieval
+ET WEB_SERVER ThinkPHP RCE Exploitation Attempt,Privilege Escalation;Remote Access;Scheduled Task;Script Execution
+ET SCAN WordPress Scanner Performing Multiple Requests to Windows Live Writer XML,File Deletion;Network Info;Remote File Retrieval
+ET POLICY Proxy CONNECT Request,Remote File Retrieval
+ET INFO Mozilla User-Agent (Mozilla/5.0) Inbound Likely Fake,Output Text;Pattern Matching;System Info
+ET POLICY Googlebot User Agent,Unmapped
+GPL WEB_SERVER robots.txt access,Directory Listing
+SURICATA HTTP Response chunked with HTTP 0.9 or 1.0,Network Info;Read file;Scheduled Task
+ET EXPLOIT Netgear DGN Remote Command Execution,Remote Access
+ET SCAN Baidu Spider Webcrawler User Agent - inbound,Network Info
+ET WEB_SERVER /bin/sh In URI Possible Shell Command Execution Attempt,Remote Access;Scheduled Task;Script Execution
+ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt (CVE-2021-41773) M2,Network Info;Scheduled Task
+ET WEB_SERVER Possible HTTP 404 XSS Attempt (Local Source),Network Info;Privilege Escalation;Remote Access;Scheduled Task;Script Execution
+ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management,Pattern Matching;Scheduled Task
+SURICATA STREAM Packet with broken ack,Network Info;Read file;Scheduled Task
+SURICATA HTTP unable to match response to request,Network Info;Read file;Remote File Retrieval;Scheduled Task
+SURICATA HTTP Unexpected Request body,Network Info;Read file;Remote File Retrieval;Scheduled Task
+ET EXPLOIT Apache Obfuscated log4j RCE Attempt (tcp ldap) (CVE-2021-44228),Network Info;Privilege Escalation;Read file;Remote Access;Scheduled Task
+ET POLICY Inbound HTTP CONNECT Attempt on Off-Port,Network Info;Scheduled Task
+ET SCAN ProxyReconBot CONNECT method to Mail,Network Info
+ET POLICY HTTP CONNECT Tunnel Attempt Inbound,Network Info;Scheduled Task
+ET WEB_SERVER 401TRG Generic Webshell Request - POST with wget in body,File Transfer;Remote Access;Remote File Retrieval;Remote File Transfer;Script Execution
+ET EXPLOIT Shenzhen TVT DVR/NVR/IPC WebUI RCE ADD Attempt,Privilege Escalation;Remote Access;Scheduled Task;Script Execution
+ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt M1,Scheduled Task;Script Execution;User Sessions
+ET POLICY Incoming Basic Auth Base64 HTTP Password detected unencrypted,Network Info;User Sessions
+ET WEB_SERVER WebShell Generic - wget http - POST,File Transfer;Network Info;Remote Access;Remote File Retrieval;Remote File Transfer;Script Execution
+ET SCAN WordPress HelloThinkCMF Scan,Network Info
+ET POLICY Executable and linking format (ELF) file download Over HTTP,Binary Locator;File Deletion;Network Info;Remote File Retrieval;Scheduled Task
+ET EXPLOIT MVPower DVR Shell UCE,Remote Access;Script Execution
+SURICATA HTTP Host header invalid,Network Info;Pattern Matching;Read file;Scheduled Task
+SURICATA STREAM reassembly sequence GAP -- missing packet(s),Network Info;Pattern Matching;Read file;Scheduled Task
+ET SCAN Mirai Variant User-Agent (Inbound),Network Info;Pattern Matching
+ET SCAN JAWS Webserver Unauthenticated Shell Command Execution,Network Info;Read file;Remote Access;Scheduled Task;Script Execution;User Sessions
+ET SCAN Zmap User-Agent (Inbound),Network Info;Pattern Matching
+ET INFO Apache Solr System Information Request,File Deletion;Output Text;Read file;Remote File Retrieval;Scheduled Task;System Info
+ET WEB_SERVER Poison Null Byte,Unmapped
+SURICATA HTTP METHOD terminated by non-compliant character,Counting lines;File Deletion;Network Info;Process Termination;Read file;Scheduled Task
+SURICATA HTTP URI terminated by non-compliant character,Counting lines;File Deletion;Network Info;Process Termination;Read file;Scheduled Task
+ET SCAN Bing Webcrawler User-Agent (BingBot),Network Info;Pattern Matching
+ET WEB_SERVER Possible XXE SYSTEM ENTITY in POST BODY.,File Transfer;Script Execution;System Info
+ET EXPLOIT Zimbra <8.8.11 - XML External Entity Injection/SSRF Attempt (CVE-2019-9621),Scheduled Task;Script Execution
+GPL WEB_SERVER /etc/passwd,Read file
+ET INFO PHP Xdebug Extension Query Parameter (XDEBUG_SESSION_START),Compression;Output Text;Read file;Script Execution;System Info;User Sessions
+ET WEB_SERVER WEB-PHP phpinfo access,Output Text;Read file;Script Execution;System Info
+ET SCAN MS Terminal Server Traffic on Non-standard Port,File Deletion;Network Info
+ET EXPLOIT Wireless IP Camera (P2) WIFICAM Remote Code Execution,Unmapped
+SURICATA HTTP Request unrecognized authorization method,Network Info;Read file;Remote File Retrieval;Scheduled Task;User Sessions
+ET HUNTING Suspicious Chmod Usage in URI (Inbound),File Attribute Manipulation;Permission/Attribute Manipulation;Process Discovery
+ET INFO Netlink GPON Login Attempt (GET),Output Text;Remote File Retrieval;Scheduled Task;System Info;User Sessions
+"ET EXPLOIT HackingTrio UA (Hello, World)",Unmapped
+ET WEB_SERVER Possible DD-WRT Metacharacter Injection Command Execution Attempt,Remote Access;Scheduled Task;Script Execution
+"ET SCAN Unusually Fast 404 Error Messages (Page Not Found), Possible Web Application Scan/Directory Guessing Attack",Change Directory;Directory Listing;Network Info;Read file;Scheduled Task
+ET HUNTING Observed Interesting Content-Type Inbound (application/x-sh),Process Discovery;Read file;Scheduled Task;Script Execution
+ET SCAN NETWORK Incoming Masscan detected,Network Info
+ET POLICY POSSIBLE Web Crawl using Curl,File Transfer;Remote File Transfer
+SURICATA HTTP Request line incomplete,Network Info;Read file;Remote File Retrieval;Scheduled Task
+ET WEB_SERVER PHP Easteregg Information-Disclosure (phpinfo),File Deletion;Output Text;Read file;Scheduled Task;Script Execution;System Info
+ET POLICY Login Credentials Possibly Passed in POST Data,Directory Listing;Extract lines;File Transfer;Scheduled Task;Text Processing;User Sessions
+SURICATA Applayer Mismatch protocol both directions,Change Directory;Directory Listing;Read file;Scheduled Task
+SURICATA STREAM Packet with invalid timestamp,Network Info;Pattern Matching;Read file;Scheduled Task
+ET WEB_SERVER Muieblackcat scanner,Network Info;Read file;Scheduled Task
+ET USER_AGENTS Aria2 User-Agent,Pattern Matching
+ET HUNTING Potential Forced OGNL Evaluation - HTTP Header,Network Info;Privilege Escalation;Process Discovery;Remote Access;Scheduled Task
+ET POLICY Proxy HEAD Request,Remote File Retrieval
+ET POLICY Majestic12 User-Agent Request Inbound,Pattern Matching;Remote File Retrieval
+SURICATA STREAM ESTABLISHED SYN resend,Network Info;Read file;Scheduled Task;Script Execution
+SURICATA STREAM SYN resend,Network Info;Read file;Scheduled Task
+ET EXPLOIT D-Link Devices Home Network Administration Protocol Command Execution,Remote Access;Scheduled Task
+ET WEB_SERVER WGET Command Specifying Output in HTTP Headers,File Transfer;Network Info;Remote File Retrieval;Remote File Transfer
+ET WEB_SERVER Possible D-Link Router HNAP Protocol Security Bypass Attempt,Scheduled Task
+ET POLICY Wget User Agent,File Transfer;Remote File Retrieval;Remote File Transfer
+ET WEB_SERVER PHP Easteregg Information-Disclosure (funny-logo),File Deletion;Output Text;Scheduled Task;Script Execution;System Info
+ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound (CVE-2022-22965),Privilege Escalation;Remote Access;Script Execution
+ET WEB_SERVER PyCurl Suspicious User Agent Inbound,File Transfer;Remote File Transfer
+SURICATA STREAM ESTABLISHED invalid ack,Network Info;Pattern Matching;Read file;Scheduled Task;Script Execution
+SURICATA STREAM FIN invalid ack,Network Info;Pattern Matching;Read file;Scheduled Task
+SURICATA STREAM Packet with invalid ack,Network Info;Pattern Matching;Read file;Scheduled Task
+SURICATA STREAM ESTABLISHED packet out of window,Network Info;Read file;Scheduled Task;Script Execution
+SURICATA STREAM FIN out of window,Network Info;Read file;Scheduled Task
+ET INFO Spring Boot Actuator Health Check Request,Output Text;Remote File Retrieval;Scheduled Task;System Info
+ET EXPLOIT Eir D1000 Modem CWMP Exploit RCE,Privilege Escalation;Remote Access
+ET USER_AGENTS BLEXBot User-Agent,Pattern Matching
+ET EXPLOIT F5 BIG-IP iControl REST Authentication Bypass (CVE 2022-1388) M1,Read file;Scheduled Task;User Sessions
+ET EXPLOIT F5 BIG-IP iControl REST authentication bypass attempt (CVE 2022-1388) M2,Read file;Scheduled Task;User Sessions
+SURICATA STREAM excessive retransmissions,Network Info;Read file;Scheduled Task
+ET SCAN NMAP SIP Version Detection Script Activity,Network Info
+ET EXPLOIT Possible MobileIron RCE Attempt Inbound (CVE-2020-15505),Privilege Escalation;Remote Access;Scheduled Task
+GPL TELNET Bad Login,User Sessions
+ET WEB_SERVER Tilde in URI - potential .php~ source disclosure vulnerability,Privilege Escalation;Remote Access;Script Execution
+ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt (CVE-2021-41773) M1,Network Info;Scheduled Task
+ET USER_AGENTS Suspcious LeakIX User-Agent (l9explore),Pattern Matching
+ET WEB_SERVER Possible SSRF Attempt Inbound Using Common Dork M6,Scheduled Task
+ET EXPLOIT Linux/Attempted Hosts File Exfil,Pattern Matching;Scheduled Task
+ET WEB_SPECIFIC_APPS Metabase Local File Inclusion Inbound (CVE-2021-41277),Process Discovery
+GPL ICMP_INFO Destination Unreachable Communication with Destination Host is Administratively Prohibited,Network Info;Output Text;Pattern Matching;Read file;Scheduled Task;System Info
+ET POLICY Java Url Lib User Agent,Unmapped
+ET POLICY Java Url Lib User Agent Web Crawl,Unmapped
+ET SCAN Internal Dummy Connection User-Agent Inbound,Network Info;Pattern Matching
+ET ATTACK_RESPONSE Possible MS CMD Shell opened on local system,Remote Access;Scheduled Task;Script Execution;System Info
+ET INFO External Host Probing for ChromeCast Devices,Output Text;Pattern Matching;System Info
+ET POLICY libwww-perl User Agent,Unmapped
+ET SCAN NMAP SIP Version Detect OPTIONS Scan,Network Info
+ET POLICY curl User-Agent Outbound,File Transfer;Pattern Matching;Remote File Transfer
+ET SCAN Polaris Botnet User-Agent (Inbound),Network Info;Pattern Matching
+ET EXPLOIT Netlink GPON Remote Code Execution Attempt (Inbound),Scheduled Task
+SURICATA STREAM CLOSEWAIT FIN out of window,Network Info;Read file;Scheduled Task
+SURICATA STREAM TIMEWAIT ACK with wrong seq,Network Info;Read file;Scheduled Task
+SURICATA STREAM TIMEWAIT invalid ack,Network Info;Pattern Matching;Read file;Scheduled Task
+ET EXPLOIT Hikvision IP Camera RCE Attempt (CVE-2021-36260),Privilege Escalation;Remote Access;Scheduled Task
+ET HUNTING curl User-Agent to Dotted Quad,File Transfer;Pattern Matching;Process Discovery;Remote File Transfer
+ET EXPLOIT Possible Zimbra Autodiscover Servlet XXE (CVE-2019-9670),Script Execution
