@@ -54,6 +54,7 @@ rm -r,File Deletion,Delete folders recursively
 sh,Script Execution,
 tftp,File Transfer,
 top,Process Discovery,
+whoami, System Info,
 uname,System Info,
 uname -a,System Info,Show all system info
 uname -n,System Info,Show hostname
