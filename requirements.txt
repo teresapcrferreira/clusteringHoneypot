@@ -1,12 +1,9 @@
 blinker==1.9.0
 certifi==2025.6.15
 click==8.2.1
+dotenv==0.9.9
 elastic-transport==8.17.1
-<<<<<<< HEAD
 elasticsearch==8.17.1
-=======
-elasticsearch>=8.17.1
->>>>>>> e9e0922e73d2424edb5d7a9350a5d427fdd4515e
 Flask==3.1.1
 hdbscan==0.8.40
 itsdangerous==2.2.0
@@ -16,6 +13,7 @@ MarkupSafe==3.0.2
 numpy==2.2.6
 pandas==2.3.0
 python-dateutil==2.9.0.post0
+python-dotenv==1.1.1
 pytz==2025.2
 scikit-learn==1.7.0
 scipy==1.15.3
