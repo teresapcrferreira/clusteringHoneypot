@@ -305,15 +305,9 @@ def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00
             cmd_display_map[cmd] = cmd_display_map.get(cmd, []) + [idx]
             doc_id = df.iloc[idx]['_id']
             index_name = df.iloc[idx]['_index']
-<<<<<<< HEAD
-            kibana_url = kiburl + f"{index_name}?id={doc_id}"
-            if cmd not in cmd_id_map:
-                cmd_id_map[cmd] = [1, kibana_url]
-=======
             kibanaurl = kiburl + f"{index_name}?id={doc_id}"
             if cmd not in cmd_id_map:
                 cmd_id_map[cmd] = [1, kibanaurl]
->>>>>>> e9e0922e73d2424edb5d7a9350a5d427fdd4515e
             else:
                 cmd_id_map[cmd][0] += 1
 
@@ -451,19 +445,11 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
             index_name = df.iloc[idx]['_index']
 
             # Build the link
-<<<<<<< HEAD
-            kibana_url = kiburl + f"{index_name}?id={doc_id}"
-
-            # Save command → (count, link)
-            if cmd not in cmd_id_map:
-                cmd_id_map[cmd] = [1, kibana_url]
-=======
             kibanaurl = kiburl + f"{index_name}?id={doc_id}"
 
             # Save command → (count, link)
             if cmd not in cmd_id_map:
                 cmd_id_map[cmd] = [1, kibanaurl]
->>>>>>> e9e0922e73d2424edb5d7a9350a5d427fdd4515e
             else:
                 cmd_id_map[cmd][0] += 1  # increment count
 
