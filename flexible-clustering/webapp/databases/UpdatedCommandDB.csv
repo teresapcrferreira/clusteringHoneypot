@@ -40,6 +40,7 @@ ls -a,Directory Listing,Include hidden files
 ls -h,Directory Listing,Show sizes in a readable format
 ls -l,Directory Listing,Use detailed file listing
 lscpu,CPU Info,
+id, User Info,
 pkill,Process Termination,
 pkill -9,Process Termination,Forcefully kill the process
 pkill -f,Process Termination,Match full command line
@@ -54,7 +55,8 @@ rm -r,File Deletion,Delete folders recursively
 sh,Script Execution,
 tftp,File Transfer,
 top,Process Discovery,
-whoami, System Info,
+logname, User Info, 
+whoami, User Info,
 uname,System Info,
 uname -a,System Info,Show all system info
 uname -n,System Info,Show hostname
