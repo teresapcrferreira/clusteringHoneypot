@@ -37,8 +37,6 @@ This repository contains the research, code, and documentation for my Master’s
 ├── setup.py
 ├── flexible-clustering
 │   └── webapp
-│       ├── __pycache__/
-│       ├── build/
 │       ├── databases/
 │       │   ├── commands_cleaned.csv
 │       │   ├── sid_to_mitre_mapping.csv
