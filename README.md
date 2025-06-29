@@ -5,7 +5,9 @@ This repository contains the research, code, and documentation for my Master’s
 ## To Run
 
 ``python setup.py build_ext --inplace`` on fish folder
+
 ``cd flexible-clustering/webapp`` 
+
 ``python app.py`` on the same folder
 
 ## Objectives
