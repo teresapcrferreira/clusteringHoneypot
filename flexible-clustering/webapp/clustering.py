@@ -265,10 +265,12 @@ def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00
     df = df[df['input'].notna()]
     commands = df['input'].values
     # Filter out pure‐string “commands”
-    filtered_commands = [cmd for cmd in commands if is_real_command(cmd)]
+    # Store (original_index, command)
+    filtered_commands = [(i, cmd) for i, cmd in enumerate(commands) if is_real_command(cmd)]
+
 
     # Recompute abstracts over the filtered list
-    abstracts = [abstract_command_line_substitution(cmd) for cmd in filtered_commands]
+    abstracts = [abstract_command_line_substitution(cmd) for i, cmd in filtered_commands]
     # distance_func = lambda x, y: geometric_distance(x, y, similarity_matrix)
     fishdbc = FISHDBC(distance_func())
     fishdbc.update(abstracts)
@@ -293,26 +295,26 @@ def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00
     results = []
     for cluster_id, members in sorted(clusters.items()):
         parent = child_to_parent.get(cluster_id, "ROOT")
-        member_cmds = [filtered_commands[member] for member in members]
+        member_cmds = [cmd for _, cmd in [filtered_commands[member] for member in members]]
         cluster_size = len(members)
         unique_count = len(set(member_cmds))
         cmd_id_map = {}
         cmd_display_map = {}
 
         for idx in members:
-            raw = filtered_commands[idx]
-            cmd = raw
-            cmd_display_map[cmd] = cmd_display_map.get(cmd, []) + [idx]
-            doc_id = df.iloc[idx]['_id']
-            index_name = df.iloc[idx]['_index']
+            orig_idx, cmd = filtered_commands[idx]
+            cmd_display_map[cmd] = cmd_display_map.get(cmd, []) + [orig_idx]
+            doc_id = df.iloc[orig_idx]['_id']
+            index_name = df.iloc[orig_idx]['_index']
             kibanaurl = kiburl + f"{index_name}?id={doc_id}"
+            # print("alert: ", cmd, " ----> Id: ", doc_id, "  ----> IndexName: ", index_name)
             if cmd not in cmd_id_map:
                 cmd_id_map[cmd] = [1, kibanaurl]
             else:
                 cmd_id_map[cmd][0] += 1
 
         purpose = classify_purpose_from_lookup(member_cmds)
-
+        
         results.append({
             "id": int(cluster_id),
             "parent": str(parent),
@@ -320,7 +322,10 @@ def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00
             "size": cluster_size,
             "unique": unique_count,
             "commands": [
-               (cmd, int(count), kibanaurl) for cmd, (count, kibanaurl) in sorted(cmd_id_map.items())]
+            (cmd, int(count), kurl) for cmd, (count, kurl) in sorted(cmd_id_map.items())
+            ]
+
+
 
         })
 
