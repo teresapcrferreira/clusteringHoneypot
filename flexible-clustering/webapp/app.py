@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from clustering import run_clustering, run_clustering_simple, run_suricata
+from clustering.clustering_algorithms import run_clustering, run_clustering_simple, run_suricata
 
 app = Flask(__name__)
 

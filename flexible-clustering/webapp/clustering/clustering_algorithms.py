@@ -1,17 +1,15 @@
-from elasticsearch import Elasticsearch
 from collections import defaultdict
 import pandas as pd
 from fish.fishdbc import FISHDBC
 
+from .elastic import connect_to_elasticsearch
 from .preprocessing import is_real_command, abstract_command_line_substitution, classify_purpose_from_lookup
 from .similarity import distance_func
-from .load_data import kiburl, url, user, pwd
-
+from .config import kiburl
 
 def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
-    es = Elasticsearch(url, basic_auth=(user, pwd))
-    if not es.ping():
-        raise RuntimeError("Could not connect to Elasticsearch")
+    es = connect_to_elasticsearch()
+
     query = {
         "bool": {
             "must": [],
@@ -127,12 +125,9 @@ def run_clustering_simple(honeypot_type="cowrie", from_date="2021-04-08T00:00:00
 
     return results, ctree
 
-
-
 def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
-    es = Elasticsearch(url, basic_auth=(user, pwd))
-    if not es.ping():
-        raise RuntimeError("Could not connect to Elasticsearch")
+    es = connect_to_elasticsearch()
+
     query = {
         "bool": {
             "must": [],
@@ -270,18 +265,15 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
 
     return results, ctree
 
-
 def run_suricata(
     honeypot_type="Suricata",
     from_date="2021-04-08T00:00:00.000Z",
     to_date="2025-04-08T00:00:00.000Z",
     size=10000
 ):
-    from collections import defaultdict
 
-    es = Elasticsearch(url, basic_auth=(user, pwd))
-    if not es.ping():
-        raise RuntimeError("Could not connect to Elasticsearch")
+    es = connect_to_elasticsearch()
+
 
     # ---- Suricata-specific query ----
     query = {
