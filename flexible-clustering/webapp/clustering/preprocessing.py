@@ -76,20 +76,37 @@ def is_real_command(cmd):
 
 def classify_purpose_from_lookup(commands):
     purpose_counts = Counter()
+
     for cmd in commands:
         if not cmd or not cmd.strip():
             continue
+
         sub_cmds = re.split(OPERATOR_PATTERN, cmd)
+
         for sub in sub_cmds:
             sub = sub.strip()
             if not sub or sub in OPERATORS:
                 continue
+
             tokens = sub.split()
             if not tokens:
                 continue
-            key = tokens[0]
-            purpose = "Execution" if key.startswith("./") else purpose_lookup.get(key, "Unknown")
+
+            # Attempt full match (e.g., "cat -n")
+            full_key = " ".join(tokens)
+            base_key = tokens[0]
+
+            if full_key in purpose_lookup:
+                purpose = purpose_lookup[full_key]
+            elif base_key in purpose_lookup:
+                purpose = purpose_lookup[base_key]
+            elif base_key.startswith("./"):
+                purpose = "Execution"
+            else:
+                purpose = "Unknown"
+
             purpose_counts[purpose] += 1
 
     purposes = [p for p in purpose_counts if p != "Unknown"]
     return " + ".join(sorted(set(purposes))) if purposes else "Unknown"
+
