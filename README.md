@@ -4,7 +4,7 @@ This repository contains the research, code, and documentation for my Master’s
 
 ## To Run
 
-``python setup.py build_ext --inplace`` on fish folder
+``python setup.py build_ext --inplace`` on webapp
 
 ``cd flexible-clustering/webapp`` 
 
@@ -24,7 +24,7 @@ This repository contains the research, code, and documentation for my Master’s
 - Python 
 - Elasticsearch
 - FISHDBC (Flexible, Incremental, Scalable, Hierarchical Density-Based Clustering)
-- Custom honeypots (e.g., Cowrie, ADBHoney and Suricata)
+- Custom honeypots (Cowrie, ADBHoney and Suricata)
 
 
 ## Repository Structure
@@ -33,24 +33,40 @@ This repository contains the research, code, and documentation for my Master’s
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
-├── .gitignore
 ├── setup.py
-├── flexible-clustering
-│   └── webapp
-│       ├── databases/
-│       │   ├── commands_cleaned.csv
-│       │   ├── sid_to_mitre_mapping.csv
-│       │   ├── signature_purposes.csv
+├── .gitignore
+├── flexible-clustering/
+│   └── webapp/
+│       ├── clustering/          # Core functionality for clustering
+│       │   ├── __init__.py
+│       │   ├── config.py        # Thresholds, paths, environment settings
+│       │   ├── elastic.py       # Elasticsearch-related functions
+│       │   ├── load_data.py     # CSV/similarity/purpose DB loaders
+│       │   ├── preprocessing.py # Command cleaning, abstraction, etc.
+│       │   ├── similarity.py    # Geometric Distance Computations
+│       │   └── clustering_algorithms.py  # Clustering 
+│
+│       ├── databases/           # Supporting data files
+│       │   ├── UpdatedSimilarity.csv
 │       │   ├── UpdatedCommandDB.csv
-│       │   └── UpdatedSimilarity.csv
-│       ├── fish/ 
-│       ├── static/
+│       │   ├── signature_purposes.csv
+│       │   ├── sid_to_mitre_mapping.csv
+│       │   └── commands_cleaned.csv
+│
+│       ├── fish/                # FISHDBC implementation
+│
+│       ├── static/              # CSS
 │       │   └── styles.css
-│       ├── templates/
-│       │   └── clusters.html
-│       ├── app.py
-│       ├── clustering.py
-│       └── setup.py
+│
+│       ├── templates/           # HTML
+│       │   ├── clusters.html
+│       │   ├── _filters.html
+│       │   ├── _head.html
+│       │   ├── _scripts.html
+│       │   └── _mini_map.html
+|
+|       ├── app.py                       # Entry point to launch Flask app
+|       ├── setup.py                     # Build fishdbc if not already
 
 ```
 `fish` folder contains the files for FISHDBC algorihtm.
