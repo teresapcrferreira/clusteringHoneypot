@@ -10,7 +10,6 @@ from .load_data import load_command_resources
 
 _, _, _, suricata_purpose_lookup = load_command_resources()
 
-
 def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
     es = connect_to_elasticsearch()
     query = {
@@ -75,7 +74,6 @@ def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
         '_index': doc['_index']
     } for doc in docs])
 
-
 def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
     df = fetch_cowrie_data(honeypot_type, from_date, to_date, size=size)
 
@@ -126,7 +124,6 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
         })
 
     return results, ctree
-
 
 def run_suricata(honeypot_type="Suricata", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=None):
     es = connect_to_elasticsearch()
