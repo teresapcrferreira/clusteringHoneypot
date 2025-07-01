@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from clustering.clustering_algorithms import run_clustering, run_clustering_simple, run_suricata
+from clustering.clustering_algorithms import run_clustering, run_suricata
 
 app = Flask(__name__)
 
@@ -14,22 +14,27 @@ def clusters():
     to_date = request.args.get("to") or "2025-04-08T00:00:00.000Z"
     limit = request.args.get("limit")
 
-    if limit == "all":
-        clusters, tree = run_clustering(honeypot, from_date, to_date)
-    elif limit:
-        size = int(limit)
-        if honeypot.lower() == "suricata":
-            clusters, tree = run_suricata(honeypot, from_date, to_date, size=size)
-        else:
-            clusters, tree = run_clustering_simple(honeypot, from_date, to_date, size=size)
+    size = None
+    if limit and limit != "all":
+        try:
+            size = int(limit)
+        except ValueError:
+            return jsonify({"error": "Invalid limit parameter"}), 400
+
+    # Determine which clustering method to run
+    if honeypot.lower() == "suricata":
+        clusters_data, tree = run_suricata(
+            honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
+        )
     else:
-        size = 1000
-        clusters, tree = run_clustering_simple(honeypot, from_date, to_date, size=size)
+        clusters_data, tree = run_clustering(
+            honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
+        )
 
     tree_edges = [[str(parent), str(child)] for parent, child, *_ in tree]
 
     return jsonify({
-        "clusters": clusters,
+        "clusters": clusters_data,
         "tree": tree_edges
     })
 

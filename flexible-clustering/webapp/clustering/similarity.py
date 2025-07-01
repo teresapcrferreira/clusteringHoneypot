@@ -1,7 +1,7 @@
 from .preprocessing import is_pure_string, group_commands_and_flags
 from .load_data import load_command_resources
 
-_, similarity_matrix, _ = load_command_resources()
+_, similarity_matrix, _, _ = load_command_resources()
 
 __all__ = ["geometric_distance", "distance_func"]
 

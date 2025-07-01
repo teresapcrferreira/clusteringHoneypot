@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Cluster Dashboard</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
+  {% include "_head.html" %}
 <body>
-
   <div class="layout">
     <aside id="cluster-index">
       <h4>Cluster Index</h4>
@@ -16,214 +9,15 @@
     </aside>
 
     <main style="flex: 1; padding: 20px;">
-      <div class="filter-row">
-        <label for="honeypot">Honeypot:</label>
-        <select id="honeypot">
-          <option value="cowrie">Cowrie</option>
-          <option value="Adbhoney">ADBHoney</option>
-          <option value="suricata">Suricata</option>
-        </select>
-
-        <label for="from-date">From:</label>
-        <input type="date" id="from-date">
-
-        <label for="to-date">To:</label>
-        <input type="date" id="to-date">
-
-        <button class="button" onclick="fetchClusters(10000)">Get 10k Alerts</button>
-        <button class="button" onclick="fetchClusters('all')">Get All Alerts</button>
-      
-        <span id="load-time" style="margin-left: 10px; font-style: italic; color: #555;"></span>  
-      </div>
-
+      {% include "_filters.html" %}
       <div id="loading-wrapper">
         <div id="loading" class="spinner"></div>
       </div>      
-
       <div id="clusters-area"></div>
     </main>
   </div>
 
-  <div id="cluster-mini-map"></div>
-
-  <script>
-    function buildBinaryTree(rootNode) {
-      function convert(node) {
-        let bNode = { id: node.id, left: null, right: null };
-        if (node.children?.length) {
-          bNode.left = convert(node.children[0]);
-          let currentSibling = bNode.left;
-          for (let i = 1; i < node.children.length; i++) {
-            currentSibling.right = convert(node.children[i]);
-            currentSibling = currentSibling.right;
-          }
-        }
-        return bNode;
-      }
-      return convert(rootNode);
-    }
-
-    function buildHierarchyFromParents(clusters) {
-      const byId = {};
-      clusters.forEach(cluster => {
-        byId[cluster.id] = {
-          id: cluster.id,
-          parent: cluster.parent,
-          children: []
-        };
-      });
-
-      const roots = [];
-      clusters.forEach(cluster => {
-        const node = byId[cluster.id];
-        if (!node.parent || node.parent === "ROOT" || !byId[node.parent]) {
-          roots.push(node);
-        } else {
-          byId[node.parent].children.push(node);
-        }
-      });
-
-      return roots.length === 1 ? roots[0] : { id: "ROOT", children: roots };
-    }
-
-    function renderMiniMapTree(rootData) {
-      d3.select("#cluster-mini-map").select("svg").remove();
-
-      const margin = { top: 20, right: 120, bottom: 40, left: 120 },
-            containerWidth = 800,
-            containerHeight = 600,
-            width = containerWidth - margin.left - margin.right,
-            height = containerHeight - margin.top - margin.bottom;
-
-      const svg = d3.select("#cluster-mini-map")
-        .append("svg")
-        .attr("viewBox", `0 0 ${containerWidth} ${containerHeight}`)
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-
-      function getChildren(node) {
-        const children = [];
-        let child = node.left;
-        while (child) {
-          children.push(child);
-          child = child.right;
-        }
-        return children.length ? children : null;
-      }
-
-      const root = d3.hierarchy(rootData, getChildren);
-      const treeLayout = d3.tree().size([width, height]);
-      treeLayout(root);
-
-      svg.selectAll(".link")
-        .data(root.links())
-        .enter()
-        .append("path")
-        .attr("class", "link")
-        .attr("fill", "none")
-        .attr("stroke", "#ccc")
-        .attr("d", d3.linkVertical().x(d => d.x).y(d => d.y));
-
-      const node = svg.selectAll(".node")
-        .data(root.descendants())
-        .enter()
-        .append("g")
-        .attr("class", d => "node" + (d.children ? " node--internal" : " node--leaf"))
-        .attr("transform", d => `translate(${d.x},${d.y})`);
-
-      node.append("circle")
-        .attr("r", 5)
-        .attr("fill", "#fff")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", "1.5");
-
-      node.append("text")
-        .attr("dy", 3)
-        .attr("x", d => d.children ? -10 : 10)
-        .style("text-anchor", d => d.children ? "end" : "start")
-        .text(d => d.data.id);
-    }
-
-    function fetchClusters(limit) {
-      const honeypot = $('#honeypot').val();
-      const from = $('#from-date').val();
-      const to = $('#to-date').val();
-      const startTime = performance.now();
-
-      $('#loading-wrapper').css('display', 'flex');
-      $('#clusters-area').empty();
-      $('#index-list').empty();
-      $('#load-time').text("");
-
-      $.get("/clusters", {
-        honeypot,
-        from: from ? new Date(from).toISOString() : '',
-        to: to ? new Date(to).toISOString() : '',
-        limit: limit
-      }, function(response) {
-        const duration = ((performance.now() - startTime) / 1000).toFixed(2);
-        $('#load-time').text(`Loaded in ${duration}s`);
-
-        const data = response.clusters;
-        const treeData = response.tree;
-
-        $('#cluster-index h4').html(`Cluster Index (${data.length})`);
-        let html = '';
-        let indexHtml = '';
-
-        data.forEach(cluster => {
-          const anchorId = `cluster-${cluster.id}`;
-          const purpose = cluster.purpose || "Unknown";
-
-          html += `<div class="cluster-block" id="${anchorId}">
-            <h3>
-              Cluster ${cluster.id}
-              <small style="font-weight:normal;">(size: ${cluster.size}, unique: ${cluster.unique})</small><br>
-              <small style="font-weight:normal;">Parent: <strong>${cluster.parent}</strong></small><br>
-              <small style="font-weight:normal;">Purpose: <strong>${purpose}</strong></small>
-            </h3>
-            <ul>`;
-
-          cluster.commands.slice(0, 3).forEach(([cmd, count, link]) => {
-            html += `<li><a href="${link}" target="_blank">${cmd} (${count})</a></li>`;
-          });
-
-          if (cluster.commands.length > 3) {
-            html += `<ul class="more-commands" style="display:none;">`;
-            cluster.commands.slice(3).forEach(([cmd, count, link]) => {
-              html += `<li><a href="${link}" target="_blank">${cmd} (${count})</a></li>`;
-            });
-            html += `</ul>
-              <button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
-          }
-
-          html += `</ul></div>`;
-          indexHtml += `<li><a href="#${anchorId}">Cluster ${cluster.id}</a></li>`;
-        });
-
-        $('#clusters-area').html(html);
-        $('#index-list').html(indexHtml);
-        $('#loading-wrapper').hide();
-
-        const binaryRootNode = buildBinaryTree(buildHierarchyFromParents(data));
-        renderMiniMapTree(binaryRootNode);
-      }).fail(() => {
-        $('#clusters-area').html('<p style="color:red;">Error loading clusters.</p>');
-        $('#loading-wrapper').hide();
-      });
-    }
-
-    function toggleCluster(button) {
-      const hiddenList = $(button).prev('.more-commands');
-      hiddenList.slideToggle(200);
-      button.textContent = hiddenList.is(':visible') ? 'Hide Cluster' : 'Inspect Cluster';
-    }
-
-    $(document).ready(() => {
-      // Optionally auto-load
-      // fetchClusters();
-    });
-  </script>
+  {% include "_mini_map.html" %}
+  {% include "_scripts.html" %}
 </body>
 </html>

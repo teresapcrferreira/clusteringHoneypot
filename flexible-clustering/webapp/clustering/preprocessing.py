@@ -2,7 +2,7 @@ import re
 from collections import Counter
 from .load_data import load_command_resources
 
-valid_commands, similarity_matrix, purpose_lookup = load_command_resources()
+valid_commands, similarity_matrix, purpose_lookup, _ = load_command_resources()
 
 OPERATOR_PATTERN = r'(\|\||&&|\||;|>|>>)'
 OPERATORS = {'|', '||', '&&', ';', '>', '>>'}

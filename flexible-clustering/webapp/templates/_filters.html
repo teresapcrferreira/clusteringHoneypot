@@ -1,0 +1,19 @@
+<div class="filter-row">
+  <label for="honeypot">Honeypot:</label>
+  <select id="honeypot">
+    <option value="cowrie">Cowrie</option>
+    <option value="Adbhoney">ADBHoney</option>
+    <option value="suricata">Suricata</option>
+  </select>
+
+  <label for="from-date">From:</label>
+  <input type="date" id="from-date">
+
+  <label for="to-date">To:</label>
+  <input type="date" id="to-date">
+
+  <button class="button" onclick="fetchClusters(10000)">Get 10k Alerts</button>
+  <button class="button" onclick="fetchClusters('all')">Get All Alerts</button>
+
+  <span id="load-time" style="margin-left: 10px; font-style: italic; color: #555;"></span>  
+</div>

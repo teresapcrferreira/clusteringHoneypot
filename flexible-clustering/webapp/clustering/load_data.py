@@ -12,4 +12,10 @@ def load_command_resources():
         purpose_df["simplified_purpose"].fillna("Unclassified")
     ))
 
-    return valid_commands, similarity_matrix, purpose_lookup
+    try:
+        sig_df = pd.read_csv("databases/signature_purposes.csv")
+        suricata_purpose_lookup = dict(zip(sig_df["signature"], sig_df["purpose"]))
+    except Exception:
+        suricata_purpose_lookup = {}
+
+    return valid_commands, similarity_matrix, purpose_lookup, suricata_purpose_lookup
