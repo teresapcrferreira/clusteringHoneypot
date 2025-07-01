@@ -10,33 +10,16 @@ from .load_data import load_command_resources
 
 _, _, _, suricata_purpose_lookup = load_command_resources()
 
+# Global objects for incremental updates
 fishdbc_global = None
 filtered_commands_global = []
+df_global = None
+cluster_tree_global = []
 
-
-def update_clusters(honeypot, from_date, to_date):
-    global fishdbc_global, filtered_commands_global
-
-    df = fetch_cowrie_data(honeypot_type=honeypot, from_date=from_date, to_date=to_date)
-
-    if df.empty or 'input' not in df:
-        print("No new alerts found in update range.")
-        return
-
-    new_filtered = [(i, cmd) for i, cmd in enumerate(df['input'].dropna().values) if is_real_command(cmd)]
-    new_abstracts = [abstract_command_line_substitution(cmd) for _, cmd in new_filtered]
-
-    if not new_abstracts:
-        print("No valid commands in update.")
-        return
-
-    if fishdbc_global is None:
-        fishdbc_global = FISHDBC(distance_func())
-
-    fishdbc_global.update(new_abstracts)
-    filtered_commands_global.extend(new_filtered)
-    print(f"Updated with {len(new_abstracts)} new alerts.")
-
+fishdbc_suricata = None
+suricata_df_global = None
+suricata_tree_global = []
+suricata_commands_global = []
 
 
 def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
@@ -103,18 +86,45 @@ def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
         '_index': doc['_index']
     } for doc in docs])
 
-def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
-    df = fetch_cowrie_data(honeypot_type, from_date, to_date, size=size)
 
+def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
+    global fishdbc_global, filtered_commands_global, df_global, cluster_tree_global
+
+    df = fetch_cowrie_data(honeypot_type, from_date, to_date, size=size)
     df = df[df['input'].notna()]
     commands = df['input'].values
     filtered_commands = [(i, cmd) for i, cmd in enumerate(commands) if is_real_command(cmd)]
     abstracts = [abstract_command_line_substitution(cmd) for _, cmd in filtered_commands]
 
-    fishdbc = FISHDBC(distance_func())
-    fishdbc.update(abstracts)
-    _, _, _, ctree, _, _ = fishdbc.cluster()
+    fishdbc_global = FISHDBC(distance_func())
+    fishdbc_global.update(abstracts)
+    _, _, _, ctree, _, _ = fishdbc_global.cluster()
 
+    filtered_commands_global = filtered_commands
+    df_global = df
+    cluster_tree_global = ctree
+
+    return build_cluster_results(filtered_commands, df, ctree), ctree
+
+
+def update_clusters(honeypot_type, from_date, to_date):
+    global fishdbc_global, filtered_commands_global, df_global, cluster_tree_global
+    if fishdbc_global is None:
+        return
+
+    df_new = fetch_cowrie_data(honeypot_type, from_date, to_date)
+    df_new = df_new[df_new['input'].notna()]
+    commands = df_new['input'].values
+    filtered_commands = [(i + len(df_global), cmd) for i, cmd in enumerate(commands) if is_real_command(cmd)]
+    abstracts = [abstract_command_line_substitution(cmd) for _, cmd in filtered_commands]
+
+    fishdbc_global.update(abstracts)
+    filtered_commands_global += filtered_commands
+    df_global = pd.concat([df_global, df_new], ignore_index=True)
+    _, _, _, cluster_tree_global, _, _ = fishdbc_global.cluster()
+
+
+def build_cluster_results(filtered_commands, df, ctree):
     clusters = defaultdict(set)
     for parent, child, _, child_size in ctree[::-1]:
         if child_size == 1:
@@ -123,7 +133,6 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
             clusters[parent].update(clusters[child])
 
     child_to_parent = {child: parent for parent, child, *_ in ctree}
-
     results = []
     for cluster_id, members in sorted(clusters.items()):
         parent = child_to_parent.get(cluster_id, "ROOT")
@@ -147,16 +156,20 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
             "purpose": purpose,
             "size": len(members),
             "unique": len(set(member_cmds)),
-            "commands": [
-                (cmd, count, url) for cmd, (count, url) in sorted(cmd_id_map.items())
-            ]
+            "commands": [(cmd, count, url) for cmd, (count, url) in sorted(cmd_id_map.items())]
         })
+    return results
 
-    return results, ctree
 
-def run_suricata(honeypot_type="Suricata", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=None):
+def get_current_cluster_state():
+    global filtered_commands_global, df_global, cluster_tree_global
+    return build_cluster_results(filtered_commands_global, df_global, cluster_tree_global), cluster_tree_global
+
+
+def run_suricata(from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=None):
+    global fishdbc_suricata, suricata_df_global, suricata_tree_global, suricata_commands_global
+
     es = connect_to_elasticsearch()
-
     query = {
         "bool": {
             "must": [],
@@ -195,29 +208,33 @@ def run_suricata(honeypot_type="Suricata", from_date="2021-04-08T00:00:00.000Z",
         return [], []
 
     df["signature"] = df["alert"].apply(lambda d: d.get("signature") if isinstance(d, dict) else None)
-    sig_to_purpose = suricata_purpose_lookup
-
-    df["purpose"] = df["signature"].map(sig_to_purpose).fillna("Unknown")
+    df["purpose"] = df["signature"].map(suricata_purpose_lookup).fillna("Unknown")
     commands = df["signature"].fillna("Unknown")
     abstracts = commands.values
 
-    distance_func_suricata = lambda a, b, k=3: (
-        (lambda A, B: 0.0 if not (A or B) else 1 - len(A & B) / len(A | B))(
-            {a[i:i+k] for i in range(len(a) - k + 1)},
-            {b[i:i+k] for i in range(len(b) - k + 1)}
-        )
-    )
+    def jaccard_distance(a, b, k=3):
+        A = {a[i:i+k] for i in range(len(a) - k + 1)}
+        B = {b[i:i+k] for i in range(len(b) - k + 1)}
+        return 1 - len(A & B) / len(A | B) if A or B else 0.0
 
-    fishdbc = FISHDBC(distance_func_suricata)
-    fishdbc.update(abstracts)
-    _, _, _, ctree, _, _ = fishdbc.cluster()
+    fishdbc_suricata = FISHDBC(jaccard_distance)
+    fishdbc_suricata.update(abstracts)
+    _, _, _, ctree, _, _ = fishdbc_suricata.cluster()
 
+    suricata_df_global = df
+    suricata_commands_global = commands
+    suricata_tree_global = ctree
+
+    return build_suricata_results(df, commands, ctree), ctree
+
+
+def build_suricata_results(df, commands, ctree):
     clusters = defaultdict(set)
     for parent, child, *_ in ctree:
         clusters[int(parent)].add(int(child))
 
     def collect_members(cluster_id):
-        if cluster_id < len(abstracts):
+        if cluster_id < len(commands):
             return [cluster_id]
         members = []
         for child in clusters.get(cluster_id, []):
@@ -272,4 +289,8 @@ def run_suricata(honeypot_type="Suricata", from_date="2021-04-08T00:00:00.000Z",
             "commands": commands_list
         })
 
-    return results, ctree
+    return results
+
+
+def update_suricata_clusters(from_date, to_date):
+    return run_suricata(from_date, to_date)
