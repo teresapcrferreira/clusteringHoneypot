@@ -38,7 +38,6 @@ def clusters():
     to_date = request.args.get("to") or "2025-04-08T00:00:00.000Z"
     limit = request.args.get("limit")
 
-    # After update, just return current state
     if limit == "all" and honeypot.lower() != "suricata":
         clusters_data, tree = get_current_cluster_state()
     else:

@@ -181,7 +181,7 @@
       to: new Date(to).toISOString()
     }, function(response) {
       alert(response.message || "Update complete.");
-      fetchClusters('all');  // refresh display after update
+      fetchClusters('all'); 
     }).fail(() => {
       alert("Failed to update clusters.");
       $('#loading-wrapper').hide();

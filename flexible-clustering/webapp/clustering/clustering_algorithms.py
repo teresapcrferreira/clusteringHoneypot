@@ -10,7 +10,6 @@ from .load_data import load_command_resources
 
 _, _, _, suricata_purpose_lookup = load_command_resources()
 
-# Global objects for incremental updates
 fishdbc_global = None
 filtered_commands_global = []
 df_global = None

@@ -92,7 +92,6 @@ def classify_purpose_from_lookup(commands):
             if not tokens:
                 continue
 
-            # Attempt full match (e.g., "cat -n")
             full_key = " ".join(tokens)
             base_key = tokens[0]
 
