@@ -1,5 +1,7 @@
 <script>
   const COMMAND_SEPARATOR = ['||', '&&', '|', ';', '>', '>>'];
+  let updatedMode = false;
+
 
   function buildBinaryTree(rootNode) {
     function convert(node) {
@@ -155,11 +157,39 @@
     });
   }
 
-  function toggleCluster(button) {
-    const hiddenList = $(button).prev('.more-commands');
-    hiddenList.slideToggle(200);
-    button.textContent = hiddenList.is(':visible') ? 'Hide Cluster' : 'Inspect Cluster';
-  }
+    function toggleCluster(button) {
+        const hiddenList = $(button).prev('.more-commands');
+        hiddenList.slideToggle(200);
+        button.textContent = hiddenList.is(':visible') ? 'Hide Cluster' : 'Inspect Cluster';
+    }
+
+    function updateClusters() {
+        const honeypot = $('#honeypot').val();
+        const from = $('#update-from-date').val();
+        const to = $('#update-to-date').val();
+
+        if (!from || !to) {
+            alert("Please select both update start and end dates.");
+            return;
+        }
+
+        $('#loading-wrapper').css('display', 'flex');
+        $('#load-time').text("Updating clusters...");
+
+        $.post("/update", {
+            honeypot,
+            from: new Date(from).toISOString(),
+            to: new Date(to).toISOString()
+        }, function(response) {
+            alert(response.message || "Update complete.");
+            $('#loading-wrapper').hide();
+        }).fail(() => {
+            alert("Failed to update clusters.");
+            $('#loading-wrapper').hide();
+        });
+    }
+
+
 
   $(document).ready(() => {
     // fetchClusters();  // Enable if auto-loading is needed

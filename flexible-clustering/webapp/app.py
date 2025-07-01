@@ -1,11 +1,29 @@
 from flask import Flask, render_template, request, jsonify
-from clustering.clustering_algorithms import run_clustering, run_suricata
+from clustering.clustering_algorithms import run_clustering, run_suricata, update_clusters
 
 app = Flask(__name__)
 
 @app.route("/")
 def dashboard():
     return render_template("clusters.html")
+
+@app.route("/update", methods=["POST"])
+def update():
+    honeypot = request.form.get("honeypot")
+    from_date = request.form.get("from")
+    to_date = request.form.get("to")
+
+    if not from_date or not to_date:
+        return jsonify({"error": "Missing date range"}), 400
+
+    try:
+        from clustering.clustering_algorithms import update_clusters
+        update_clusters(honeypot, from_date, to_date)
+        return jsonify({"message": "Clusters updated successfully."})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 @app.route("/clusters")
 def clusters():

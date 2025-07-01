@@ -10,6 +10,35 @@ from .load_data import load_command_resources
 
 _, _, _, suricata_purpose_lookup = load_command_resources()
 
+fishdbc_global = None
+filtered_commands_global = []
+
+
+def update_clusters(honeypot, from_date, to_date):
+    global fishdbc_global, filtered_commands_global
+
+    df = fetch_cowrie_data(honeypot_type=honeypot, from_date=from_date, to_date=to_date)
+
+    if df.empty or 'input' not in df:
+        print("No new alerts found in update range.")
+        return
+
+    new_filtered = [(i, cmd) for i, cmd in enumerate(df['input'].dropna().values) if is_real_command(cmd)]
+    new_abstracts = [abstract_command_line_substitution(cmd) for _, cmd in new_filtered]
+
+    if not new_abstracts:
+        print("No valid commands in update.")
+        return
+
+    if fishdbc_global is None:
+        fishdbc_global = FISHDBC(distance_func())
+
+    fishdbc_global.update(new_abstracts)
+    filtered_commands_global.extend(new_filtered)
+    print(f"Updated with {len(new_abstracts)} new alerts.")
+
+
+
 def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
     es = connect_to_elasticsearch()
     query = {
