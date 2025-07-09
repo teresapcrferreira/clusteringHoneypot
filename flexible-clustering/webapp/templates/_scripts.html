@@ -89,34 +89,43 @@
   }
 
   function renderClusterBlock(cluster) {
-    const anchorId = `cluster-${cluster.id}`;
-    const purpose = cluster.purpose || "Unknown";
-    let html = `
-      <div class="cluster-block" id="${anchorId}">
-        <h3>
-          Cluster ${cluster.id}
-          <small>(size: ${cluster.size}, unique: ${cluster.unique})</small><br>
-          <small>Parent: <strong>${cluster.parent}</strong></small><br>
-          <small>Purpose: <strong>${purpose}</strong></small>
-        </h3>
-        <ul>
-    `;
+  const anchorId = `cluster-${cluster.id}`;
+  const purpose = cluster.purpose || "Unknown";
+  let html = `
+    <div class="cluster-block" id="${anchorId}">
+      <h3>
+        Cluster ${cluster.id}
+        <small>(size: ${cluster.size}, unique: ${cluster.unique})</small><br>
+        <small>Parent: <strong>${cluster.parent}</strong></small><br>
+        <small>Purpose: <strong>${purpose}</strong></small>
+      </h3>
+      <ul>
+  `;
 
-    cluster.commands.slice(0, 3).forEach(([cmd, count, link]) => {
-      html += `<li><a href="${link}" target="_blank">${cmd} (${count})</a></li>`;
+  cluster.commands.slice(0, 3).forEach(([cmd, count, link, ips, firstTs, lastTs]) => {
+    html += `<li>
+      <a href="${link}" target="_blank">${cmd} (${count})</a><br>
+      <small>IPs: ${ips.join(", ")}</small><br>
+      <small>Time: ${firstTs === lastTs ? firstTs : `${firstTs} → ${lastTs}`}</small>
+    </li>`;
+  });
+
+  if (cluster.commands.length > 3) {
+    html += `<ul class="more-commands" style="display:none;">`;
+    cluster.commands.slice(3).forEach(([cmd, count, link, ips, firstTs, lastTs]) => {
+      html += `<li>
+        <a href="${link}" target="_blank">${cmd} (${count})</a><br>
+        <small>IPs: ${ips.join(", ")}</small><br>
+        <small>Time: ${firstTs === lastTs ? firstTs : `${firstTs} → ${lastTs}`}</small>
+      </li>`;
     });
-
-    if (cluster.commands.length > 3) {
-      html += `<ul class="more-commands" style="display:none;">`;
-      cluster.commands.slice(3).forEach(([cmd, count, link]) => {
-        html += `<li><a href="${link}" target="_blank">${cmd} (${count})</a></li>`;
-      });
-      html += `</ul><button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
-    }
-
-    html += `</ul></div>`;
-    return html;
+    html += `</ul><button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
   }
+
+  html += `</ul></div>`;
+  return html;
+}
+
 
   function fetchClusters(limit) {
     const honeypot = $('#honeypot').val();

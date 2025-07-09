@@ -31,6 +31,30 @@ def update():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# @app.route("/clusters")
+# def clusters():
+#     honeypot = request.args.get("honeypot", default="cowrie")
+#     from_date = request.args.get("from") or "2021-04-08T00:00:00.000Z"
+#     to_date = request.args.get("to") or "2025-04-08T00:00:00.000Z"
+#     limit = request.args.get("limit")
+
+#     if limit == "all" and honeypot.lower() != "suricata":
+#         clusters_data, tree = get_current_cluster_state()
+#     else:
+#         size = int(limit) if limit and limit != "all" else None
+#         if honeypot.lower() == "suricata":
+#             clusters_data, tree = run_suricata(
+#                 honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
+#             )
+#         else:
+#             clusters_data, tree = run_clustering(
+#                 honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
+#             )
+
+#     tree_edges = [[str(parent), str(child)] for parent, child, *_ in tree]
+#     return jsonify({"clusters": clusters_data, "tree": tree_edges})
+
+
 @app.route("/clusters")
 def clusters():
     honeypot = request.args.get("honeypot", default="cowrie")
@@ -43,9 +67,7 @@ def clusters():
     else:
         size = int(limit) if limit and limit != "all" else None
         if honeypot.lower() == "suricata":
-            clusters_data, tree = run_suricata(
-                honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
-            )
+            clusters_data, tree = run_suricata(from_date=from_date, to_date=to_date, size=size)
         else:
             clusters_data, tree = run_clustering(
                 honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size

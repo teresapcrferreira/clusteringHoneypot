@@ -200,10 +200,26 @@ def build_cluster_results(filtered_commands, df, ctree):
             doc_id = df.iloc[orig_idx]['_id']
             index_name = df.iloc[orig_idx]['_index']
             kibanaurl = f"{kiburl}{index_name}?id={doc_id}"
+            # if cmd not in cmd_id_map:
+            #     cmd_id_map[cmd] = [1, kibanaurl]
+            # else:
+            #     cmd_id_map[cmd][0] += 1
+
+            timestamp = df.iloc[orig_idx]['@timestamp']
+            source_ip = df.iloc[orig_idx].get('src_ip', 'N/A')
+
             if cmd not in cmd_id_map:
-                cmd_id_map[cmd] = [1, kibanaurl]
+                cmd_id_map[cmd] = {
+                    "count": 1,
+                    "url": kibanaurl,
+                    "timestamps": [timestamp],
+                    "ips": {source_ip},
+                }
             else:
-                cmd_id_map[cmd][0] += 1
+                cmd_id_map[cmd]["count"] += 1
+                cmd_id_map[cmd]["timestamps"].append(timestamp)
+                cmd_id_map[cmd]["ips"].add(source_ip)
+
 
         purpose = classify_purpose_from_lookup(command_set)
         results.append({
@@ -212,7 +228,18 @@ def build_cluster_results(filtered_commands, df, ctree):
             "purpose": purpose,
             "size": len(members),
             "unique": len(command_set),
-            "commands": [(cmd, count, url) for cmd, (count, url) in sorted(cmd_id_map.items())]
+            "commands": [
+                (
+                    cmd,
+                    data["count"],
+                    data["url"],
+                    sorted(data["ips"]),
+                    min(data["timestamps"]),
+                    max(data["timestamps"])
+                )
+                for cmd, data in sorted(cmd_id_map.items())
+            ]
+
         })
 
     return results

@@ -21,6 +21,7 @@ curl -s,Remote File Retrieval,Suppress output
 echo,Output Text,
 echo -e,Output Text,Interpret escape characters
 echo -n,Output Text,Skip trailing newline
+echo -ne,Output Text,Interpret escape characters Skip trailing newline
 free,Memory Info,
 free -g,Memory Info,Show memory in GB
 free -h,Memory Info,Show sizes in a readable format

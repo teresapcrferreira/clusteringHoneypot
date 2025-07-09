@@ -181,6 +181,11 @@ scroll-behavior: smooth;
   display: none;
 } */
 
+.cluster-block small {
+  color: #666;
+  font-size: 0.85em;
+}
+
 
 #loading-wrapper {
   position: fixed;
