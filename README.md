@@ -4,6 +4,8 @@ This repository contains the research, code, and documentation for my Master’s
 
 ## To Run
 
+-- update this
+
 ``python setup.py build_ext --inplace`` on webapp
 
 ``cd flexible-clustering/webapp`` 
