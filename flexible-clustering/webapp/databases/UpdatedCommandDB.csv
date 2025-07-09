@@ -33,12 +33,14 @@ grep -v,Pattern Matching,Match lines that don't fit the pattern
 head,Extract lines,
 head -n,Extract lines,Show the first N lines
 ifconfig,Network Info,
-lockr,Permission/Attribute Manipulation,
+lockr,Permission Manipulation,
 ls,Directory Listing,
 ls -R,Directory Listing,List directories recursively
 ls -a,Directory Listing,Include hidden files
 ls -h,Directory Listing,Show sizes in a readable format
 ls -l,Directory Listing,Use detailed file listing
+ls -la,Directory Listing,Use detailed file listing Include hidden files
+ls -lh,Directory Listing,Use detailed file listing Show sizes in a readable format
 lscpu,CPU Info,
 id, User Info,
 pkill,Process Termination,
@@ -49,9 +51,11 @@ ps,Process Discovery,
 ps -e,Process Discovery,List all processes
 ps -f,Process Discovery,Show detailed process info
 ps -u,Process Discovery,Match user’s processes
+ps -x,Process Discovery,List all processes
 rm,File Deletion,
 rm -f,File Deletion,Force delete files
 rm -r,File Deletion,Delete folders recursively
+rm -rf,File Deletion, Force delete files and folders recursively
 sh,Script Execution,
 tftp,File Transfer,
 top,Process Discovery,
@@ -72,80 +76,82 @@ wget --no-check-certificate,Remote File Retrieval,Skip certificate checks
 wget -O,Remote File Retrieval,Write output to a file
 wget -q,Remote File Retrieval,Suppress output
 which,Binary Locator,
-ack ,Pattern Matching,
+which -ls,Binary Locator,Path Discovery
+ack,Pattern Matching,
 ack -i,Pattern Matching,Ignore case
 ack -w,Pattern Matching,Match whole words
 ack -c,Pattern Matching,Count matching lines
 ack -l,Pattern Matching,List matching files
 ack -n,Pattern Matching,Number every output line
-bzip2 ,Compression,
+bzip2,Compression,
 bzip2 -k,Compression,Keep input files
 bzip2 -f,Compression,Force overwrite
 bzip2 -v,Compression,Verbose mode
 bzip2 -d,Compression,Decompress
 bzip2 -t,Compression,Test integrity
-cmp ,Comparison,
+cmp,Comparison,
 cmp -l,Comparison,List all differing bytes
 cmp -s,Comparison,"Silent, exit status only"
 cmp -n,Comparison,Limit number of bytes to compare
 cmp -i,Comparison,Skip initial bytes
-diff ,Comparison,
+diff,Comparison,
 diff -u,Comparison,Unified format
 diff -c,Comparison,Context format
 diff -i,Comparison,Ignore case
 diff -b,Comparison,Ignore changes in whitespace
 diff -r,Comparison,Search directories recursively
-find ,File Search,
+find,File Search,
 find -name,File Search,Match filename
 find -type,File Search,Specify file type
 find -mtime,File Search,Match modification time
 find -size,File Search,Match file size
 find -exec,File Search,Execute command on found files
-gzip ,Compression,
+gzip,Compression,
 gzip -k,Compression,Keep input files
 gzip -d,Compression,Decompress
 gzip -v,Compression,Verbose mode
 gzip --best,Compression,Best compression
 gzip --fast,Compression,Fastest compression
-locate ,File Search,
+locate,File Search,
 locate -i,File Search,Ignore case
 locate -r,File Search,Use regular expressions
 locate -l,File Search,Limit number of results
 locate -e,File Search,Only existing files
-mosh ,Remote Access,
+mosh,Remote Access,
 mosh -p,Remote Access,Specify port
 mosh -s,Remote Access,Server-side SSH options
 mosh -c,Remote Access,Specify SSH command
 mosh --predict,Remote Access,Enable local-echo prediction
-rsync ,Remote File Transfer,
+rsync,Remote File Transfer,
 rsync -a,Remote File Transfer,Archive mode
 rsync -v,Remote File Transfer,Verbose mode
 rsync -z,Remote File Transfer,Compress file data
 rsync --delete,Remote File Transfer,Delete extraneous files
 rsync -P,Remote File Transfer,Show progress
-scp ,Remote File Transfer,
+scp,Remote File Transfer,
 scp -r,Remote File Transfer,Recursive copy
 scp -p,Remote File Transfer,Preserve file attributes
 scp -C,Remote File Transfer,Enable compression
 scp -P,Remote File Transfer,Specify port
 scp -l,Remote File Transfer,Limit bandwidth
-ssh ,Remote Access,
+scp -t,Remote File Transfer,Payload drop
+ssh,Remote Access,
 ssh -p,Remote Access,Specify port
 ssh -i,Remote Access,Identity file
 ssh -L,Remote Access,Local port forwarding
 ssh -R,Remote Access,Remote port forwarding
 ssh -o,Remote Access,Specify SSH option
-su ,Privilege Escalation,
+su,Privilege Escalation,
 su -c,Privilege Escalation,Run command as substitute user
 su -l,Privilege Escalation,Start login shell
 su -p,Privilege Escalation,Preserve environment
-sudo ,Privilege Escalation,
+sudo,Privilege Escalation,
 sudo -u,Privilege Escalation,Run as specified user
 sudo -s,Privilege Escalation,Run shell as specified user
 sudo -H,Privilege Escalation,Set HOME to target user
 sudo -E,Privilege Escalation,Preserve environment
 sudo -n,Privilege Escalation,Non-interactive mode
-tar ,Archiving,
+tar,Archiving,
 tar -c,Archiving,Create archive
 tar -x,Archiving,Extract archive
 tar -t,Archiving,List archive contents
@@ -154,9 +160,19 @@ tar -j,Archiving,Filter through bzip2
 tar -v,Archiving,Verbose output
 tar -f,Archiving,Specify archive file
 tar --exclude,Archiving,Exclude files
-zip ,Archiving,
+zip,Archiving,
 zip -r,Archiving,Include files and directories recursively
 zip -u,Archiving,Update existing entries
 zip -d,Archiving,Delete entries from zip
 zip -9,Archiving,Maximum compression
 zip -l,Archiving,List contents
+nproc,Process Discovery,
+chmod,Permission Manipulation,
+chown,Permission Manipulation,
+chrgp,Permission Manipulation,
+dnf, Package Manipulation,
+yum, Package Manipulation,
+apt-get,Package Manipulation,
+kill,Process Termination,
+killall,Process Termination,
+bg,Process Termination,

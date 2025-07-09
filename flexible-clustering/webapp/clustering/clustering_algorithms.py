@@ -123,23 +123,80 @@ def update_clusters(honeypot_type, from_date, to_date):
     _, _, _, cluster_tree_global, _, _ = fishdbc_global.cluster()
 
 
+# def build_cluster_results(filtered_commands, df, ctree):
+#     clusters = defaultdict(set)
+#     for parent, child, _, child_size in ctree[::-1]:
+#         if child_size == 1:
+#             clusters[parent].add(child)
+#         else:
+#             clusters[parent].update(clusters[child])
+
+#     child_to_parent = {child: parent for parent, child, *_ in ctree}
+#     results = []
+#     for cluster_id, members in sorted(clusters.items()):
+#         parent = child_to_parent.get(cluster_id, "ROOT")
+#         member_cmds = [filtered_commands[member][1] for member in members]
+#         cmd_id_map = {}
+
+#         for idx in members:
+#             orig_idx, cmd = filtered_commands[idx]
+#             doc_id = df.iloc[orig_idx]['_id']
+#             index_name = df.iloc[orig_idx]['_index']
+#             kibanaurl = f"{kiburl}{index_name}?id={doc_id}"
+#             if cmd not in cmd_id_map:
+#                 cmd_id_map[cmd] = [1, kibanaurl]
+#             else:
+#                 cmd_id_map[cmd][0] += 1
+
+#         purpose = classify_purpose_from_lookup(member_cmds)
+#         results.append({
+#             "id": int(cluster_id),
+#             "parent": str(parent),
+#             "purpose": purpose,
+#             "size": len(members),
+#             "unique": len(set(member_cmds)),
+#             "commands": [(cmd, count, url) for cmd, (count, url) in sorted(cmd_id_map.items())]
+#         })
+#     return results
+
 def build_cluster_results(filtered_commands, df, ctree):
-    clusters = defaultdict(set)
-    for parent, child, _, child_size in ctree[::-1]:
+    cluster_sets = defaultdict(set)
+    for parent, child, _, child_size in reversed(ctree):
         if child_size == 1:
-            clusters[parent].add(child)
+            cluster_sets[parent].add(child)
         else:
-            clusters[parent].update(clusters[child])
+            cluster_sets[parent].update(cluster_sets[child])
+
+    cluster_cmd_sets = {
+        cid: set(filtered_commands[i][1] for i in members)
+        for cid, members in cluster_sets.items()
+    }
 
     child_to_parent = {child: parent for parent, child, *_ in ctree}
+    parent_to_children = defaultdict(set)
+    for child, parent in child_to_parent.items():
+        parent_to_children[parent].add(child)
+
+    for parent, children in parent_to_children.items():
+        for child in children:
+            if child in cluster_cmd_sets:
+                cluster_cmd_sets[parent] -= cluster_cmd_sets[child]
+
+
     results = []
-    for cluster_id, members in sorted(clusters.items()):
+    for cluster_id, command_set in sorted(cluster_cmd_sets.items()):
+        if not command_set:
+            continue  
+
+
+        members = cluster_sets[cluster_id]
         parent = child_to_parent.get(cluster_id, "ROOT")
-        member_cmds = [filtered_commands[member][1] for member in members]
         cmd_id_map = {}
 
         for idx in members:
             orig_idx, cmd = filtered_commands[idx]
+            if cmd not in command_set:
+                continue  
             doc_id = df.iloc[orig_idx]['_id']
             index_name = df.iloc[orig_idx]['_index']
             kibanaurl = f"{kiburl}{index_name}?id={doc_id}"
@@ -148,16 +205,19 @@ def build_cluster_results(filtered_commands, df, ctree):
             else:
                 cmd_id_map[cmd][0] += 1
 
-        purpose = classify_purpose_from_lookup(member_cmds)
+        purpose = classify_purpose_from_lookup(command_set)
         results.append({
             "id": int(cluster_id),
             "parent": str(parent),
             "purpose": purpose,
             "size": len(members),
-            "unique": len(set(member_cmds)),
+            "unique": len(command_set),
             "commands": [(cmd, count, url) for cmd, (count, url) in sorted(cmd_id_map.items())]
         })
+
     return results
+
+
 
 
 def get_current_cluster_state():
