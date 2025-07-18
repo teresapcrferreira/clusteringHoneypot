@@ -22,6 +22,20 @@ suricata_commands_global = []
 
 
 def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
+    """
+    Fetches command input logs from Elasticsearch for a specific honeypot type (e.g., Cowrie)
+    within the provided date range.
+
+    Args:
+        honeypot_type (str): Honeypot type to filter (e.g., 'cowrie').
+        from_date (str): Start date in ISO format.
+        to_date (str): End date in ISO format.
+        size (int, optional): Number of results to fetch (non-paginated). If None, uses scroll API.
+
+    Returns:
+        pd.DataFrame: DataFrame with results, each row containing `_id`, `_index`, and document content.
+    """
+
     es = connect_to_elasticsearch()
     query = {
         "bool": {
@@ -85,8 +99,17 @@ def fetch_cowrie_data(honeypot_type, from_date, to_date, size=None):
         '_index': doc['_index']
     } for doc in docs])
 
-
 def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=10000):
+    """
+    Runs the FISHDBC clustering process on Cowrie honeypot command logs.
+
+    Stores global state for future incremental updates. Filters invalid commands,
+    abstracts them, clusters using semantic distance, and builds structured results.
+
+    Returns:
+        tuple: (cluster_results, cluster_tree) where cluster_results is a list of structured clusters.
+    """
+
     global fishdbc_global, filtered_commands_global, df_global, cluster_tree_global
 
     df = fetch_cowrie_data(honeypot_type, from_date, to_date, size=size)
@@ -105,8 +128,18 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
 
     return build_cluster_results(filtered_commands, df, ctree), ctree
 
-
 def update_clusters(honeypot_type, from_date, to_date):
+    """
+    Incrementally updates existing Cowrie clusters with new data.
+
+    Fetches new data and abstracts commands, then updates the existing FISHDBC model.
+
+    Args:
+        honeypot_type (str): Type of honeypot (e.g., 'cowrie').
+        from_date (str): Start of update range.
+        to_date (str): End of update range.
+    """
+
     global fishdbc_global, filtered_commands_global, df_global, cluster_tree_global
     if fishdbc_global is None:
         return
@@ -122,7 +155,7 @@ def update_clusters(honeypot_type, from_date, to_date):
     df_global = pd.concat([df_global, df_new], ignore_index=True)
     _, _, _, cluster_tree_global, _, _ = fishdbc_global.cluster()
 
-
+##### This next function is the original function in which the alerts are kept in the parent cluster
 # def build_cluster_results(filtered_commands, df, ctree):
 #     clusters = defaultdict(set)
 #     for parent, child, _, child_size in ctree[::-1]:
@@ -160,6 +193,20 @@ def update_clusters(honeypot_type, from_date, to_date):
 #     return results
 
 def build_cluster_results(filtered_commands, df, ctree):
+    """
+    Converts the raw cluster tree into human-readable structured cluster results.
+
+    Each result contains the parent cluster ID, behavioral purpose, counts, and metadata (Kibana URLs, timestamps, IPs).
+
+    Args:
+        filtered_commands (list): List of (index, command) tuples used in clustering.
+        df (pd.DataFrame): Original DataFrame with command metadata.
+        ctree (list): FISHDBC-generated cluster tree (tuples of parent, child, etc.).
+
+    Returns:
+        list: Structured list of cluster dictionaries ready for display or export.
+    """
+
     cluster_sets = defaultdict(set)
     for parent, child, _, child_size in reversed(ctree):
         if child_size == 1:
@@ -200,6 +247,7 @@ def build_cluster_results(filtered_commands, df, ctree):
             doc_id = df.iloc[orig_idx]['_id']
             index_name = df.iloc[orig_idx]['_index']
             kibanaurl = f"{kiburl}{index_name}?id={doc_id}"
+            #### this commented out block is for the original organization of alerts with all alerts in the parents
             # if cmd not in cmd_id_map:
             #     cmd_id_map[cmd] = [1, kibanaurl]
             # else:
@@ -244,15 +292,32 @@ def build_cluster_results(filtered_commands, df, ctree):
 
     return results
 
-
-
-
 def get_current_cluster_state():
+    """
+    Returns the most recently clustered Cowrie data (and tree) using global variables.
+
+    Returns:
+        tuple: (cluster_results, cluster_tree)
+    """
+
     global filtered_commands_global, df_global, cluster_tree_global
     return build_cluster_results(filtered_commands_global, df_global, cluster_tree_global), cluster_tree_global
 
-
 def run_suricata(from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00:00.000Z", size=None):
+    """
+    Runs clustering on Suricata alert logs (based on `alert.signature` field).
+
+    Uses Jaccard distance on trigram shingles of signature text. Stores global state
+    for later inspection or updates.
+
+    Args:
+        from_date (str): Start date for fetching alerts.
+        to_date (str): End date for fetching alerts.
+        size (int, optional): Number of results to fetch (non-paginated). If None, uses scroll API.
+
+    Returns:
+        tuple: (cluster_results, cluster_tree) where results are structured descriptions of each cluster.
+    """
     global fishdbc_suricata, suricata_df_global, suricata_tree_global, suricata_commands_global
 
     es = connect_to_elasticsearch()
@@ -313,8 +378,21 @@ def run_suricata(from_date="2021-04-08T00:00:00.000Z", to_date="2025-04-08T00:00
 
     return build_suricata_results(df, commands, ctree), ctree
 
-
 def build_suricata_results(df, commands, ctree):
+    """
+    Structures the Suricata clustering output into a list of dictionaries per cluster.
+
+    Adds command frequency, associated Kibana links, and aggregates semantic 'purpose' labels.
+
+    Args:
+        df (pd.DataFrame): DataFrame with Suricata alert logs.
+        commands (pd.Series): Series of signature texts used in clustering.
+        ctree (list): FISHDBC-generated hierarchical cluster tree.
+
+    Returns:
+        list: Structured clusters, each with metadata and semantic interpretation.
+    """
+
     clusters = defaultdict(set)
     for parent, child, *_ in ctree:
         clusters[int(parent)].add(int(child))
@@ -377,6 +455,16 @@ def build_suricata_results(df, commands, ctree):
 
     return results
 
-
 def update_suricata_clusters(from_date, to_date):
+    """
+    Wrapper function to re-run Suricata clustering for a new time window.
+
+    Args:
+        from_date (str): Start date.
+        to_date (str): End date.
+
+    Returns:
+        tuple: (cluster_results, cluster_tree)
+    """
+
     return run_suricata(from_date, to_date)

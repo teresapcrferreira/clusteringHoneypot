@@ -1,7 +1,17 @@
 <script>
-  const COMMAND_SEPARATOR = ['||', '&&', '|', ';', '>', '>>'];
-  let updatedMode = false;
+// Shell command separators used to parse compound commands
+const COMMAND_SEPARATOR = ['||', '&&', '|', ';', '>', '>>'];
 
+// Tracks whether the UI is showing updated clusters
+let updatedMode = false;
+
+/**
+ * Converts a tree with arbitrary children into a left-child/right-sibling binary tree.
+ * Used to prepare data for D3 hierarchical tree rendering.
+ *
+ * @param {Object} rootNode - The root of the general tree.
+ * @returns {Object} - Root node of the binary tree.
+ */
   function buildBinaryTree(rootNode) {
     function convert(node) {
       const binaryNode = { id: node.id, left: null, right: null };
@@ -18,6 +28,13 @@
     return convert(rootNode);
   }
 
+/**
+ * Constructs a hierarchical tree from a flat list of clusters using parent references.
+ * If multiple roots exist, wraps them in a synthetic "ROOT" node.
+ *
+ * @param {Array} clusters - Flat list of cluster objects with 'id' and 'parent' fields.
+ * @returns {Object} - Root node of the reconstructed tree.
+ */
   function buildHierarchyFromParents(clusters) {
     const byId = Object.fromEntries(clusters.map(c => [c.id, { ...c, children: [] }]));
     const roots = [];
@@ -34,6 +51,12 @@
     return roots.length === 1 ? roots[0] : { id: "ROOT", children: roots };
   }
 
+/**
+ * Renders a vertical minimap tree (binary tree format) inside the #cluster-mini-map container.
+ * Uses D3.js to layout and draw links and nodes.
+ *
+ * @param {Object} rootData - Root of the binary tree structure.
+ */
   function renderMiniMapTree(rootData) {
     const svgRoot = d3.select("#cluster-mini-map");
     svgRoot.select("svg").remove();
@@ -88,6 +111,12 @@
       .text(d => d.data.id);
   }
 
+/**
+ * Renders a single cluster block (HTML) including metadata, top commands, and expandable list.
+ *
+ * @param {Object} cluster - Cluster object with id, size, purpose, and commands.
+ * @returns {string} - HTML string to inject into the page.
+ */
   function renderClusterBlock(cluster) {
   const anchorId = `cluster-${cluster.id}`;
   const purpose = cluster.purpose || "Unknown";
@@ -126,7 +155,14 @@
   return html;
 }
 
-
+/**
+ * Fetches clustered data from the backend and renders the full cluster view:
+ * - Cluster blocks
+ * - Cluster index
+ * - Minimap tree
+ *
+ * @param {string} limit - Limit for number of clusters to fetch, or "all".
+ */
   function fetchClusters(limit) {
     const honeypot = $('#honeypot').val();
     const from = $('#from-date').val();
@@ -165,12 +201,22 @@
     });
   }
 
+/**
+ * Toggles the visibility of the expanded command list inside a cluster block.
+ *
+ * @param {HTMLElement} button - The "Inspect Cluster" / "Hide Cluster" button element.
+ */
   function toggleCluster(button) {
     const hiddenList = $(button).prev('.more-commands');
     hiddenList.slideToggle(200);
     button.textContent = hiddenList.is(':visible') ? 'Hide Cluster' : 'Inspect Cluster';
   }
 
+
+/**
+ * Sends a request to update existing clusters with new data based on user-selected dates.
+ * Then refreshes the full cluster view.
+ */
   function updateClusters() {
     const honeypot = $('#honeypot').val();
     const from = $('#update-from-date').val();
