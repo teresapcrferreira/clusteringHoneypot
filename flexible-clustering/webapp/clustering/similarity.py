@@ -1,3 +1,4 @@
+import numpy as np
 from .preprocessing import is_pure_string, group_commands_and_flags
 from .load_data import load_command_resources
 
@@ -47,7 +48,7 @@ def geometric_distance(cmd1, cmd2, sim_matrix):
         product *= max(s, SIMILARITY_THRESHOLD)
 
     geometric_mean = product ** (1.0 / len(sims))
-    return 1.0 - geometric_mean
+    return np.clip(1.0 - geometric_mean, 0.0, 1.0)
 
 def distance_func():
     """
