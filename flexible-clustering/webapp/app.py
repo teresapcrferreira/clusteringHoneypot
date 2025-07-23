@@ -63,18 +63,25 @@ def clusters():
     limit = request.args.get("limit")
 
     if limit == "all" and honeypot.lower() != "suricata":
-        clusters_data, tree = get_current_cluster_state()
+        # NOTE: you need to update get_current_cluster_state() to also return full_clusters
+        clusters_data, full_clusters, tree = get_current_cluster_state()
     else:
         size = int(limit) if limit and limit != "all" else None
         if honeypot.lower() == "suricata":
             clusters_data, tree = run_suricata(from_date=from_date, to_date=to_date, size=size)
+            full_clusters = clusters_data  # No pruning needed for Suricata
         else:
-            clusters_data, tree = run_clustering(
+            clusters_data, full_clusters, tree = run_clustering(
                 honeypot_type=honeypot, from_date=from_date, to_date=to_date, size=size
             )
 
     tree_edges = [[str(parent), str(child)] for parent, child, *_ in tree]
-    return jsonify({"clusters": clusters_data, "tree": tree_edges})
+    return jsonify({
+        "clusters": clusters_data,
+        "full_tree_clusters": full_clusters,
+        "tree": tree_edges
+    })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

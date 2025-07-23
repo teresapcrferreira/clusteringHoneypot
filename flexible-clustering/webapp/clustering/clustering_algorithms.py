@@ -126,7 +126,11 @@ def run_clustering(honeypot_type="cowrie", from_date="2021-04-08T00:00:00.000Z",
     df_global = df
     cluster_tree_global = ctree
 
-    return build_cluster_results(filtered_commands, df, ctree), ctree
+    ui_clusters = build_cluster_results(filtered_commands, df, ctree, preserve_all_alerts=False)
+    full_clusters = build_cluster_results(filtered_commands, df, ctree, preserve_all_alerts=True)
+
+
+    return ui_clusters, full_clusters, ctree
 
 def update_clusters(honeypot_type, from_date, to_date):
     """
@@ -192,7 +196,8 @@ def update_clusters(honeypot_type, from_date, to_date):
 #         })
 #     return results
 
-def build_cluster_results(filtered_commands, df, ctree):
+def build_cluster_results(filtered_commands, df, ctree, preserve_all_alerts=False):
+
     """
     Converts the raw cluster tree into human-readable structured cluster results.
 
@@ -224,10 +229,13 @@ def build_cluster_results(filtered_commands, df, ctree):
     for child, parent in child_to_parent.items():
         parent_to_children[parent].add(child)
 
-    for parent, children in parent_to_children.items():
-        for child in children:
-            if child in cluster_cmd_sets:
-                cluster_cmd_sets[parent] -= cluster_cmd_sets[child]
+    if not preserve_all_alerts:
+        # REMOVE children from parent command sets
+        for parent, children in parent_to_children.items():
+            for child in children:
+                if child in cluster_cmd_sets:
+                    cluster_cmd_sets[parent] -= cluster_cmd_sets[child]
+
 
 
     results = []
@@ -268,7 +276,23 @@ def build_cluster_results(filtered_commands, df, ctree):
                 cmd_id_map[cmd]["timestamps"].append(timestamp)
                 cmd_id_map[cmd]["ips"].add(source_ip)
 
+        purpose_to_cmds = defaultdict(list)
+        for cmd, data in cmd_id_map.items():
+            purpose = classify_purpose_from_lookup([cmd])
+            purpose_to_cmds[purpose].append((
+                cmd,
+                data["count"],
+                data["url"],
+                len(data["ips"]),
+                min(data["timestamps"]),
+                max(data["timestamps"])
+            ))
 
+        # Sort commands inside each purpose by frequency
+        grouped_commands = {
+            purpose: sorted(cmds, key=lambda x: -x[1])  # sort by count descending
+            for purpose, cmds in sorted(purpose_to_cmds.items())  # sort purposes alphabetically or by priority if needed
+        }
         purpose = classify_purpose_from_lookup(command_set)
         results.append({
             "id": int(cluster_id),
@@ -276,18 +300,7 @@ def build_cluster_results(filtered_commands, df, ctree):
             "purpose": purpose,
             "size": len(members),
             "unique": len(command_set),
-            "commands": [
-                (
-                    cmd,
-                    data["count"],
-                    data["url"],
-                    sorted(data["ips"]),
-                    min(data["timestamps"]),
-                    max(data["timestamps"])
-                )
-                for cmd, data in sorted(cmd_id_map.items())
-            ]
-
+            "grouped_commands": grouped_commands
         })
 
     return results
@@ -428,21 +441,27 @@ def build_suricata_results(df, commands, ctree):
         })
         purpose = " + ".join(member_purposes) if member_purposes else "Unknown"
 
-        commands_list = [
-            (
+        # Group by purpose (using suricata_purpose_lookup)
+        purpose_to_cmds = defaultdict(list)
+        for sig, (cnt, link) in cmd_map.items():
+            purpose = suricata_purpose_lookup.get(sig, "Unknown")
+            ip_count = len(set(df.iloc[idx].get('src_ip', 'N/A') for idx in member_ids if commands.iloc[idx] == sig))
+            timestamps = [df.iloc[idx]['@timestamp'] for idx in member_ids if commands.iloc[idx] == sig]
+            
+            purpose_to_cmds[purpose].append((
                 sig,
                 cnt,
-                first_url,
-                list(dict.fromkeys(
-                    df.iloc[idx]['purpose']
-                    for idx in member_ids
-                    if commands.iloc[idx] == sig
-                    and df.iloc[idx].get('purpose')
-                    and df.iloc[idx]['purpose'] != "Unknown"
-                ))
-            )
-            for sig, (cnt, first_url) in sorted(cmd_map.items())
-        ]
+                link,
+                ip_count,
+                min(timestamps),
+                max(timestamps)
+            ))
+
+        # Sort commands inside each purpose by frequency
+        grouped_commands = {
+            purpose: sorted(cmds, key=lambda x: -x[1])
+            for purpose, cmds in sorted(purpose_to_cmds.items())
+        }
 
         results.append({
             "id": int(cluster_id),
@@ -450,8 +469,9 @@ def build_suricata_results(df, commands, ctree):
             "purpose": purpose,
             "size": len(member_ids),
             "unique": len(cmd_map),
-            "commands": commands_list
+            "grouped_commands": grouped_commands
         })
+
 
     return results
 

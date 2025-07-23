@@ -117,43 +117,56 @@ let updatedMode = false;
  * @param {Object} cluster - Cluster object with id, size, purpose, and commands.
  * @returns {string} - HTML string to inject into the page.
  */
-  function renderClusterBlock(cluster) {
+function renderClusterBlock(cluster) {
   const anchorId = `cluster-${cluster.id}`;
-  const purpose = cluster.purpose || "Unknown";
+  const purpose = cluster.purpose;
   let html = `
     <div class="cluster-block" id="${anchorId}">
       <h3>
         Cluster ${cluster.id}
         <small>(size: ${cluster.size}, unique: ${cluster.unique})</small><br>
-        <small>Parent: <strong>${cluster.parent}</strong></small><br>
-        <small>Purpose: <strong>${purpose}</strong></small>
+        <small>Parent: <strong>${cluster.parent}</strong></small>
       </h3>
-      <ul>
   `;
 
-  cluster.commands.slice(0, 3).forEach(([cmd, count, link, ips, firstTs, lastTs]) => {
-    html += `<li>
-      <a href="${link}" target="_blank">${cmd} (${count})</a><br>
-      <small>IPs: ${ips.join(", ")}</small><br>
-      <small>Time: ${firstTs === lastTs ? firstTs : `${firstTs} → ${lastTs}`}</small>
-    </li>`;
-  });
+  const grouped = cluster.grouped_commands;  // fallback in case backend sends old format
 
-  if (cluster.commands.length > 3) {
-    html += `<ul class="more-commands" style="display:none;">`;
-    cluster.commands.slice(3).forEach(([cmd, count, link, ips, firstTs, lastTs]) => {
+   Object.entries(grouped).forEach(([subPurpose, commands]) => {
+    if (!commands.length) return;
+
+    // If purpose is not "Unknown", add a heading
+    if (subPurpose !== "Unknown") {
+      html += `<strong>${subPurpose}</strong>`;
+    }
+
+    html += `<ul>`;
+    commands.slice(0, 3).forEach(([cmd, count, link, ipCount, firstTs, lastTs]) => {
       html += `<li>
         <a href="${link}" target="_blank">${cmd} (${count})</a><br>
-        <small>IPs: ${ips.join(", ")}</small><br>
+        <small>Unique IPs: ${ipCount}</small><br>
         <small>Time: ${firstTs === lastTs ? firstTs : `${firstTs} → ${lastTs}`}</small>
       </li>`;
     });
-    html += `</ul><button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
-  }
 
-  html += `</ul></div>`;
+    if (commands.length > 3) {
+      html += `<ul class="more-commands" style="display:none;">`;
+      commands.slice(3).forEach(([cmd, count, link, ipCount, firstTs, lastTs]) => {
+        html += `<li>
+          <a href="${link}" target="_blank">${cmd} (${count})</a><br>
+          <small>IPs: ${ipCount} unique</small><br>
+          <small>Time: ${firstTs === lastTs ? firstTs : `${firstTs} → ${lastTs}`}</small>
+        </li>`;
+      });
+      html += `</ul><button class="inspect-btn" onclick="toggleCluster(this)">Inspect Cluster</button>`;
+    }
+
+    html += `</ul>`;
+  });
+
+  html += `</div>`;
   return html;
 }
+
 
 /**
  * Fetches clustered data from the backend and renders the full cluster view:
@@ -163,43 +176,46 @@ let updatedMode = false;
  *
  * @param {string} limit - Limit for number of clusters to fetch, or "all".
  */
-  function fetchClusters(limit) {
-    const honeypot = $('#honeypot').val();
-    const from = $('#from-date').val();
-    const to = $('#to-date').val();
-    const startTime = performance.now();
+function fetchClusters(limit) {
+  const honeypot = $('#honeypot').val();
+  const from = $('#from-date').val();
+  const to = $('#to-date').val();
+  const startTime = performance.now();
 
-    $('#loading-wrapper').css('display', 'flex');
-    $('#clusters-area').empty();
-    $('#index-list').empty();
-    $('#load-time').text("");
+  $('#loading-wrapper').css('display', 'flex');
+  $('#clusters-area').empty();
+  $('#index-list').empty();
+  $('#load-time').text("");
 
-    $.get("/clusters", {
-      honeypot,
-      from: from ? new Date(from).toISOString() : '',
-      to: to ? new Date(to).toISOString() : '',
-      limit
-    }).done(response => {
-      const duration = ((performance.now() - startTime) / 1000).toFixed(2);
-      $('#load-time').text(`Loaded in ${duration}s`);
+  $.get("/clusters", {
+    honeypot,
+    from: from ? new Date(from).toISOString() : '',
+    to: to ? new Date(to).toISOString() : '',
+    limit
+  }).done(response => {
+    const duration = ((performance.now() - startTime) / 1000).toFixed(2);
+    $('#load-time').text(`Loaded in ${duration}s`);
 
-      const data = response.clusters;
-      $('#cluster-index h4').html(`Cluster Index (${data.length})`);
+    const data = response.clusters;                   // for dashboard
+    const fullTreeData = response.full_tree_clusters; // for minimap only
 
-      const clusterHTML = data.map(renderClusterBlock).join('');
-      const indexHTML = data.map(c => `<li><a href="#cluster-${c.id}">Cluster ${c.id}</a></li>`).join('');
+    $('#cluster-index h4').html(`Cluster Index (${data.length})`);
 
-      $('#clusters-area').html(clusterHTML);
-      $('#index-list').html(indexHTML);
-      $('#loading-wrapper').hide();
+    const clusterHTML = data.map(renderClusterBlock).join('');
+    const indexHTML = data.map(c => `<li><a href="#cluster-${c.id}">Cluster ${c.id}</a></li>`).join('');
 
-      const binaryRootNode = buildBinaryTree(buildHierarchyFromParents(data));
-      renderMiniMapTree(binaryRootNode);
-    }).fail(() => {
-      $('#clusters-area').html('<p style="color:red;">Error loading clusters.</p>');
-      $('#loading-wrapper').hide();
-    });
-  }
+    $('#clusters-area').html(clusterHTML);
+    $('#index-list').html(indexHTML);
+    $('#loading-wrapper').hide();
+
+    // 🔁 change here: use fullTreeData for the tree
+    const binaryRootNode = buildBinaryTree(buildHierarchyFromParents(fullTreeData));
+    renderMiniMapTree(binaryRootNode);
+  }).fail(() => {
+    $('#clusters-area').html('<p style="color:red;">Error loading clusters.</p>');
+    $('#loading-wrapper').hide();
+  });
+}
 
 /**
  * Toggles the visibility of the expanded command list inside a cluster block.
