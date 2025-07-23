@@ -223,10 +223,13 @@ function fetchClusters(limit) {
  * @param {HTMLElement} button - The "Inspect Cluster" / "Hide Cluster" button element.
  */
   function toggleCluster(button) {
-    const hiddenList = $(button).prev('.more-commands');
-    hiddenList.slideToggle(200);
-    button.textContent = hiddenList.is(':visible') ? 'Hide Cluster' : 'Inspect Cluster';
-  }
+  const hiddenList = $(button).prev('.more-commands');
+
+  hiddenList.slideToggle(200, function () {
+    const isVisible = $(this).is(':visible');
+    button.textContent = isVisible ? 'Hide Cluster' : 'Inspect Cluster';
+  });
+}
 
 
 /**

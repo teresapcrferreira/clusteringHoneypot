@@ -10,13 +10,14 @@ chattr +a,File Attribute Manipulation,Only allow adding to file
 chattr +i,File Attribute Manipulation,Make file unchangeable
 chattr -i,File Attribute Manipulation,Allow file changes again
 crontab,Scheduled Task,
-crontab -e,Scheduled Task,Edit user crontab
-crontab -l,Scheduled Task,List user crontab
-crontab -r,Scheduled Task,Delete user crontab
+crontab -e,Scheduled Task,Edit user 
+crontab -l,Scheduled Task,List user 
+crontab -r,Scheduled Task,Delete user 
 curl,Remote File Retrieval,
 curl -X,Remote File Retrieval,Set request method
 curl -d,Remote File Retrieval,Send data with POST
 curl -o,Remote File Retrieval,Write output to a file
+curl -O,Remote File Retrieval,Write output to a file
 curl -s,Remote File Retrieval,Suppress output
 echo,Output Text,
 echo -e,Output Text,Interpret escape characters
@@ -49,10 +50,10 @@ pkill -9,Process Termination,Forcefully kill the process
 pkill -f,Process Termination,Match full command line
 pkill -u,Process Termination,Match user’s processes
 ps,Process Discovery,
-ps -e,Process Discovery,List all processes
-ps -f,Process Discovery,Show detailed process info
+ps -e,Process Discovery,List all 
+ps -f,Process Discovery,Show detailed 
 ps -u,Process Discovery,Match user’s processes
-ps -x,Process Discovery,List all processes
+ps -x,Process Discovery,List all 
 rm,File Deletion,
 rm -f,File Deletion,Force delete files
 rm -r,File Deletion,Delete folders recursively
@@ -76,6 +77,7 @@ wget,Remote File Retrieval,
 wget --no-check-certificate,Remote File Retrieval,Skip certificate checks
 wget -O,Remote File Retrieval,Write output to a file
 wget -q,Remote File Retrieval,Suppress output
+wget -qO,Remote File Retrieval,Write output to a file and Suppress output
 which,Binary Locator,
 which -ls,Binary Locator,Path Discovery
 ack,Pattern Matching,

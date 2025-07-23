@@ -160,6 +160,10 @@ def classify_purpose_from_lookup(commands):
     for cmd in commands:
         if not cmd or not cmd.strip():
             continue
+        
+        if cmd.strip().startswith(">"):
+            purpose_counts["Write Inside File"] += 1
+            continue
 
         sub_cmds = re.split(OPERATOR_PATTERN, cmd)
 
@@ -180,9 +184,14 @@ def classify_purpose_from_lookup(commands):
             elif base_key in purpose_lookup:
                 purpose = purpose_lookup[base_key]
             elif base_key.startswith("./"):
-                purpose = "Execution"
+                purpose = "File Execution"
+            elif base_key.startswith(">"):
+                purpose = "Write Inside File"
+            elif base_key.startswith("/"):
+                purpose = "File Execution"
             else:
                 purpose = "Unknown"
+
 
             purpose_counts[purpose] += 1
 

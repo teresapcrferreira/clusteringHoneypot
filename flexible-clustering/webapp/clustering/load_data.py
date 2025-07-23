@@ -7,10 +7,17 @@ def load_command_resources():
     similarity_matrix = pd.read_csv("databases/UpdatedSimilarity.csv", index_col=0)
 
     purpose_df = pd.read_csv("databases/UpdatedCommandDB.csv")
-    purpose_lookup = dict(zip(
-        purpose_df["label"].str.strip(),
-        purpose_df["simplified_purpose"].fillna("Unclassified")
-    ))
+    purpose_lookup = dict(
+        zip(
+            purpose_df["label"].str.strip(),
+            purpose_df.apply(
+                lambda row: f"{row['simplified_purpose'].strip()} ({row['flag_description'].strip()})"
+                if pd.notna(row["flag_description"])
+                else row["simplified_purpose"].strip(),
+                axis=1
+            )
+        )
+    )
 
     try:
         sig_df = pd.read_csv("databases/signature_purposes.csv")
